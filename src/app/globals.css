@@ -4,5 +4,5 @@ body {
 }
 
 .btn {
-  @apply bg-amber-500 text-white font-semibold py-2 px-4 rounded hover:bg-amber-600 transition-colors;
+  @apply cursor-pointer bg-amber-600 text-white font-semibold py-2 px-4 rounded-xl hover:bg-amber-500 transition-colors;
 }

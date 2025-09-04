@@ -9,7 +9,7 @@ export default function Header() {
   const [isGalleryOpen, setGalleryOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full h-20 z-20 bg-gradient-to-b from-black/100 to-transparent text-white">
+    <header className="absolute top-0 left-0 w-full h-20 z-20 bg-gradient-to-b from-black/100 to-transparent  text-white">
       <div className="flex items-center justify-between h-full px-4 md:px-6 lg:px-10">
         <Logo />
         <nav className="flex gap-4 text-sm md:text-base lg:text-lg font-bold text-amber-300 dark:text-amber-400">
