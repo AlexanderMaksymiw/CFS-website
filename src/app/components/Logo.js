@@ -7,8 +7,8 @@ export default function Logo() {
       <Image
         src="/images/hero/CFS_logo.png"
         alt="CFS Logo"
-        width={120}
-        height={120}
+        width={100}
+        height={100}
         priority
       />
     </Link>

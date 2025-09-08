@@ -1,54 +1,73 @@
-"use client"; // need this we will use useState
-import { useState, useEffect } from "react"; // we need this as the images will be changing
-import Image from "next/image"; // this optimizes images for browser (convert to webp)
+"use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function HeroSlideshow() {
-  //component function
   const images = [
-    // images array for the slideshow
-    "/images/hero/Volvo_drive.jpg", // idx 0 src "/images..."
-    "/images/hero/BMW_back.jpg", // idx 1 src "/images..."
-    "/images/hero/911_front_side.jpg", // idx 2 src "/images..."
-    "/images/hero/Escort_green.jpg", // idx 3 src "/images..."
-    "/images/hero/subaru_front.jpg", // idx 4 src "/images..."
-    "/images/hero/Supra_front.jpg", // idx 5 src "/images..."
-    "/images/hero/Toyota_Corolla.jpg", // idx 6 src "/images..."
-    "/images/hero/Evo_back_2.jpg", // idx 7 src "/images..."
-    "/images/hero/Supra.jpg", // idx 8 src "/images..."
-    "/images/hero/MX5.jpg", // idx 9 src "/images..."
-    "/images/hero/escort_green_side.jpg", // idx 10 src "/images..."
+    "/images/hero/Volvo_drive.jpg",
+    "/images/hero/BMW_back.jpg",
+    "/images/hero/911_front_side.jpg",
+    "/images/hero/Toyota_Corolla.jpg",
+    "/images/hero/Evo_back_2.jpg",
+    "/images/hero/Supra.jpg",
+    "/images/hero/MX5.jpg",
   ];
 
-  const [current, setCurrent] = useState(0); // set up the vairable for the image and foundation to update it. 0 represents the index so first image
+  const [current, setCurrent] = useState(0);
 
-  //useEffect this bit is the engine that makes the slideshow automatically cycle through images.
   useEffect(() => {
-    //run code after the component renders.
     const interval = setInterval(() => {
-      //setinterval runs the callback every 5 seconds
-      setCurrent((prev) => (prev + 1) % images.length); //setCurrent is the state updater for current prev syntax means we're updating current based on its previous value.
-    }, 7000); // % images.length is what makes the slideshow loop forever modulo returns remainder eg. start =0 (0+1 % = 1) show img 1, prev 8 (8+1 % 9 =0 goes back to the first index)
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 7000);
 
-    return () => clearInterval(interval); // clean up function optional stops the slideshow when user leaves page clear is a counterpart to set
-  }, [images.length]); // this is the dependency array that the effect depends on React watches these variables
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-  //creates the frame for the slideshow (div className="relative...")
   return (
     <div className="relative w-full h-[750px] object-none">
-      {/* .map iterates over the images array return what we specify src, idx the file source and index. (callback) */}
       {images.map((src, idx) => (
-        <Image // for each image we render <Image> component Next.js optimized images. lazy loading, webp
-          key={idx} //react requires unique keys when rendering lists we use the index for the key.(variable from map function)
-          src={src} // image path from the images array. (variable from map function)
-          alt={`Hero slide ${idx + 1}`} //alt text of image, using template literal
-          fill //makes image stretch to fill parent container (parent must have position: relative)
-          priority={idx === 0} //  priority tells Next.js to load immediately but only idx 0 the first.
+        <Image
+          key={idx}
+          src={src}
+          alt={`Hero slide ${idx + 1}`}
+          fill
+          priority={idx === 0}
           className={`object-cover transition-opacity duration-1000 ${
-            //object-cover image scale to parent container. transition-opacity 1s trans, template literal to write js
-            idx === current ? "opacity-100" : "opacity-0" // js function if current idx add opacity 100% if not current set to 0%
+            idx === current ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
     </div>
   );
 }
+
+// "use client"; → Required for client-side rendering since we use hooks (useState, useEffect).
+// import { useState, useEffect } → React hooks to manage state and handle side effects (slideshow timing).
+// import Image from "next/image" → Next.js component that optimizes images (lazy loading, WebP, resizing).
+
+// images array → Contains all image paths for the slideshow. Each index corresponds to a slide.
+
+// useState(0) → "current" stores the index of the currently displayed image, starting at 0 (first image).
+
+// useEffect → Runs after the component renders.
+// Inside, setInterval changes the "current" index every 7 seconds.
+// The formula (prev + 1) % images.length increments the index, and loops back to 0 when reaching the end.
+// Cleanup function (clearInterval) stops the slideshow when the component unmounts.
+// Dependency [images.length] ensures the effect reruns if the image array changes.
+
+// return() → Renders the slideshow UI.
+
+// <div className="relative w-full h-[750px] object-none"> → Container for the slideshow.
+// "relative" ensures the absolutely positioned <Image fill /> can stretch inside it.
+// "w-full h-[750px]" sets the slideshow size.
+
+// images.map((src, idx) => … ) → Iterates through the image array and renders an <Image> for each one.
+// key={idx} → Unique key required by React when mapping lists.
+// src={src} → Image file path.
+// alt={`Hero slide ${idx + 1}`} → Alt text with slide number for accessibility.
+// fill → Makes image cover the container dimensions (requires parent "relative").
+// priority={idx === 0} → Ensures the very first image loads immediately for better UX.
+// className → Handles display and animation:
+//   - object-cover → Scales image to cover container area.
+//   - transition-opacity duration-1000 → 1 second fade effect when changing slides.
+//   - idx === current ? "opacity-100" : "opacity-0" → Shows the current image (100% opacity) and hides others (0%).

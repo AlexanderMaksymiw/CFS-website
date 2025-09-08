@@ -1,18 +1,23 @@
 "use client";
+import { useState, useEffect } from "react";
 
 export default function Card({ image, title, content }) {
   return (
-    <div
-      className="relative p-4 rounded-lg bg-cover bg-center text-white h-100"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      {/* Overlay (optional, for readability) */}
-      <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
+    <div className="relative overflow-hidden group">
+      {/* Image */}
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-140 object-cover transform transition-transform duration-500 group-hover:scale-110"
+      />
 
-      {/* Content sits on top */}
-      <div className="relative z-10">
-        <h3 className="mt-2 text-lg font-bold">{title}</h3>
-        <p>{content}</p>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-end p-4 text-white">
+        <h3 className="mt-2 text-4xl font-bold">{title}</h3>
+        <p className="mt-6 max-w-sm">{content}</p>
       </div>
     </div>
   );

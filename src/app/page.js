@@ -1,7 +1,7 @@
 "use client"; // this tells next.js that this component needs to run in browser not server side because using React hooks
 import Link from "next/link"; // components link
 import { useRouter } from "next/navigation"; // Next.js app router hook allows for navigation
-import { useState, useEffect } from "react"; // react hook for creating states
+import { useState, useEffect, Component } from "react"; // react hook for creating states
 import HeroSlideshow from "./components/HeroSlideshow";
 import Header from "./components/Header";
 import HeroOverlay from "./components/heroOverlay";
@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import Summary from "./components/Summary";
 import Intro from "./components/Intro";
 import Highlights from "./components/Highlights";
+import Map from "./components/Map";
+import Info from "./components/Info"
 
 const myCards = [
   {
@@ -50,18 +52,10 @@ const myCards = [
 ];
 
 export default function Home() {
-  const [carBrand, setcarBrand] = useState(""); //carBrand = current value of input field, setCarBrand function to update it
-  const router = useRouter();
-
-  function navigate() {
-    setcarBrand("");
-    router.push("/cars/" + carBrand);
-  }
-
   return (
     <div className="header">
-      <HeroSlideshow />
       <Header />
+      <HeroSlideshow />
       <HeroOverlay />
       <Intro
         eyebrow="Your CFS Invitation"
@@ -73,19 +67,19 @@ export default function Home() {
         content={
           <>
             Every Thursday evening through Spring, Summer and Autumn we witness
-            up to{" "}
+            up to
             <strong> 400 cool rides gathering near Oswestry Shropshire </strong>
-            . With hardstanding provided across the site and onsite catering.
+            CFS is More than just meets, our events feature scenic road trips,
+            great food and coffee, and a relaxed, inclusive atmosphere that
+            celebrates everything from supercars to timeless classics.
           </>
         }
         button="CFS Rules"
         image="/images/I8.png"
       />
-      <Highlights
-        heading="Our Highligts"
-        text="Check out our feature Cards!"
-        cards={myCards}
-      />
+      <Info />
+      <Highlights heading="Gallery" text="" cards={myCards} />
+      <Map />
       <Footer />
     </div>
   );

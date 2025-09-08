@@ -1,9 +1,14 @@
-import { Roboto } from "next/font/google";
+import { Roboto, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
-
 
 const roboto = Roboto({
   variable: "--font-Roboto",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const roboto_condensed = Roboto_Condensed({
+  variable: "--font-Roboto_Condensed",
   subsets: ["latin"],
 });
 
@@ -15,7 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} ${roboto_condensed.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
