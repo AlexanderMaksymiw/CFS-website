@@ -11,12 +11,28 @@ export default function Header() {
       <div className="flex items-center justify-between h-full px-20">
         <Logo />
         <nav className="flex gap-4 text-sm md:text-base lg:text-lg font-semibold tracking-wide">
-          <Link href="/story">Our Story</Link>
-          <Link href="/rules">Rules</Link>
-          <Link href="/gear">Gear</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/latest">Latest</Link>
-          <Link href="/gallery">Gallery</Link>
+          <Link href="/about">
+            <span className="link text-xl font-semibold">Our Story</span>
+          </Link>
+          <Link href="/rules">
+            <span className="link text-xl font-semibold">Rules</span>
+          </Link>
+          <Link href="/gear">
+            <span className="link text-xl font-semibold">Gear</span>
+          </Link>
+          <Link href="/events">
+            {" "}
+            <span className="link text-xl font-semibold">Events</span>
+          </Link>
+          <Link href="/latest">
+            {" "}
+            <span className="link text-xl font-semibold">Latest</span>
+          </Link>
+          <Link href="/gallery">
+            {" "}
+            <span className="link text-xl font-semibold">Gallery</span>
+          </Link>
+
         </nav>
       </div>
     </header>

@@ -6,48 +6,41 @@ import HeroSlideshow from "./components/HeroSlideshow";
 import Header from "./components/Header";
 import HeroOverlay from "./components/heroOverlay";
 import Footer from "./components/Footer";
-import Summary from "./components/Summary";
 import Intro from "./components/Intro";
 import Highlights from "./components/Highlights";
 import Map from "./components/Map";
-import Info from "./components/Info"
+import Info from "./components/Info";
+import Banner from "./components/Banner";
 
 const myCards = [
   {
     image: "/images/Drive_out_ford.jpg",
     title: "Epic Adventures",
-    content:
-      "Join us on a road trip for a well-organised, respectful, and unforgettable drive through this stunning part of the country. It's about enjoying the road responsibly. ",
+
   },
   {
     image: "/images/catering.jpg",
     title: "Food and Drink",
-    content:
-      "On-site catering food, drink and seating is provided at CFS grab a coffee and sit down and talk to fellow car enthusiasts.",
+
   },
   {
     image: "/images/escort.jpg",
     title: "Supercars and Classics",
-    content:
-      "Bring your four-legged roadster along for the ride, we’re dog-friendly, stocked with Pawtastic treats, and always ready to fuel up wagging tails with snacks.",
+
   },
   {
     image: "/images/abarth.jpg",
     title: "Clubs Welcome!",
-    content:
-      "Bring your four-legged roadster along for the ride, we’re dog-friendly, stocked with Pawtastic treats, and always ready to fuel up wagging tails with snacks.",
+
   },
   {
     image: "/images/MX5_polaroid.jpg",
     title: "Community Driven",
-    content:
-      "Bring your four-legged roadster along for the ride, we’re dog-friendly, stocked with Pawtastic treats, and always ready to fuel up wagging tails with snacks.",
   },
   {
     image: "/images/dog.jpg",
     title: "Dog Friendly",
-    content:
-      "Bring your four-legged roadster along for the ride, we’re dog-friendly, stocked with Pawtastic treats, and always ready to fuel up wagging tails with snacks.",
+
   },
 ];
 
@@ -59,26 +52,10 @@ export default function Home() {
       <HeroOverlay />
       <Intro
         eyebrow="Your CFS Invitation"
-        title="Visit LLynclys Farm between 17:30 - 20:00 Every Thursday!"
+        title="Join us at LLynclys Farm between 17:30 - 20:00 Every Thursday!"
         content="From April to September, classics, supercars, and modern specials gather at LLynclys Farm in a vibrant, welcoming space for all enthusiasts with the right attitude."
       />
-      <Summary
-        title="Join us for an epic car meetup with hundreds of enthusiasts"
-        content={
-          <>
-            Every Thursday evening through Spring, Summer and Autumn we witness
-            up to
-            <strong> 400 cool rides gathering near Oswestry Shropshire </strong>
-            CFS is More than just meets, our events feature scenic road trips,
-            great food and coffee, and a relaxed, inclusive atmosphere that
-            celebrates everything from supercars to timeless classics.
-          </>
-        }
-        button="CFS Rules"
-        image="/images/I8.png"
-      />
       <Info />
-      <Highlights heading="Gallery" text="" cards={myCards} />
       <Map />
       <Footer />
     </div>

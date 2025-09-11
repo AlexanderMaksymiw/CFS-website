@@ -8,7 +8,7 @@ export default function Card({ image, title, content }) {
       <img
         src={image}
         alt={title}
-        className="w-full h-140 object-cover transform transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-120 object-cover transform transition-transform duration-500 group-hover:scale-110"
       />
 
       {/* Overlay */}
