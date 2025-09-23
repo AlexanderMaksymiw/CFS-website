@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function SubPageHero({ title }) {
   return (
-    <div className="relative w-full h-120">
+    <div className="relative w-full h-180">
       <Header />
       <Image
         className="object-cover"
@@ -14,10 +14,10 @@ export default function SubPageHero({ title }) {
         fill
       />
 
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/20" />
 
-      <div className=" absolute inset-0 flex flex-col px-55 justify-center pt-40 text-white">
-        <h1 className="text-6xl  pt-20 font-bold">{title}</h1>
+      <div className=" absolute inset-0 flex flex-col px-55 justify-center  text-white">
+        <h1 className="text-7xl text-center drop-shadow-2xl font-bold">{title}</h1>
       </div>
     </div>
   );

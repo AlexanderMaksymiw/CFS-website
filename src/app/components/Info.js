@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import Slideshow from "../components/Slideshow";
+import FullBackground from "../components/Full Background";
 
-export default function EventInfo() {
+export default function Info() {
   return (
-    <section className="px-55 pt-8">
+    <section className="pt-8">
       <div className="space-y-16">
         {/* Intro */}
 
-        <div className="flex  gap-6">
+        <div className="flex px-55 gap-6">
           <div
             className=" space-y-4 bg-cover bg-center h-[600px] flex-2"
             style={{ backgroundImage: "url('/images/Ferrari.webp')  " }}
@@ -48,7 +49,7 @@ export default function EventInfo() {
             />
           </div>
         </div>
-        <div className="flex relative gap-6">
+        <div className="flex px-55 relative gap-6">
           <div
             className=" relative space-y-4 bg-cover bg-center h-[600px] flex-1"
             style={{ backgroundImage: "url('/images/couple.jpg')  " }}
@@ -80,8 +81,10 @@ export default function EventInfo() {
           </div>
         </div>
 
+        <FullBackground>
+        </FullBackground>
         {/* Epic Road Trips */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid px-55 md:grid-cols-2 gap-10 items-center">
           <img
             src="/images/Elan_Valley.jpg"
             alt="Elan Valley Road Trip"
@@ -104,18 +107,18 @@ export default function EventInfo() {
         </div>
 
         {/* Supercars and Classics */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 px-55 gap-10 items-center">
           <div className="order-2 md:order-1 space-y-6">
             <h2 className="text-3xl font-semibold text-slate-800">
               Supercars and Classics
             </h2>
             <p className="text-lg text-slate-700 max-w-2xl">
-              Everyone is welcome — supercars, 90s icons, JDM legends, timeless
+              Everyone is welcome supercars, 90s icons, JDM legends, timeless
               classics, and everything in between. Part of the excitement is
               never knowing exactly what will roll up at each event, making
               every meet unique and full of surprises.{" "}
             </p>
-            <button className="btn">Paddock Cars</button>
+            <button className="btn">Cars</button>
           </div>
           <img
             src="/images/911.jpg"

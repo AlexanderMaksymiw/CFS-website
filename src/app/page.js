@@ -7,31 +7,25 @@ import Header from "./components/Header";
 import HeroOverlay from "./components/heroOverlay";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
-import Highlights from "./components/Highlights";
 import Map from "./components/Map";
 import Info from "./components/Info";
-import Banner from "./components/Banner";
 
 const myCards = [
   {
     image: "/images/Drive_out_ford.jpg",
     title: "Epic Adventures",
-
   },
   {
     image: "/images/catering.jpg",
     title: "Food and Drink",
-
   },
   {
     image: "/images/escort.jpg",
     title: "Supercars and Classics",
-
   },
   {
     image: "/images/abarth.jpg",
     title: "Clubs Welcome!",
-
   },
   {
     image: "/images/MX5_polaroid.jpg",
@@ -40,7 +34,6 @@ const myCards = [
   {
     image: "/images/dog.jpg",
     title: "Dog Friendly",
-
   },
 ];
 
@@ -56,6 +49,7 @@ export default function Home() {
         content="From April to September, classics, supercars, and modern specials gather at LLynclys Farm in a vibrant, welcoming space for all enthusiasts with the right attitude."
       />
       <Info />
+
       <Map />
       <Footer />
     </div>

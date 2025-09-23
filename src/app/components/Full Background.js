@@ -1,0 +1,21 @@
+"use client";
+
+export default function FullBackground({ children }) {
+  return (
+    <div className="relative h-180 bg-center bg-fixed overflow-hidden">
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/videos/CFS Video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      <div className="px-55 pt-25 flex relative z-20">
+        <div className="border border-white h-120 flex-1"></div>
+        <div>{children}</div>
+      </div>
+    </div>
+  );
+}
