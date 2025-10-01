@@ -40,9 +40,7 @@ export default function Footer() {
                 <Link href="/events">
                   <span className="link text-lg font-semibold">Events</span>
                 </Link>
-                <Link href="/latest">
-                  <span className="link text-lg font-semibold">Latest</span>
-                </Link>
+
                 <Link href="/merch">
                   <span className="link text-lg font-semibold">Merch</span>
                 </Link>

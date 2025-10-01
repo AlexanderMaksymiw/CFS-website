@@ -9,7 +9,7 @@ export default function Info() {
       <div className="space-y-16">
         {/* Intro */}
 
-        <div className="flex px-55 gap-6">
+        <div className="flex px-56 gap-6">
           <div
             className=" space-y-4 bg-cover bg-center h-[600px] flex-2"
             style={{ backgroundImage: "url('/images/Ferrari.webp')  " }}
@@ -49,7 +49,7 @@ export default function Info() {
             />
           </div>
         </div>
-        <div className="flex px-55 relative gap-6">
+        <div className="flex px-56 relative gap-6">
           <div
             className=" relative space-y-4 bg-cover bg-center h-[600px] flex-1"
             style={{ backgroundImage: "url('/images/couple.jpg')  " }}
@@ -84,7 +84,7 @@ export default function Info() {
         <FullBackground>
         </FullBackground>
         {/* Epic Road Trips */}
-        <div className="grid px-55 md:grid-cols-2 gap-10 items-center">
+        <div className="grid px-56 md:grid-cols-2 gap-10 items-center">
           <img
             src="/images/Elan_Valley.jpg"
             alt="Elan Valley Road Trip"
@@ -107,7 +107,7 @@ export default function Info() {
         </div>
 
         {/* Supercars and Classics */}
-        <div className="grid md:grid-cols-2 px-55 gap-10 items-center">
+        <div className="grid md:grid-cols-2 px-56 gap-10 items-center">
           <div className="order-2 md:order-1 space-y-6">
             <h2 className="text-3xl font-semibold text-slate-800">
               Supercars and Classics

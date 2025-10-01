@@ -3,6 +3,7 @@ import SubPageHero from "../components/SubPageHero";
 import Image from "next/image";
 import Video from "../components/Video";
 import Footer from "../components/Footer";
+import Slider from "../components/Slider";
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
       <div className="flex flex-col md:flex-row items-start gap-8 px-55 ">
         {/* Text block */}
         <div className=" ">
-          <h3 className="text-3xl pt-20 text-slate-700 font-semibold px-55 mb-8 p-8 pb-20  leading-10 text-center bg-slate-100">
+          <h3 className="text-3xl pt-20 text-slate-700 font-semibold px-55 mb-8 p-8 pb-20  leading-10 text-center bg-slate-200">
             "We’re a team of unapologetic car nuts. If it’s got wheels, we’re
             into it. Most days you’ll find us getting our fix, either online,
             under the bonnet, or out on the road. The idea for Car Farm Social
@@ -38,6 +39,24 @@ export default function About() {
             foundation of what would become Car Farm Social. Without them, CFS
             would never have grown into the thriving community it is today.
           </p>
+          <div className=" flex flex-row text-xl gap-10 text-slate-700 pb-20">
+            <div className="flex-1 h-[400] relative ">
+              <Image
+                src="/images/First_Mini.png"
+                alt="First Mini at CFS"
+                fill
+                className="object-cover pl-40"
+              />
+            </div>
+            <div className="flex-1 relative h-[400]">
+              <Image
+                src="/images/First Cars.png"
+                alt="first cars at CFS"
+                fill
+                className="object-cover pr-40"
+              />
+            </div>
+          </div>
           <p className="text-lg leading-8 text-slate-700 mb-8 px-40">
             {" "}
             At its heart, CFS is a social club first, with cars attached. While
@@ -56,27 +75,12 @@ export default function About() {
             special!
           </p>
           <h2 className="text-4xl font-semibold px-40 mb-10 text-slate-700 text-center mt-10">
-            First Car Farm Social August 2021
+            Car Farm Social in 2025
           </h2>
         </div>
       </div>
       <div className="px-55 flex flex-row text-xl gap-10 text-slate-700 pb-20">
-        <div className="flex-1 h-[400] relative ">
-          <Image
-            src="/images/First_Mini.png"
-            alt="First Mini at CFS"
-            fill
-            className="object-cover pl-40"
-          />
-        </div>
-        <div className="flex-1 relative h-[400]">
-          <Image
-            src="/images/First Cars.png"
-            alt="first cars at CFS"
-            fill
-            className="object-cover pr-40"
-          />
-        </div>
+        <Slider/>
       </div>
 
       <Footer />

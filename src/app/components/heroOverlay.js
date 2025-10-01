@@ -11,7 +11,7 @@ export default function HeroOverlay() {
   return (
     <div className="absolute inset-0 z-20 flex flex-col items-start justify-center text-left bg-slate-900/20 text-white px-55 pt-35 h-[750px]">
       <div className="">
-        <h1 className="text-8xl tracking-wide font-bold mb-4 max-w-2xl antialiased ">
+        <h1 className="text-8xl  font-bold mb-4 max-w-2xl antialiased ">
           WELCOME TO <span className="text-yellow-400">CAR FARM SOCIAL </span>
         </h1>
         <h3 className="text-xl md:text 3xl max-w-sm mb-6 font-semibold ">
