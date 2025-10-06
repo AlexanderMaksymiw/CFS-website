@@ -42,7 +42,6 @@ export default function Merch() {
             cars; it’s like spotting another member of the crew while cruising
             around. That instant recognition is what makes the community real.
           </p>
-          <button className="btn">Road Trips</button>
         </div>
       </div>
 
@@ -55,7 +54,6 @@ export default function Merch() {
             just chilling with friends. CFS hoodies are in limited supply so
             make sure to pick one up before they're all gone.
           </p>
-          <button className="btn">Cars</button>
         </div>
         <img
           src="/images/CFS Hoodie.jpg"

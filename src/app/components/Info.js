@@ -2,53 +2,65 @@
 import Image from "next/image";
 import Slideshow from "../components/Slideshow";
 import FullBackground from "../components/Full Background";
+import SectionBG from "../components/SectionBG";
+import SectionBGShort from "../components/SectionBGShort";
+import ItemGrid from "../components/ItemGrid";
+import { useRouter } from "next/navigation";
 
 export default function Info() {
+  const router = useRouter();
+
+  function navigateGallery() {
+    router.push("/gallery");
+  }
+
+  function navigateEvents() {
+    router.push("/events");
+  }
+
   return (
     <section className="pt-8">
-      <div className="space-y-16">
-        {/* Intro */}
-
-        <div className="flex px-56 gap-6">
-          <div
-            className=" space-y-4 bg-cover bg-center h-[600px] flex-2"
-            style={{ backgroundImage: "url('/images/Ferrari.webp')  " }}
-          >
-            <h1 className=" text-6xl max-w-xl font-bold text-white pl-16 pt-5 drop-shadow-2xl">
-              Community Where Cars and Culture{" "}
-              <span className="text-yellow-400">Come Alive</span>
-            </h1>
-            <h3 className="text-xl font-semibold text-white max-w-3xl pl-16 drop-shadow-2xl">
-              Every Thursday evening through Spring, Summer and Autumn we
-              witness up to 400 cool rides gathering near Oswestry Shropshire
-              CFS is More than just meets, our events feature scenic road trips,
-              great food and coffee, and a relaxed, inclusive atmosphere that
-              celebrates everything from supercars to timeless classics.
-            </h3>
+      <div className="space-y-16 pb-20">
+        <SectionBG image={"/images/hero/Supra_front.jpg"}>
+          <div className=" relative flex px-56 gap-6">
+            <div className=" space-y-4 bg-cover bg-center h-[600px] flex-2">
+              <h1 className=" text-6xl max-w-xl font-bold text-white pb-5 drop-shadow-2xl">
+                A Community Where Cars and Culture{" "}
+                <span className="text-yellow-400">Come Alive</span>
+              </h1>
+              <h3 className="text-2xl/8 font-semibold text-justify text-white max-w-md pb-5 drop-shadow-xl">
+                Every Thursday evening throughout Spring, Summer, and Autumn, up
+                to 400 amazing rides gather near Oswestry, Shropshire.
+              </h3>
+              <h3 className="text-2xl/8 font-semibold text-justify text-white max-w-md  drop-shadow-xl">
+                CFS is more than just a meet-up our events include scenic road
+                trips, delicious food and coffee, and a relaxed, inclusive
+                atmosphere that celebrates everything from supercars to timeless
+                classics.
+              </h3>
+            </div>
+            <div className="relative space-y-6 h-[600px] w-[900px]  overflow-hidden">
+              <Slideshow
+                images={[
+                  "/images/friends 4.jpg",
+                  "/images/eating.jpg",
+                  "/images/dad 2.jpg",
+                  "/images/Ice_cream.jpg",
+                  "/images/having fun.jpg",
+                  "/images/MX5_Polaroid.jpg",
+                  "/images/dog 6.jpg",
+                  "/images/group-2.jpg",
+                  "/images/talking.jpg",
+                  "/images/dog 4.jpg",
+                  "/images/Ice_cream CFS.jpg",
+                  "/images/Leon.jpg",
+                  "/images/photographer.jpg",
+                  "/images/porsche-back.jpg",
+                ]}
+              />
+            </div>
           </div>
-          <div className="relative space-y-6 h-[600px] flex-1 overflow-hidden">
-            <h2 className="absolute z-20 text-white text-5xl font-bold pl-8 pt-5 max-w-30 drop-shadow-2xl">
-              Driven Together
-            </h2>
-
-            <Slideshow
-              images={[
-                "/images/friends 4.jpg",
-                "/images/eating.jpg",
-                "/images/dad 2.jpg",
-                "/images/Ice_cream.jpg",
-                "/images/having fun.jpg",
-                "/images/MX5_Polaroid.jpg",
-                "/images/trip.jpg",
-                "/images/group 2.jpg",
-                "/images/talking.jpg",
-                "/images/dog 4.jpg",
-                "/images/Ice_cream CFS.jpg",
-                "/images/Leon.jpg",
-              ]}
-            />
-          </div>
-        </div>
+        </SectionBG>
         <div className="flex px-56 relative gap-6">
           <div
             className=" relative space-y-4 bg-cover bg-center h-[600px] flex-1"
@@ -80,16 +92,17 @@ export default function Info() {
             </div>
           </div>
         </div>
-
-        <FullBackground>
-        </FullBackground>
-        {/* Epic Road Trips */}
-        <div className="grid px-56 md:grid-cols-2 gap-10 items-center">
+        <div className="px-56">
+          <ItemGrid />
+        </div>
+        <SectionBGShort className="bg-slate-300/20" image={"/images/two-scoobies.jpg"}> </SectionBGShort>
+        <div className="grid px-56 md:grid-cols-2 gap-10 items-center ">
           <img
             src="/images/Elan_Valley.jpg"
             alt="Elan Valley Road Trip"
             className=" object-cover w-full h-110"
           />
+
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold text-slate-800">
               Epic Road Trips
@@ -102,7 +115,9 @@ export default function Info() {
               that’s at the Red Kite Café and Grill or other local favourites.
               Every trip is about the drive, the scenery, and the company.{" "}
             </p>
-            <button className="btn">Road Trips</button>
+            <button className="btn" onClick={navigateEvents}>
+              Road Trips
+            </button>
           </div>
         </div>
 
@@ -118,7 +133,9 @@ export default function Info() {
               never knowing exactly what will roll up at each event, making
               every meet unique and full of surprises.{" "}
             </p>
-            <button className="btn">Cars</button>
+            <button className="btn" onClick={navigateGallery}>
+              Cars
+            </button>
           </div>
           <img
             src="/images/911.jpg"
@@ -127,6 +144,7 @@ export default function Info() {
           />
         </div>
       </div>
+      <SectionBGShort image={"/images/bora.jpg"}> </SectionBGShort>
     </section>
   );
 }

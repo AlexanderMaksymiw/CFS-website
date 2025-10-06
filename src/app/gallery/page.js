@@ -6,6 +6,7 @@ import SubPageHero from "../components/SubPageHero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GalleryGrid from "../components/GalleryGrid";
+import ImageCard from "../components/ImageCard";
 
 const images = [
   "/images/renault.jpg",
@@ -59,6 +60,7 @@ export default function Gallery() {
         </h3>
       </div>
       <GalleryGrid images={images} />
+      <ImageCard image={"/images/Evo adventure.jpg"}/>
       <Header />
       <Footer />
     </div>

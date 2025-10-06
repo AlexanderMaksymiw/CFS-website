@@ -65,7 +65,6 @@ export default function Rules() {
               <div className="relative w-[920px] h-[580px]">
                 <video
                   src="/videos/exit.mp4"
-                  fill
                   autoPlay
                   loop
                   muted
