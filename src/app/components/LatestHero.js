@@ -9,6 +9,7 @@ export default function SubPageHero({
   image,
   articleTitle,
   articleIntro,
+  link,
 }) {
   //default images if none are passed as props
   const defaultImages = ["/images/Ferrari Hero 2.jpg", "/images/M3.jpg"];
@@ -23,14 +24,16 @@ export default function SubPageHero({
         <div className="flex-3 relative bg-slate-800">
           <div className="absolute inset-0 flex flex-col justify-center items-start pl-46">
             <h3 className="text-white text-md pb-4">Latest</h3>
-            <h2 className="text-white text-5xl pb-4">{articleTitle}</h2>
-            <h3 className="text-white text-md text-md max-w-lg">
+            <h2 className="text-white text-5xl pb-4 max-w-lg">{articleTitle}</h2>
+            <h3 className="text-white text-md max-w-md">
               {articleIntro}
             </h3>
             <div className="pt-5">
-              <button className=" bg-amber-300 text-slate-800 hover:bg-amber-400 cursor-pointer p-2 font-semibold text-sm">
-               Find out more
-              </button>
+              <a href={link}>
+                <button className=" bg-amber-300 text-slate-800 hover:bg-amber-400 cursor-pointer p-2 font-semibold text-sm rounded-2xl">
+                  Find out more
+                </button>
+              </a>
             </div>
           </div>
         </div>

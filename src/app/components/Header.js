@@ -20,15 +20,14 @@ export default function Header() {
           <Link href="/merch">
             <span className="link text-xl font-semibold">Merch</span>
           </Link>
-          <Link href="/events">
+          <Link href="/latest">
             {" "}
-            <span className="link text-xl font-semibold">Events</span>
+            <span className="link text-xl font-semibold">Latest</span>
           </Link>
           <Link href="/gallery">
             {" "}
             <span className="link text-xl font-semibold">Gallery</span>
           </Link>
-
         </nav>
       </div>
     </header>

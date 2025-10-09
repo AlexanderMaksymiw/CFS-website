@@ -176,7 +176,7 @@ export default function Rules() {
         <div className="border border-slate-300"> </div>
         <div className="grid grid-cols-2 gap-4 pt-10 pr-91">
           {/* Left column */}
-          <h2 className="text-slate-800 text-5xl font-bold">05</h2>
+          <h2 className="text-slate-800 text-5xl font-bold">06</h2>
 
           {/* Right column */}
           <div className="flex flex-col items-start ">

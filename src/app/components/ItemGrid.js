@@ -44,7 +44,7 @@ export default function ItemGrid() {
           {/* Image half */}
           <div className="relative overflow-hidden h-[450px] w-full">
             <Image
-              src="/images/hero/Escort_green.jpg"
+              src="/images/911-drive.jpg"
               alt="Featured Article"
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
