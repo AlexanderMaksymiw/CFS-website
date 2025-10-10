@@ -6,24 +6,28 @@ const articles = [
   {
     id: 1,
     image: "/images/golf-orange.jpg",
+    slug: "german-cfs-night-a-social-celebration-of-german-cars",
     title: "German Night: A Social Celebration of German Cars",
     date: "07/08/2025",
   },
   {
     id: 2,
     image: "/images/hero/volvo_drive.jpg",
+    slug: "explore-the-elan-valley-group-drive-out",
     title: "Explore the Elan Valley: Group Drive Out",
     date: "03/07/2025",
   },
   {
     id: 3,
     image: "/images/evo_back.jpg",
+    slug: "jdm-battle-trophy-for-the-top-japanese-car",
     title: "JDM Battle: Trophy for the Top Japanese Car",
     date: "10/07/2025",
   },
   {
     id: 4,
     image: "/images/red-kite-event/red-fords.jpg",
+    slug: "red-kite-cafe-drive-out-adventure",
     title: "Red Kite Café Drive-Out Adventure",
     date: "03/08/2025",
   },
@@ -62,7 +66,10 @@ export default function ItemGrid() {
         {/* Right column: small articles */}
         <div className="grid grid-cols-2 grid-rows-2 overflow-hidden gap-5">
           {articles.map((article) => (
-            <div key={article.id} className="flex flex-col h-[350px] cursor-pointer">
+            <div
+              key={article.id}
+              className="flex flex-col h-[350px] cursor-pointer"
+            >
               {/* Image half */}
               <div className="relative h-[250px] cursor-pointer overflow-hidden w-full">
                 <Image
