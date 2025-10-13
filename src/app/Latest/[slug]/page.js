@@ -82,8 +82,18 @@ function renderContent(content, imageMap) {
       const src = imageMap[key];
       if (src) {
         return (
-          <div key={index} className="relative h-[500px] w-full my-10">
-            <Image src={src} alt={key} fill className="object-cover" />
+          <div
+            key={index}
+            className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden my-8"
+          >
+            <Image
+              src={src}
+              alt={key}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 80vw"
+              priority
+            />
           </div>
         );
       }
@@ -91,7 +101,7 @@ function renderContent(content, imageMap) {
     return (
       <p
         key={index}
-        className="text-xl text-slate-700 whitespace-pre-wrap leading-relaxed"
+        className="text-base sm:text-lg md:text-xl text-slate-700 whitespace-pre-wrap leading-relaxed"
       >
         {part}
       </p>
@@ -127,43 +137,52 @@ export default function Page({ params }) {
   };
 
   return (
-    <div className="">
+    <div className="flex flex-col min-h-screen">
       {/*hero image */}
       <Header />
-      <div className="relative w-full h-200">
+      <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[21/9]">
         <Image
           src={article.heroImage}
           alt={article.title}
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
-        <div className="absolute inset-0 flex flex-col  justify-end pb-20 items-center font-semibold text-white bg-gradient-to-t from-slate-800/90 to-transparent">
-          <h1 className="text-white text-7xl drop-shadow-2xl absolute max-w-4xl">
+        <div className="absolute inset-0 flex items-end justify-center pb-10 sm:pb-16 md:pb-24 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent">
+          <h1 className="text-2xl leading-tight sm:text-2xl md:text-3xl lg:text-7xl font-black text-white drop-shadow-2xl lg:max-w-4xl md:max-w-2xl sm:max-w-2xl max-w-md text-center md:text-left">
             {article.title}
           </h1>
         </div>
       </div>
-      <div className="flex flex-col items-center pt-10">
-        {/* Heading centered */}
-        <h3 className="text-3xl max-w-4xl text-left">{article.intro}</h3>
 
-        {/* Info aligned to the start of the h3 */}
-        <div className="max-w-4xl w-full mt-5 text-left">
+      {/* article content */}
+      <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
+        {/* Heading centered */}
+        <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-4xl text-slate-800">
+          {article.intro}
+        </h3>
+
+        {/* article date and author */}
+        <div className="max-w-4xl w-full mt-4 text-center md:text-left text-slate-600 text-sm sm:text-base">
           <p>Written by {article.author}</p>
           <p>Event Date: {article.date}</p>
         </div>
 
-        <div className=" relative h-[550px] max-w-4xl w-full mt-10">
+        {/*article first image */}
+        <div className="relative w-full max-w-4xl aspect-[16/9] overflow-hidden mt-8 mb-5">
           <Image
             src={article.image}
             alt={article.image}
             fill
             priority
+            sizes="(max-width: 768px) 100vw, 80vw"
             className="object-cover"
           />
         </div>
-        <div className="max-w-4xl w-full mt-5 text-left space-y-8 pb-30">
+
+        {/* main content */}
+        <div className="max-w-4xl w-full space-y-8 text-left text-slate-700 px-2 sm:px-4 md:px-0">
           {renderContent(article.content, imageMap)}
         </div>
       </div>

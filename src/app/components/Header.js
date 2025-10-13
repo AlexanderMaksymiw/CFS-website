@@ -1,35 +1,65 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
 import Logo from "./Logo";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className=" absolute top-0 left-0 w-full h-20 z-50 bg-gradient-to-b from-slate-900 to-transparent  text-white">
-      <div className="flex items-center justify-between h-full px-20">
+    <header className="absolute top-0 left-0 w-full z-50 bg-gradient-to-b from-slate-900 to-transparent text-white">
+      <div className="flex items-center justify-between h-20 px-4 sm:px-6 md:px-10 lg:px-20">
         <Logo />
-        <nav className="flex gap-4 text-sm md:text-base lg:text-lg font-semibold tracking-wide">
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex gap-6 text-base font-semibold tracking-wide">
           <Link href="/about">
-            <span className="link text-xl font-semibold">Our Story</span>
+            <span>Our Story</span>
           </Link>
           <Link href="/rules">
-            <span className="link text-xl font-semibold">Rules</span>
+            <span>Rules</span>
           </Link>
           <Link href="/merch">
-            <span className="link text-xl font-semibold">Merch</span>
+            <span>Merch</span>
           </Link>
           <Link href="/latest">
-            {" "}
-            <span className="link text-xl font-semibold">Latest</span>
+            <span>Latest</span>
           </Link>
           <Link href="/gallery">
-            {" "}
-            <span className="link text-xl font-semibold">Gallery</span>
+            <span>Gallery</span>
           </Link>
         </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden text-3xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="md:hidden absolute top-20 left-0 w-full bg-slate-900 flex flex-col px-4 py-6 gap-4 items-center">
+          <Link href="/about" onClick={() => setIsOpen(false)}>
+            Our Story
+          </Link>
+          <Link href="/rules" onClick={() => setIsOpen(false)}>
+            Rules
+          </Link>
+          <Link href="/merch" onClick={() => setIsOpen(false)}>
+            Merch
+          </Link>
+          <Link href="/latest" onClick={() => setIsOpen(false)}>
+            Latest
+          </Link>
+          <Link href="/gallery" onClick={() => setIsOpen(false)}>
+            Gallery
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

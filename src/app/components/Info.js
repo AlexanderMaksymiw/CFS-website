@@ -95,7 +95,12 @@ export default function Info() {
         <div className="px-56">
           <ItemGrid />
         </div>
-        <SectionBGShort className="bg-slate-300/20" image={"/images/two-scoobies.jpg"}> </SectionBGShort>
+        <SectionBGShort
+          className="bg-slate-300/20"
+          image={"/images/two-scoobies.jpg"}
+        >
+          {" "}
+        </SectionBGShort>
         <div className="grid px-56 md:grid-cols-2 gap-10 items-center ">
           <img
             src="/images/Elan_Valley.jpg"
@@ -144,7 +149,6 @@ export default function Info() {
           />
         </div>
       </div>
-      <SectionBGShort image={"/images/bora.jpg"}> </SectionBGShort>
     </section>
   );
 }

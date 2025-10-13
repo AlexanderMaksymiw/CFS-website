@@ -43,25 +43,27 @@ const images = [
 
 export default function Gallery() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen bg-white text-slate-800 ">
+      <Header />
       <SubPageHero title="Car Gallery" images={["/images/R32 Golf.jpg"]} />
-      <div className="">
-        <h2 className="text-4xl font-semibold text-center pt-10 px-56 text-slate-800">
+
+      <section className="w-full max-w-screen-xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-12 ">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8">
           Share Your Photos
         </h2>
-      </div>
-      <div className="px-54">
-        <h3 className="text-slate-800 px-40 p-15 text-2xl font-semibold leading-8 text-center">
+
+        <h3 className="text-base sm:text-lg md:text-xl leading-relaxed text-center font-medium">
           We feel incredibly lucky to have so many talented photographers
           supporting Car Farm Social not just the professionals, but also the
           passionate amateurs, and that includes you. We love seeing the shots
           you capture at our events, and many of them get featured across our
           social channels.
         </h3>
-      </div>
-      <GalleryGrid images={images} />
-      <ImageCard image={"/images/Evo adventure.jpg"}/>
-      <Header />
+      </section>
+
+      <section className="w-full justify-center mx-auto px-4 sm:px-6 md:px-10 py-10 ">
+        <GalleryGrid images={images} />
+      </section>
       <Footer />
     </div>
   );

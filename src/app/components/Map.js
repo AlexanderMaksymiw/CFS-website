@@ -9,7 +9,7 @@ export default function Location() {
   return (
     <div className="flex flex-col px-55 gap-8 pb-20">
       <div className="flex-1">
-        <h2 className="text-5xl text-center pt-15 pb-5 text-slate-800 font-bold">
+        <h2 className="text-5xl text-center  pb-5 text-slate-800 font-bold">
           Where To Find Us
         </h2>
       </div>
