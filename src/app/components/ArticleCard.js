@@ -1,35 +1,41 @@
-"use client"; // if using Next.js 13+ app directory
-
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArticleCard({ title, description, image, link }) {
   return (
-    <div className=" flex flex-col justify-between h-full bg-white w-full max-w-full border-gray-200  shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
-      <a href={link}>
-        <Image
-          src={image}
-          alt={title}
-          width={800} // approximate width
-          height={450} // approximate height
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </a>
-      <div className="p-5">
-        <a href={link}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <div className="flex flex-col bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+      {/* Image */}
+      <Link href={link}>
+        <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority
+          />
+        </div>
+      </Link>
+
+      {/* Text */}
+      <div className="p-5 flex flex-col flex-grow">
+        <Link href={link}>
+          <h5 className="text-xl sm:text-2xl font-semibold mb-3 text-slate-800 dark:text-white leading-tight">
             {title}
           </h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        </Link>
+        <p className="text-gray-700 dark:text-gray-400 text-sm sm:text-base flex-grow">
           {description}
         </p>
-        <a
+
+        <Link
           href={link}
-          className="inline-flex items-center px-3 py-2 bg-amber-300 text-slate-800 rounded-2xl hover:bg-amber-400 cursor-pointer p-2 font-semibold text-sm"
+          className="inline-block mt-4 px-4 py-2 bg-amber-300 text-slate-800 font-semibold text-sm rounded-xl hover:bg-amber-400 transition-colors self-start"
         >
-          Read more
-        </a>
+          Read more →
+        </Link>
       </div>
     </div>
   );

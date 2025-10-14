@@ -18,7 +18,7 @@ export default function Latest() {
       <h2 className="text-4xl font-semibold text-slate-800 text-center pt-20">
         Latest Events & News
       </h2>
-      <div className="grid grid-cols-3 gap-8 py-15 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-15 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ArticleCard
           title="German CFS Night: A Social Celebration of German Cars"
           image="/images/epic-golf.jpg"

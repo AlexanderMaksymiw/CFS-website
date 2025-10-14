@@ -8,13 +8,9 @@ export default function Merch() {
   return (
     <div>
       <SubPageHero title={"CFS Merch"} images={["/images/R8 Black.jpg"]} />
-      <div className="">
-        <h2 className="text-4xl font-semibold text-center pt-10 pb-10 text-slate-800">
-          Car Farm Show Merchandise
-        </h2>
-      </div>
-      <div className="px-52">
-        <h3 className="text-slate-800 px-40 p-15 text-2xl font-semibold leading-8 text-center">
+
+      <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
+        <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-sm md:max-w-4xl mx-auto text-slate-800">
           We didn’t start Car Farm Social to turn a profit, we built it out of
           our love for cars and the drive to foster a real community around
           them. Every piece of merch we make reflects that same passion. It’s
@@ -24,17 +20,20 @@ export default function Merch() {
         </h3>
       </div>
 
-      <div className="grid px-55 md:grid-cols-2 gap-10 items-center">
-        <img
-          src="/images/CFS Stickers.jpg"
-          alt="Elan Valley Road Trip"
-          className=" object-cover w-full h-110"
-        />
+      <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2  mx-auto max-w-8xl justify-center">
+        <div className="relative w-full h-60 sm:h-80 md:h-110">
+          <Image
+            src="/images/CFS Stickers.jpg"
+            alt="CFS Stickers"
+            fill
+            className="object-cover "
+          />
+        </div>
         <div className="space-y-6">
-          <h2 className="text-3xl font-semibold text-slate-800">
+          <h2 className="text-3xl font-semibold text-slate-800 text-center md:text-left">
             CFS Stickers
           </h2>
-          <p className="text-lg text-slate-700 max-w-3xl">
+          <p className="text-lg text-slate-700 max-w-3xl mb-10">
             The stickers are one of the most fun ways to show you’re part of Car
             Farm Social. Slap one on your car, and it’s more than just a graphic
             — it’s a badge that says you’re in the culture with us. Next time
@@ -45,21 +44,26 @@ export default function Merch() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 px-55 gap-10 items-center mt-15 mb-20">
+      <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2 mx-auto max-w-8xl justify-center mt-20 mb-20">
         <div className="order-2 md:order-1 space-y-6">
-          <h2 className="text-3xl font-semibold text-slate-800">CFS Hoodies</h2>
-          <p className="text-lg text-slate-700 max-w-2xl">
+          <h2 className="text-3xl font-semibold text-slate-800 text-center md:text-left">
+            CFS Hoodies
+          </h2>
+          <p className="text-lg text-slate-700 max-w-2xl md:text-left mb-10">
             hoodies that bring the same energy comfortable, reliable, and
             perfect whether you’re at the track, wrenching in the garage, or
             just chilling with friends. CFS hoodies are in limited supply so
             make sure to pick one up before they're all gone.
           </p>
         </div>
-        <img
-          src="/images/CFS Hoodie.jpg"
-          alt="Lineup of Supercars"
-          className="order-1 md:order-2  object-cover w-full h-110"
-        />
+        <div className="relative order-1 md:order-2 w-full h-60 sm:h-80 md:h-110">
+          <Image
+            src="/images/CFS Hoodie.jpg"
+            alt="CFS Hoodie"
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
       <Footer />
     </div>
