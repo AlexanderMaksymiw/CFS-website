@@ -2,7 +2,7 @@
 
 export default function FullBackground({ children }) {
   return (
-    <div className="relative h-[850px] bg-center bg-fixed overflow-hidden">
+    <div className="relative h-[650px] md:h-[850px] bg-center bg-fixed overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/videos/CFS Video.mp4"
@@ -12,8 +12,8 @@ export default function FullBackground({ children }) {
         playsInline
       />
 
-      <div className="px-55 pt-25 flex relative z-20">
-        <div className=" border-white h-120 flex-1"></div>
+      <div className=" pt-25 flex relative z-20">
+        <div className="  h-120 flex-1"></div>
         <div>{children}</div>
       </div>
     </div>

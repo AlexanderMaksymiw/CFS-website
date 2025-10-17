@@ -35,7 +35,7 @@ export default function SubPageHero({
         <div className="absolute inset-0 bg-slate-800/10 md:hidden"></div>
 
         {/* Text section */}
-        <div className="relative z-10 flex-1 flex pt-30 items-center justify-center px-8 py-16 md:py-0 bg-slate-800/70 md:bg-slate-800 md:static">
+        <div className="relative z-10 flex-1 flex pt-30 items-center justify-center px-4 py-16 md:py-0 bg-slate-800/70 md:bg-slate-800 md:static">
           <div className="text-left max-w-xl">
             <h3 className="text-white text-base pb-4 uppercase tracking-wide">
               Latest

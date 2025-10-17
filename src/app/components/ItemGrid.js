@@ -35,7 +35,7 @@ const articles = [
 
 export default function ItemGrid() {
   return (
-    <div className="w-full ">
+    <div className="w-full bg-white">
       {/* Section Heading */}
       <h2 className="text-5xl font-bold text-slate-800 text-left mb-8">
         Latest Events
