@@ -5,7 +5,7 @@ export default function FullBackground({ children }) {
     <div className="relative h-[650px] md:h-[850px] bg-center bg-fixed overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/videos/CFS Video.mp4"
+        src="/videos/cfs-video.mp4"
         autoPlay
         loop
         muted

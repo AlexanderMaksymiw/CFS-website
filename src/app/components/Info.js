@@ -5,6 +5,7 @@ import FullBackground from "../components/Full Background";
 import SectionBG from "../components/SectionBG";
 import ItemGrid from "../components/ItemGrid";
 import { useRouter } from "next/navigation";
+import { SocialIcon } from "react-social-icons";
 
 export default function Info() {
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function Info() {
         />
       </div>
       <div className="px-4 md:hidden pb-10  ">
-        <div className="md:hidden px-5 pt-10 pb-10 bg-slate-200">
+        <div className="md:hidden px-5 pt-10 pb-10 bg-sky-200">
           <h2 className="pb-5 text-3xl font-semibold text-slate-900 max-w-50">
             Community & Clubs Welcome
           </h2>
@@ -69,7 +70,7 @@ export default function Info() {
         </a>
       </div>
 
-      <div className="space-y-10 sm:space-y-16 pb-10 sm:pb-20">
+      <div className="pb-10 sm:pb-20">
         <SectionBG
           image={"/images/hero/Supra_front.jpg"}
           className={"bg-white/90 lg:bg-slate-800/60"}
@@ -83,13 +84,13 @@ export default function Info() {
                 </span>
               </h1>
 
-              <h3 className="text-base px-4 leading-7 sm:text-lg font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
+              <h3 className="text-base px-4 leading-7 sm:text-xl font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
                 Every Thursday evening throughout Spring, Summer, and Autumn, up
                 to 400 amazing rides gather near Oswestry, Shropshire.
               </h3>
 
-              <h3 className="text-base px-4 sm:text-lg leading-7 font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
-                CFS is more than just a meet-up — our events include scenic road
+              <h3 className="text-base px-4 sm:text-xl leading-7 font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
+                CFS is more than just a meet-up, our events include scenic road
                 trips, delicious food and coffee, and a relaxed, inclusive
                 atmosphere that celebrates everything from supercars to timeless
                 classics.
@@ -118,49 +119,94 @@ export default function Info() {
             </div>
           </div>
         </SectionBG>
-        <div className="flex flex-col md:flex-row sm:px-10 md:px-56 gap-6">
-          {/* LEFT SECTION */}
-          <div
-            className="relative flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
-            style={{ backgroundImage: "url('/images/couple.jpg')" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 to-transparent"></div>
-            <h2 className="relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16 px-8 text-center md:text-left drop-shadow-2xl">
-              Share Your CFS <span className="text-yellow-400">Moments</span>
-            </h2>
+        <div className="sm:px-10 md:px-56 gap-6 relative z-0 pt-20">
+          <h2 className="relative hidden lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
+            Share Your CFS Moments
+          </h2>
+          {/* LEFT + RIGHT SECTION */}
+          <div className="flex flex-col md:flex-row gap-6 lg:p-10">
+            {/* LEFT SECTION */}
+            <div
+              className="relative flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
+              style={{ backgroundImage: "url('/images/subaru-couple.jpg')" }}
+            >
+              <h2 className="sm:hidden relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16 px-8 text-center md:text-left drop-shadow-2xl">
+                Share Your CFS Moments
+              </h2>
+            </div>
+
+            {/* RIGHT SECTION */}
+            <div className="relative flex-1 min-h-[500px] sm:min-h-[400px] md:min-h-[500px] overflow-hidden z-20">
+              <div className="absolute inset-0 z-0">
+                <Slideshow
+                  images={[
+                    "/images/e30.jpg",
+                    "/images/bmw-exit.jpg",
+                    "/images/subaru-red.jpg",
+                    "/images/tvr.jpg",
+                    "/images/ww2.jpg",
+                    "/images/beetle.jpg",
+                    "/images/205-leaving.jpg",
+                    "/images/evo-6.jpg",
+                    "/images/yaris.jpg",
+                  ]}
+                />
+              </div>
+            </div>
           </div>
 
-          {/* RIGHT SECTION */}
-          <div
-            className="relative flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
-            style={{ backgroundImage: "url('/images/Subaru Red.jpg')" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 to-transparent"></div>
-            <div className="relative z-10 space-y-5 pt-10 px-8 md:px-16">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white max-w-xl drop-shadow-2xl">
-                What Makes a CFS{" "}
-                <span className="text-yellow-400">Event Special</span>
-              </h1>
-              <h3 className="text-lg sm:text-xl font-semibold text-white max-w-xl drop-shadow-2xl">
-                Freelance photographers capture the highlights, while local
-                businesses add creativity and character. Together, they create a
-                vibrant mix of cars, culture, and community. With a family- and
-                dog-friendly atmosphere, clear rules, and respect for all, it’s
-                an event everyone can enjoy.
-              </h3>
+          {/* MIDDLE SECTION (STACKED BELOW LEFT + RIGHT) */}
+          <div className="px-4 mx-auto flex flex-col justify-center items-center pb-10 pt-10 z-10">
+            <p className="text-slate-800 font-semibold text-lg lg:max-w-xl lg:text-2xl max-w-xs text-center">
+              Tag your photos with
+              <span className="text-sky-500"> #carfarmsocial</span> on Instagram
+              or Facebook for a chance to be featured!
+            </p>
+            <div className="space-x-3 mt-5">
+              <SocialIcon
+                bgColor="#ffffff"
+                fgColor="#0f172a"
+                url="https://www.facebook.com/groups/3764447677206661"
+              />
+              <SocialIcon
+                bgColor="#ffffff"
+                fgColor="#0f172a"
+                url="https://www.instagram.com/carfarmsocial/"
+              />
+              <SocialIcon
+                bgColor="#ffffff"
+                fgColor="#0f172a"
+                url="https://www.youtube.com/@carfarmsocial"
+              />
             </div>
           </div>
         </div>
 
-        <div className="px-4 sm:px-10 md:px-56">
+        <div className=" relative h-[500px] lg:h-[650px]">
+          <video
+            src="/videos/cfs-civic.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="relative flex flex-col justify-center h-full px-4 lg:px-52 bg-black/50">
+            <h1 className="text-6xl sm:text-5xl lg:text-7xl font-bold text-white max-w-xl drop-shadow-2xl px-4">
+              Where Car Lovers Learn, Share, and Inspire
+            </h1>
+            <p className="text-lg sm:text-xl font-semibold text-white max-w-80 lg:max-w-xl  pt-10 pb-10 px-4 drop-shadow-2xl">
+              With a family and dog friendly atmosphere, clear rules, and
+              respect for all, it’s an event everyone can enjoy.
+            </p>
+          </div>
+        </div>
+
+        <div className="px-4 sm:px-10 pt-10 md:px-56 pb-10">
           <ItemGrid />
         </div>
         <SectionBG image={"/images/two-scoobies.jpg"}>
-          <div className="relative flex flex-col md:flex-row  md:items-start  sm:px-10 md:px-56 gap-10">
-            <div className="relative w-full md:w-[900px] h-[400px] sm:h-[350px] md:h-[600px] overflow-hidden ">
-              <h2></h2>
-            </div>
-          </div>
+
         </SectionBG>
         {/* Mobile version */}
         <div className="md:hidden px-4 sm:px-10 md:px-56 -mt-4 ">
@@ -183,8 +229,8 @@ export default function Info() {
         </div>
 
         {/* Desktop version */}
-        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
-          <div className="space-y-6 order-2 md:order-1">
+        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-10 sm:px-10 md:px-56">
+          <div className="space-y-6 order-2 md:order-2">
             <h2 className="text-3xl font-semibold text-slate-800">
               Epic Road Trips
             </h2>
@@ -203,7 +249,7 @@ export default function Info() {
           <img
             src="/images/evo-adventure.jpg"
             alt="Elan Valley Road Trip"
-            className="object-cover w-full h-[400px] md:h-110"
+            className="object-cover w-full h-[400px] md:h-110 md:order-2"
           />
         </div>
 
@@ -247,7 +293,7 @@ export default function Info() {
           <img
             src="/images/mclaren.jpg"
             alt="Lineup of Supercars"
-            className="object-cover w-full h-[400px] md:h-110"
+            className="object-cover w-full h-[400px] md:h-110 md:order-"
           />
         </div>
       </div>
