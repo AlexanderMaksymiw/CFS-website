@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <Link href="/" className="flex items-center">
-      <div className="relative w-16 h-16 md:w-26 md:h-26">
+      <div className="relative flex items-center justify-center">
         <Image
-          src="/images/hero/CFS_logo.png"
+          src="/images/logo/CFS_logo.png"
           alt="CFS Logo"
-          width={100}
-          height={100}
+          width={130} 
+          height={130}
           priority
         />
       </div>

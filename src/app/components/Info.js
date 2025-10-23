@@ -30,15 +30,15 @@ export default function Info() {
         />
       </div>
       <div className="px-4 md:hidden pb-10  ">
-        <div className="md:hidden px-5 pt-10 pb-10 bg-sky-200">
+        <div className="md:hidden px-5 pt-10 pb-10 bg-sky-100">
           <h2 className="pb-5 text-3xl font-semibold text-slate-900 max-w-50">
             Community & Clubs Welcome
           </h2>
-          <p className="leading-7 text-md max-w-70 text-slate-800">
+          <p className="leading-7 text-lg max-w-70 text-slate-800">
             CFS welcomes enthusiasts of all levels to enjoy scenic road trips,
             friendly competitions, photography opportunities, and delicious food
             and drinks. Family-friendly and inclusive, our events encourage
-            socializing, sharing your passion, and making memories—but remember,
+            socializing, sharing your passion, and making memories but remember,
             respect and the right attitude are key. Please follow our simple
             rules to keep the meet safe and enjoyable for everyone.
           </p>
@@ -84,17 +84,17 @@ export default function Info() {
                 </span>
               </h1>
 
-              <h3 className="text-base px-4 leading-7 sm:text-xl font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
+              <p className="text-lg px-4 leading-7 sm:text-xl lg:text-xl lg:font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
                 Every Thursday evening throughout Spring, Summer, and Autumn, up
                 to 400 amazing rides gather near Oswestry, Shropshire.
-              </h3>
+              </p>
 
-              <h3 className="text-base px-4 sm:text-xl leading-7 font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
+              <p className="text-lg px-4 sm:text-xl leading-7 lg:font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
                 CFS is more than just a meet-up, our events include scenic road
                 trips, delicious food and coffee, and a relaxed, inclusive
                 atmosphere that celebrates everything from supercars to timeless
                 classics.
-              </h3>
+              </p>
             </div>
 
             <div className="relative w-full md:w-[900px] h-[400px] sm:h-[350px] md:h-[600px] overflow-hidden shadow-xl">
@@ -124,13 +124,13 @@ export default function Info() {
             Share Your CFS Moments
           </h2>
           {/* LEFT + RIGHT SECTION */}
-          <div className="flex flex-col md:flex-row gap-6 lg:p-10">
+          <div className="flex flex-col md:flex-row gap-6 ">
             {/* LEFT SECTION */}
             <div
               className="relative flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
               style={{ backgroundImage: "url('/images/subaru-couple.jpg')" }}
             >
-              <h2 className="sm:hidden relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16 px-8 text-center md:text-left drop-shadow-2xl">
+              <h2 className="sm:hidden relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16  px-8 text-center md:text-left drop-shadow-2xl">
                 Share Your CFS Moments
               </h2>
             </div>
@@ -157,7 +157,7 @@ export default function Info() {
 
           {/* MIDDLE SECTION (STACKED BELOW LEFT + RIGHT) */}
           <div className="px-4 mx-auto flex flex-col justify-center items-center pb-10 pt-10 z-10">
-            <p className="text-slate-800 font-semibold text-lg lg:max-w-xl lg:text-2xl max-w-xs text-center">
+            <p className="text-slate-800 font-semibold text-lg lg:max-w-xl lg:text-2xl leading-7 max-w-xs text-center">
               Tag your photos with
               <span className="text-sky-500"> #carfarmsocial</span> on Instagram
               or Facebook for a chance to be featured!
@@ -182,7 +182,7 @@ export default function Info() {
           </div>
         </div>
 
-        <div className=" relative h-[500px] lg:h-[650px]">
+        <div className=" relative h-[550px] lg:h-[650px]">
           <video
             src="/videos/cfs-civic.mp4"
             autoPlay
@@ -191,25 +191,30 @@ export default function Info() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="relative flex flex-col justify-center h-full px-4 lg:px-52 bg-black/50">
-            <h1 className="text-6xl sm:text-5xl lg:text-7xl font-bold text-white max-w-xl drop-shadow-2xl px-4">
-              Where Car Lovers Learn, Share, and Inspire
-            </h1>
-            <p className="text-lg sm:text-xl font-semibold text-white max-w-80 lg:max-w-xl  pt-10 pb-10 px-4 drop-shadow-2xl">
-              With a family and dog friendly atmosphere, clear rules, and
-              respect for all, it’s an event everyone can enjoy.
-            </p>
+          <div className="relative flex flex-col justify-center h-full px-4 lg:px-56 bg-black/50 ">
+            <div className="border border-white flex p-6">
+              <div>
+                <h1 className="text-6xl sm:text-5xl lg:text-7xl font-bold text-white max-w-xl drop-shadow-2xl ">
+                  Where Car Lovers Learn, Share, and Inspire
+                </h1>
+                <p className="text-lg sm:text-xl font-semibold text-white max-w-70 lg:max-w-xl  pt-10 pb-10 drop-shadow-2xl">
+                  With a family and dog friendly atmosphere, clear rules, and
+                  respect for all, it’s an event everyone can enjoy.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="px-4 sm:px-10 pt-10 md:px-56 pb-10">
           <ItemGrid />
         </div>
-        <SectionBG image={"/images/two-scoobies.jpg"}>
-
-        </SectionBG>
+        <SectionBG
+          image="/images/two-scoobies.jpg"
+          className="h-[500px]"
+        ></SectionBG>
         {/* Mobile version */}
-        <div className="md:hidden px-4 sm:px-10 md:px-56 -mt-4 ">
+        <div className="md:hidden px-4 sm:px-10 md:px-56 pt-10 pb-10">
           <a
             href="/latest"
             className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
@@ -229,7 +234,7 @@ export default function Info() {
         </div>
 
         {/* Desktop version */}
-        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-10 sm:px-10 md:px-56">
+        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-10 sm:px-10 pb-20 md:px-56">
           <div className="space-y-6 order-2 md:order-2">
             <h2 className="text-3xl font-semibold text-slate-800">
               Epic Road Trips
@@ -238,7 +243,7 @@ export default function Info() {
               Our road trips often take us through the stunning Elan Valley and
               across the beautiful roads of Mid Wales. Over the years, we’ve
               enjoyed memorable drives out to places like Bala, with plenty of
-              chances to stop along the way for food and conversation — whether
+              chances to stop along the way for food and conversation whether
               that’s at the Red Kite Café and Grill or other local favourites.
               Every trip is about the drive, the scenery, and the company.
             </p>
@@ -255,7 +260,7 @@ export default function Info() {
 
         {/* Mobile version */}
 
-        <div className="md:hidden px-4 sm:px-10 md:px-56 -mt-4">
+        <div className="md:hidden px-4 sm:px-10 md:px-56">
           <a
             href="/gallery"
             className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
@@ -281,7 +286,7 @@ export default function Info() {
               Supercars and Classics
             </h2>
             <p className="text-lg text-slate-700 max-w-2xl">
-              Everyone is welcome—supercars, 90s icons, JDM legends, timeless
+              Everyone is welcome; supercars, 90s icons, JDM legends, timeless
               classics, and everything in between. Part of the excitement is
               never knowing exactly what will roll up at each event, making
               every meet unique and full of surprises.
