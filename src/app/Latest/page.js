@@ -1,19 +1,11 @@
-"use client";
-import { useState } from "react";
-import { Article } from "../components/article";
-import LatestHero from "../components/LatestHero";
+import LatestHeroServer from "../components/LatestHeroServer";
 import ArticleCard from "../components/ArticleCard";
 import Footer from "../components/Footer";
 
 export default function Latest() {
   return (
     <main>
-      <LatestHero
-        articleTitle="Final 2025 Meet: Pre-90s Classic Car Night"
-        articleIntro="A night to celebrate everything pre-1990 with a trophy for the best car of the night."
-        image={["/images/911-drive.jpg"]}
-        link="/latest/final-2025-meet-pre-90s-classic-car-night"
-      />
+      <LatestHeroServer />
 
       <h2 className="text-4xl font-semibold text-slate-800 text-center pt-20">
         Latest Events & News

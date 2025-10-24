@@ -1,7 +1,4 @@
-"use client"; // this tells next.js that this component needs to run in browser not server side because using React hooks
 import Link from "next/link"; // components link
-import { useRouter } from "next/navigation"; // Next.js app router hook allows for navigation
-import { useState, useEffect, Component } from "react"; // react hook for creating states
 import HeroSlideshow from "./components/HeroSlideshow";
 import Header from "./components/Header";
 import HeroOverlay from "./components/heroOverlay";
@@ -11,6 +8,8 @@ import Map from "./components/Map";
 import Info from "./components/Info";
 import FullBackground from "./components/Full Background";
 import SectionBG from "./components/SectionBG";
+import ItemGridServer from "./components/ItemGridServer";
+import Info2 from "./components/Info2";
 
 const myCards = [
   {
@@ -52,6 +51,8 @@ export default function Home() {
         content="From April to September, classics, supercars, JDM, and everything in between gather at LLynclys Farm in a vibrant, welcoming space for all enthusiasts with the right attitude."
       />
       <Info />
+      <ItemGridServer />
+      <Info2 />
       <Map />
       <Footer />
     </div>

@@ -19,7 +19,7 @@ export default function Footer() {
       {/* (2 columns) */}
       <div className="relative z-10 w-full h-120 lg:gap-6 lg:flex lg:px-56 px-4 pt-10 lg:pt-15 pb-10">
         <div className="flex-1 ">
-          <h1 className="bg-gradient-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl text-6xl font-black text-left ">
+          <h1 className="bg-gradient-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
             CAR FARM SOCIAL
           </h1>
         </div>

@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import Slideshow from "../components/Slideshow";
-import FullBackground from "../components/Full Background";
 import SectionBG from "../components/SectionBG";
-import ItemGrid from "../components/ItemGrid";
 import { useRouter } from "next/navigation";
 import { SocialIcon } from "react-social-icons";
+import ItemGridServer from "../components/ItemGridServer";
 
 export default function Info() {
   const router = useRouter();
@@ -204,102 +203,6 @@ export default function Info() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="px-4 sm:px-10 pt-10 md:px-56 pb-10">
-          <ItemGrid />
-        </div>
-        <SectionBG
-          image="/images/two-scoobies.jpg"
-          className="h-[500px]"
-        ></SectionBG>
-        {/* Mobile version */}
-        <div className="md:hidden px-4 sm:px-10 md:px-56 pt-10 pb-10">
-          <a
-            href="/latest"
-            className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
-          >
-            <img
-              src="/images/evo-adventure.jpg"
-              alt="Elan Valley Road Trip"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute gap-3 inset-0 bg-slate-800/40 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
-              <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
-                Epic Road Trips
-              </h2>
-              <button className="btn">See Road Trips</button>
-            </div>
-          </a>
-        </div>
-
-        {/* Desktop version */}
-        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-10 sm:px-10 pb-20 md:px-56">
-          <div className="space-y-6 order-2 md:order-2">
-            <h2 className="text-3xl font-semibold text-slate-800">
-              Epic Road Trips
-            </h2>
-            <p className="text-lg text-slate-700 max-w-2xl">
-              Our road trips often take us through the stunning Elan Valley and
-              across the beautiful roads of Mid Wales. Over the years, we’ve
-              enjoyed memorable drives out to places like Bala, with plenty of
-              chances to stop along the way for food and conversation whether
-              that’s at the Red Kite Café and Grill or other local favourites.
-              Every trip is about the drive, the scenery, and the company.
-            </p>
-            <div className="flex justify-start">
-              <button className="btn">Events</button>
-            </div>
-          </div>
-          <img
-            src="/images/evo-adventure.jpg"
-            alt="Elan Valley Road Trip"
-            className="object-cover w-full h-[400px] md:h-110 md:order-2"
-          />
-        </div>
-
-        {/* Mobile version */}
-
-        <div className="md:hidden px-4 sm:px-10 md:px-56">
-          <a
-            href="/gallery"
-            className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
-          >
-            <img
-              src="/images/mclaren.jpg"
-              alt="Lineup of Supercars"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 gap-3 bg-slate-800/20 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
-              <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
-                Explore New Roads
-              </h2>
-              <button className="btn">See the Lineup</button>
-            </div>
-          </a>
-        </div>
-
-        {/* Desktop version */}
-        <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
-          <div className="space-y-6 order-2 md:order-1">
-            <h2 className="text-3xl font-semibold text-slate-800">
-              Supercars and Classics
-            </h2>
-            <p className="text-lg text-slate-700 max-w-2xl">
-              Everyone is welcome; supercars, 90s icons, JDM legends, timeless
-              classics, and everything in between. Part of the excitement is
-              never knowing exactly what will roll up at each event, making
-              every meet unique and full of surprises.
-            </p>
-            <div className="flex justify-start">
-              <button className="btn">Cars</button>
-            </div>
-          </div>
-          <img
-            src="/images/mclaren.jpg"
-            alt="Lineup of Supercars"
-            className="object-cover w-full h-[400px] md:h-110 md:order-"
-          />
         </div>
       </div>
     </section>
