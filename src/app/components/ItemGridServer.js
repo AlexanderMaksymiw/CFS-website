@@ -6,7 +6,7 @@ const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publish
   title,
   slug,
   publishedAt,
-  "imageUrl": image.asset->url
+  "imageUrl": heroImage.asset->url
 }`;
 
 const options = { next: { revalidate: 30 } };

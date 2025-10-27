@@ -3,11 +3,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import Link from "next/link";
 
 const LATEST_POST_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0] {
   title,
   intro,
-  heroImage
+  heroImage,
+  "slug": slug.current
 }`;
 
 export default async function LatestHeroServer() {
@@ -39,17 +41,25 @@ export default async function LatestHeroServer() {
         <div className="absolute inset-0 bg-slate-800/10 md:hidden"></div>
 
         {/* Text */}
-        <div className="relative z-10 flex-1 flex pt-32 items-center justify-center px-4 py-16 md:py-0 bg-slate-800/70 md:bg-slate-800 md:static">
+
+        <div className="relative z-10 flex-1 flex items-center justify-center px-4  bg-slate-800/70 md:bg-slate-800 md:static">
           <div className="text-left max-w-xl">
-            <h3 className="text-white text-base pb-4 uppercase tracking-wide">
-              Latest
-            </h3>
             <h2 className="text-white text-4xl md:text-5xl pb-4 font-semibold leading-tight">
               {post.title}
             </h2>
             <h3 className="text-white text-base md:text-lg max-w-md leading-relaxed">
               {post.intro}
             </h3>
+            <h3 className="text-white text-base md:text-lg max-w-md leading-relaxed">
+              {post.date}
+            </h3>
+            <div className="pt-5">
+              <Link href={`/latest/${post.slug}`}>
+                <button className="rounded-xl py-2 text-white cursor-pointer underline">
+                  Read more
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -64,8 +74,6 @@ export default async function LatestHeroServer() {
           />
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

@@ -1,40 +1,16 @@
 import LatestHeroServer from "../components/LatestHeroServer";
 import ArticleCard from "../components/ArticleCard";
 import Footer from "../components/Footer";
+import ArticleCardWrapper from "../components/ArticleCardWrapper";
 
 export default function Latest() {
   return (
     <main>
       <LatestHeroServer />
 
-      <h2 className="text-4xl font-semibold text-slate-800 text-center pt-20">
-        Latest Events & News
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-15 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ArticleCard
-          title="German CFS Night: A Social Celebration of German Cars"
-          image="/images/epic-golf.jpg"
-          description="“German Night” brings car enthusiasts together to celebrate German cars."
-          link="/latest/german-cfs-night-a-social-celebration-of-german-cars"
-        />
-        <ArticleCard
-          title="Explore the Elan Valley: Group Drive Out"
-          image="/images/hero/volvo_drive.jpg"
-          description="CFS hit the Elan Valley for a group drive around mid-Wales with twisty roads, epic scenery, and an unbeatable driving spirit all around."
-          link="/latest/explore-the-elan-valley-group-drive-out"
-        />
-        <ArticleCard
-          title="JDM Battle: Trophy for the Top Japanese Car"
-          image="/images/evo_back.jpg"
-          description="Celebrate Japan’s finest automotive icons at CFS for a JDM battle for the finest car."
-          link="/latest/jdm-battle-trophy-for-the-top-japanese-car"
-        />
-        <ArticleCard
-          title="Red Kite Café Drive-Out Adventure"
-          image="/images/red-kite-event/red-fords.jpg"
-          description="Set out on a scenic drive to the Red Kite Café, a relaxed adventure combining great roads and stunning countryside views."
-          link="/latest/red-kite-cafe-drive-out-adventure"
-        />
+
+      <div className="px-56 pt-20 pb-20">
+      <ArticleCardWrapper />
       </div>
       <Footer />
     </main>
