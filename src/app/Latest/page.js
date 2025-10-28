@@ -1,15 +1,15 @@
-import LatestHeroServer from "../components/LatestHeroServer";
 import ArticleCard from "../components/ArticleCard";
 import Footer from "../components/Footer";
 import ArticleCardWrapper from "../components/ArticleCardWrapper";
+import SubPageHero from "../components/SubPageHero";
 
 export default function Latest() {
   return (
     <main>
-      <LatestHeroServer />
+      <SubPageHero title="Latest News" images={["/images/skoda-drive.jpg"]} />
 
 
-      <div className="px-56 pt-20 pb-20">
+      <div className="lg:px-56 px-4 pt-20 pb-20">
       <ArticleCardWrapper />
       </div>
       <Footer />

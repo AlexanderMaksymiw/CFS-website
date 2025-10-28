@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import ArticleCard from "./ArticleCard";
 
-const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[1...21] {
+const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...20] {
   title,
   intro,
   heroImage,

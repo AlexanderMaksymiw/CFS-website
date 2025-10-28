@@ -24,7 +24,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-56 max-w-full mx-auto h-full transition-all duration-500">
         {/* Logo */}
         <motion.div
-          className="flex-shrink-0 max-w-[150px]" // prevents logo overflow
+          className="flex-shrink-0 max-w-[100px]" // prevents logo overflow
           animate={{
             scale: isScrolled ? 0.8 : 1.0,
             y: isScrolled ? 0 : 10,
@@ -55,7 +55,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          className="md:hidden absolute top-full left-0 w-full bg-slate-900 flex flex-col px-4 py-6 gap-4 items-center overflow-x-hidden"
+          className="md:hidden absolute top-[98%]  left-0 w-full bg-slate-900 flex flex-col px-4 py-6 gap-4 items-center overflow-x-hidden"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}

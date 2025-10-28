@@ -25,7 +25,7 @@ export default async function LatestHeroServer() {
     <div>
       <Header />
 
-      <div className="relative flex flex-col md:flex-row h-auto md:h-[600px]">
+      <div className="relative flex flex-col md:flex-row  md:h-[600px] h-[500px]">
         {/* Background Image */}
         <div className="absolute inset-0 md:static">
           <Image
@@ -42,7 +42,7 @@ export default async function LatestHeroServer() {
 
         {/* Text */}
 
-        <div className="relative z-10 flex-1 flex items-center justify-center px-4  bg-slate-800/70 md:bg-slate-800 md:static">
+        <div className=" relative z-10 flex-1 flex items-center justify-center px-4  bg-slate-800/70 md:bg-slate-800 md:static">
           <div className="text-left max-w-xl">
             <h2 className="text-white text-4xl md:text-5xl pb-4 font-semibold leading-tight">
               {post.title}
