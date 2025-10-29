@@ -21,7 +21,7 @@ export default function Info() {
     <section className="pt-8 sm:pt-8">
       <div className="relative md:hidden w-full h-[300px] sm:h-[400px] overflow-hidden bg-gray-200 ">
         <Image
-          src="/images/i8.png"
+          src="/images/i8-bmw.png"
           alt="BMW I8 at CFS"
           fill
           className="object-cover px-4 pt-5"
@@ -98,14 +98,14 @@ export default function Info() {
                 images={[
                   "/images/friends-4.jpg",
                   "/images/eating.jpg",
-                  "/images/dad 2.jpg",
+                  "/images/dad-2.jpg",
                   "/images/ice-cream.jpg",
-                  "/images/having fun.jpg",
-                  "/images/MX5_Polaroid.jpg",
-                  "/images/dog 6.jpg",
+                  "/images/having-fun.jpg",
+                  "/images/mx5-polaroid.jpg",
+                  "/images/dog-6.jpg",
                   "/images/group-2.jpg",
                   "/images/talking.jpg",
-                  "/images/dog 4.jpg",
+                  "/images/dog-4.jpg",
                   "/images/ice-cream-cfs.jpg",
                   "/images/mg.jpg",
                   "/images/photographer.jpg",

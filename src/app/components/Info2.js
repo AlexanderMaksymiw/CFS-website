@@ -68,7 +68,7 @@ export default function Info2() {
         >
           <Image
             src="/images/orange-mclaren.jpg"
-            alt="Lineup of Supercars"
+            alt="orange mclaren at cfs"
             fill
             className="object-cover w-full h-full border border-gray-200 shadow shadow-indigo-200"
           />
