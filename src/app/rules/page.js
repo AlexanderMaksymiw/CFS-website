@@ -9,7 +9,7 @@ export default function Rules() {
     {
       id: "01",
       title: "Arrival",
-      img: "/images/young friends.jpg",
+      img: "/images/young-friends.jpg",
       text: `Respect and obey marshals at all times. Park up, switch your engine off, and take the keys out. Do not sit revving your engine. Maintain a strict 10MPH crawl through the car park. If you're unsure of where to park, speak to one of our marshals who can be found at the main entrance or nearby seating area.`,
     },
     {
@@ -21,13 +21,13 @@ export default function Rules() {
     {
       id: "03",
       title: "Leaving the Event",
-      img: "/images/EVO 6.jpg",
+      img: "/images/evo-6.jpg",
       text: `Leave in an orderly fashion. A gentle 1st or 2nd gear pull to reach legal speed is acceptable, but do not accelerate aggressively all the way to the end of the straight towards Oswestry. This alarms local residents and other road users, and it is both dangerous and illegal.`,
     },
     {
       id: "04",
       title: "Filming & Social Media",
-      img: "/images/Abarth.jpg",
+      img: "/images/abarth.jpg",
       text: `Spectators must not encourage bad behaviour by filming it or posting it online, as this damages CFS. Only the official CFS photographer is permitted to monitor junction activity. Filming cars exiting via the minor road leading to the A483 is also banned.`,
     },
     {
@@ -39,7 +39,7 @@ export default function Rules() {
     {
       id: "06",
       title: "On a Final Note",
-      img: "/images/I8.png",
+      img: "/images/i8-bmw.png",
       text: `Thank you to everyone for supporting the event. With everyone’s cooperation, we can look forward to many more safe and enjoyable CFS meets.`,
     },
   ];
@@ -47,22 +47,31 @@ export default function Rules() {
   return (
     <div>
       <Header />
-      <SubPageHero title="Car Farm Social Rules" images={["/images/Porsche GT4.webp"]} />
+      <SubPageHero
+        title="Car Farm Social Rules"
+        images={["/images/porsche-gt4.webp"]}
+      />
 
       {/* Intro */}
       <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 max-w-7xl mx-auto">
         <h3 className="text-slate-800 text-lg sm:text-xl md:text-2xl font-semibold leading-8 text-center pt-10 pb-8">
-          NEW RULES WITH IMMEDIATE EFFECT. Ignorance of the rules is not an excuse. 
-          Breaking the rules will result in a <span className="text-red-600">PERMANENT BAN</span>. 
-          These rules exist to ensure the absolute safety of people, pets, and other road users.
+          NEW RULES WITH IMMEDIATE EFFECT. Ignorance of the rules is not an
+          excuse. Breaking the rules will result in a{" "}
+          <span className="text-red-600">PERMANENT BAN</span>. These rules exist
+          to ensure the absolute safety of people, pets, and other road users.
         </h3>
 
         {/* Rules List */}
         {rules.map((rule) => (
-          <div key={rule.id} className="border-t border-slate-300 pt-10 md:pt-16">
+          <div
+            key={rule.id}
+            className="border-t border-slate-300 pt-10 md:pt-16"
+          >
             <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-6 md:gap-10">
               {/* Rule number */}
-              <h2 className="text-slate-800 text-3xl font-bold text-center md:text-left">{rule.id}</h2>
+              <h2 className="text-slate-800 text-3xl font-bold text-center md:text-left">
+                {rule.id}
+              </h2>
 
               {/* Rule content */}
               <div>

@@ -28,7 +28,7 @@ make sure to pick one up before they're all gone.`,
 export default function Merch() {
   return (
     <div>
-      <SubPageHero title={"CFS Merch"} images={["/images/R8 Black.jpg"]} />
+      <SubPageHero title={"CFS Merch"} images={["/images/r8-black.jpg"]} />
 
       <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
         <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-sm md:max-w-4xl mx-auto text-slate-800">
@@ -39,7 +39,7 @@ export default function Merch() {
       <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2  mx-auto max-w-8xl justify-center">
         <div className="relative w-full h-60 sm:h-80 md:h-110">
           <Image
-            src="/images/CFS Stickers.jpg"
+            src="/images/cfs-stickers.jpg"
             alt="CFS Stickers"
             fill
             className="object-cover "
