@@ -139,7 +139,7 @@ export default function Info() {
                     "/images/silver-e30.jpg",
                     "/images/bmw-exit.jpg",
                     "/images/subaru-red.jpg",
-                    "/images/tvr.jpg",
+                    "/images/tvr-chimaera.jpg",
                     "/images/ww2.jpg",
                     "/images/beetle.jpg",
                     "/images/205-leaving.jpg",

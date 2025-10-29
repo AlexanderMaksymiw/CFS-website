@@ -22,7 +22,7 @@ export default async function ArticleCardWrapper() {
       {posts.map((post) => {
         const imageUrl = post.heroImage
           ? urlFor(post.heroImage).width(800).height(600).url()
-          : "/images/Ferrari Hero 2.jpg";
+          : "/images/i8-open.jpg";
 
         return (
           <ArticleCard
