@@ -4,6 +4,27 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import SubPageHero from "../components/SubPageHero";
 
+const merchDescription = {
+  mainText: `We didn't start Car Farm Social to turn a profit, we built it out of
+our love for cars and the drive to foster a real community around
+them. Every piece of merch we make reflects that same passion. It's
+not about selling stuff; it's about giving people in the scene a way
+to connect, represent, and feel like they're part of something bigger
+than just the next meet or weekend drive.`,
+
+  stickersText: `The stickers are one of the most fun ways to show you're part of Car
+            Farm Social. Slap one on your car, and it's more than just a graphic
+            it's a badge that says you're in the culture with us. Next time
+            you're out on the road, keep an eye out for CFS stickers on other
+            cars; it's like spotting another member of the crew while cruising
+            around. That instant recognition is what makes the community real.`,
+
+  hoodiesText: `Hoodies that bring the same energy: comfortable, reliable, and
+perfect whether you're at the track, wrenching in the garage, or
+just chilling with friends. CFS hoodies are in limited supply so
+make sure to pick one up before they're all gone.`,
+};
+
 export default function Merch() {
   return (
     <div>
@@ -11,12 +32,7 @@ export default function Merch() {
 
       <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
         <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-sm md:max-w-4xl mx-auto text-slate-800">
-          We didn’t start Car Farm Social to turn a profit, we built it out of
-          our love for cars and the drive to foster a real community around
-          them. Every piece of merch we make reflects that same passion. It’s
-          not about selling stuff; it’s about giving people in the scene a way
-          to connect, represent, and feel like they’re part of something bigger
-          than just the next meet or weekend drive.
+          {merchDescription.mainText}
         </h3>
       </div>
 
@@ -34,12 +50,7 @@ export default function Merch() {
             CFS Stickers
           </h2>
           <p className="text-lg text-slate-700 max-w-3xl mb-10">
-            The stickers are one of the most fun ways to show you’re part of Car
-            Farm Social. Slap one on your car, and it’s more than just a graphic
-            — it’s a badge that says you’re in the culture with us. Next time
-            you’re out on the road, keep an eye out for CFS stickers on other
-            cars; it’s like spotting another member of the crew while cruising
-            around. That instant recognition is what makes the community real.
+            {merchDescription.stickersText}
           </p>
         </div>
       </div>
@@ -50,10 +61,7 @@ export default function Merch() {
             CFS Hoodies
           </h2>
           <p className="text-lg text-slate-700 max-w-2xl md:text-left mb-10">
-            hoodies that bring the same energy comfortable, reliable, and
-            perfect whether you’re at the track, wrenching in the garage, or
-            just chilling with friends. CFS hoodies are in limited supply so
-            make sure to pick one up before they're all gone.
+            {merchDescription.hoodiesText}
           </p>
         </div>
         <div className="relative order-1 md:order-2 w-full h-60 sm:h-80 md:h-110">

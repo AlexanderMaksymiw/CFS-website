@@ -1,5 +1,6 @@
 import SectionBG from "./SectionBG";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Info2() {
   return (
@@ -10,9 +11,10 @@ export default function Info2() {
       ></SectionBG>
 
       <div className="md:hidden px-4 sm:px-10 md:px-56 pt-10 pb-10 ">
-        <a
-          href="/latest"
-          className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden "
+        <Link
+          href="/latest/"
+          className="relative block w-full h-[300px] sm:h-[400px]
+          overflow-hidden"
         >
           <Image
             src="/images/evo-adventure.jpg"
@@ -26,12 +28,12 @@ export default function Info2() {
             </h2>
             <button className="btn">See Road Trips</button>
           </div>
-        </a>
+        </Link>
       </div>
 
       {/* Desktop version */}
-      <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-20 sm:px-10 pb-20 md:px-56">
-        <div className="space-y-6 order-2 md:order-2">
+      <div className=" relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-20 sm:px-10 pb-20 md:px-56">
+        <div className="space-y-6">
           <h2 className="text-3xl font-semibold text-slate-800">
             Epic Road Trips
           </h2>
@@ -47,17 +49,20 @@ export default function Info2() {
             <button className="btn">Events</button>
           </div>
         </div>
-        <img
-          src="/images/evo-adventure.jpg"
-          alt="Elan Valley Road Trip"
-          className="object-cover w-full h-[400px] md:h-110 md:order-2"
-        />
+        <div className="relative w-full h-[400px] md:h-110">
+          <Image
+            src="/images/evo-adventure.jpg"
+            alt="Elan Valley Road Trip"
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
 
       {/* Mobile version */}
 
       <div className="md:hidden px-4 sm:px-10 md:px-56">
-        <a
+        <Link
           href="/gallery"
           className="relative block w-full h-[300px] sm:h-[400px]"
         >
@@ -73,12 +78,20 @@ export default function Info2() {
             </h2>
             <button className="btn">See the Lineup</button>
           </div>
-        </a>
+        </Link>
       </div>
 
       {/* Desktop version */}
-      <div className="hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
-        <div className="space-y-6 order-2 md:order-1">
+      <div className="relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
+        <div className="relative w-full h-[400px] md:h-110">
+          <Image
+            src="/images/mclaren.jpg"
+            alt="Lineup of Supercars"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="space-y-6">
           <h2 className="text-3xl font-semibold text-slate-800">
             Supercars and Classics
           </h2>
@@ -92,11 +105,6 @@ export default function Info2() {
             <button className="btn">Cars</button>
           </div>
         </div>
-        <img
-          src="/images/mclaren.jpg"
-          alt="Lineup of Supercars"
-          className="object-cover w-full h-[400px] md:h-110 md:order-"
-        />
       </div>
     </section>
   );
