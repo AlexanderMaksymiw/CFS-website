@@ -67,7 +67,7 @@ export default function Info2() {
           className="relative block w-full h-[300px] sm:h-[400px]"
         >
           <Image
-            src="/images/mclaren.jpg"
+            src="/images/orange-mclaren.jpg"
             alt="Lineup of Supercars"
             fill
             className="object-cover w-full h-full border border-gray-200 shadow shadow-indigo-200"
@@ -85,7 +85,7 @@ export default function Info2() {
       <div className="relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
         <div className="relative w-full h-[400px] md:h-110">
           <Image
-            src="/images/mclaren.jpg"
+            src="/images/orange-mclaren.jpg"
             alt="Lineup of Supercars"
             fill
             className="object-cover"
