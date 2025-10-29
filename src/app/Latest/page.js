@@ -1,4 +1,3 @@
-import ArticleCard from "../components/ArticleCard";
 import Footer from "../components/Footer";
 import ArticleCardWrapper from "../components/ArticleCardWrapper";
 import SubPageHero from "../components/SubPageHero";
