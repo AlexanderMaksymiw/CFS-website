@@ -17,9 +17,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
-        isScrolled ? "bg-slate-900 shadow-2xl h-20" : "bg-transparent h-32"
-      } text-white`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+        ${
+          isScrolled || isOpen
+            ? "bg-slate-900 shadow-2xl h-20"
+            : "bg-transparent h-32"
+        } text-white`}
     >
       <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-56 max-w-full mx-auto h-full transition-all duration-500">
         {/* Logo */}
@@ -55,17 +58,27 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          className="md:hidden absolute top-[98%]  left-0 w-full bg-slate-900 flex flex-col px-4 py-6 gap-4 items-center overflow-x-hidden"
+          className="md:hidden absolute top-[98%]  left-0 w-full bg-slate-900 flex flex-col px-4 py-6 gap-4 items-center overflow-x-hidden shadow-2xl"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <Link href="/about" onClick={() => setIsOpen(false)}>Our Story</Link>
-          <Link href="/rules" onClick={() => setIsOpen(false)}>Rules</Link>
-          <Link href="/merch" onClick={() => setIsOpen(false)}>Merch</Link>
-          <Link href="/latest" onClick={() => setIsOpen(false)}>Latest</Link>
-          <Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}>
+            Our Story
+          </Link>
+          <Link href="/rules" onClick={() => setIsOpen(false)}>
+            Rules
+          </Link>
+          <Link href="/merch" onClick={() => setIsOpen(false)}>
+            Merch
+          </Link>
+          <Link href="/latest" onClick={() => setIsOpen(false)}>
+            Latest
+          </Link>
+          <Link href="/gallery" onClick={() => setIsOpen(false)}>
+            Gallery
+          </Link>
         </motion.div>
       )}
     </header>

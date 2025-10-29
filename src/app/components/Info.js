@@ -4,7 +4,7 @@ import Slideshow from "../components/Slideshow";
 import SectionBG from "../components/SectionBG";
 import { useRouter } from "next/navigation";
 import { SocialIcon } from "react-social-icons";
-import ItemGridServer from "../components/ItemGridServer";
+import Link from "next/link";
 
 export default function Info() {
   const router = useRouter();
@@ -19,17 +19,17 @@ export default function Info() {
 
   return (
     <section className="pt-8 sm:pt-8">
-      <div className="relative md:hidden w-full h-[300px] sm:h-[400px] overflow-hidden">
+      <div className="relative md:hidden w-full h-[300px] sm:h-[400px] overflow-hidden bg-gray-200 ">
         <Image
           src="/images/i8.png"
           alt="BMW I8 at CFS"
           fill
-          className="object-cover px-4"
+          className="object-cover px-4 pt-5"
           priority
         />
       </div>
-      <div className="px-4 md:hidden pb-10  ">
-        <div className="md:hidden px-5 pt-10 pb-10 bg-sky-100">
+      <div className="px-4 md:hidden pb-10  bg-gray-200 ">
+        <div className="md:hidden px-5 pt-10 pb-10 border-gray-200 bg-white shadow shadow-indigo-200">
           <h2 className="pb-5 text-3xl font-semibold text-slate-900 max-w-50">
             Community & Clubs Welcome
           </h2>
@@ -42,34 +42,33 @@ export default function Info() {
             rules to keep the meet safe and enjoyable for everyone.
           </p>
           <div className="pt-15">
-            <button className="btn">See Rules</button>
+            <Link href={"/rules"}>
+              <button className="btn">See Rules</button>
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="md:hidden px-4 sm:px-10 md:px-56 pb-5 -mt-4">
-        <a
-          href="/gallery"
-          className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
-        >
-          <video
-            src="/videos/mean-bean-coffee.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 gap-5 bg-slate-800/20 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
-            <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
-              Excellent Coffee
-            </h2>
+      <div className="md:hidden relative px-4 sm:px-10 md:px-56 pb-5 pt-5 h-[350px] ">
+        <video
+          src="/videos/mean-bean-coffee.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full  shadow shadow-indigo-200"
+        />
+        <div className="absolute inset-0 gap-5  flex flex-col justify-center items-center text-center px-4">
+          <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
+            Excellent Coffee
+          </h2>
+          <Link href={"/rules"}>
             <button className="btn">Grab a Cup</button>
-          </div>
-        </a>
+          </Link>
+        </div>
       </div>
 
-      <div className="pb-10 sm:pb-20">
+      <div>
         <SectionBG
           image={"/images/hero/Supra_front.jpg"}
           className={"bg-white/90 lg:bg-slate-800/60"}
@@ -99,7 +98,7 @@ export default function Info() {
             <div className="relative w-full md:w-[900px] h-[400px] sm:h-[350px] md:h-[600px] overflow-hidden shadow-xl">
               <Slideshow
                 images={[
-                  "/images/friends 4.jpg",
+                  "/images/friends-4.jpg",
                   "/images/eating.jpg",
                   "/images/dad 2.jpg",
                   "/images/ice-cream.jpg",
@@ -119,14 +118,14 @@ export default function Info() {
           </div>
         </SectionBG>
         <div className="sm:px-10 md:px-56 gap-6 relative z-0 pt-20">
-          <h2 className="relative hidden lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
+          <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
             Share Your CFS Moments
           </h2>
           {/* LEFT + RIGHT SECTION */}
           <div className="flex flex-col md:flex-row gap-6 ">
             {/* LEFT SECTION */}
             <div
-              className="relative flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
+              className="relative hidden md:block flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
               style={{ backgroundImage: "url('/images/subaru-couple.jpg')" }}
             >
               <h2 className="sm:hidden relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16  px-8 text-center md:text-left drop-shadow-2xl">

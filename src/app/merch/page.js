@@ -58,7 +58,7 @@ export default function Merch() {
         </div>
         <div className="relative order-1 md:order-2 w-full h-60 sm:h-80 md:h-110">
           <Image
-            src="/images/CFS Hoodie.jpg"
+            src="/images/cfs-hoodie.jpg"
             alt="CFS Hoodie"
             fill
             className="object-cover"

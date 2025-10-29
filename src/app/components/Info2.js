@@ -1,25 +1,26 @@
 import SectionBG from "./SectionBG";
-
+import Image from "next/image";
 
 export default function Info2() {
   return (
-    <section className="pt-20 pb-20">
+    <section className=" pb-20">
       <SectionBG
         image="/images/two-scoobies.jpg"
         className="h-[500px]"
       ></SectionBG>
 
-      <div className="md:hidden px-4 sm:px-10 md:px-56 pt-10 pb-10">
+      <div className="md:hidden px-4 sm:px-10 md:px-56 pt-10 pb-10 ">
         <a
           href="/latest"
-          className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
+          className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden "
         >
-          <img
+          <Image
             src="/images/evo-adventure.jpg"
             alt="Elan Valley Road Trip"
-            className="object-cover w-full h-full"
+            fill
+            className="object-cover w-full h-full shadow shadow-indigo-200 "
           />
-          <div className="absolute gap-3 inset-0 bg-slate-800/40 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
+          <div className="absolute gap-3 inset-0 bg-slate-800/40 bg-opacity-40 flex flex-col justify-center items-center text-center px-4 ">
             <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
               Epic Road Trips
             </h2>
@@ -58,12 +59,13 @@ export default function Info2() {
       <div className="md:hidden px-4 sm:px-10 md:px-56">
         <a
           href="/gallery"
-          className="relative block w-full h-[300px] sm:h-[400px] overflow-hidden"
+          className="relative block w-full h-[300px] sm:h-[400px]"
         >
-          <img
+          <Image
             src="/images/mclaren.jpg"
             alt="Lineup of Supercars"
-            className="object-cover w-full h-full"
+            fill
+            className="object-cover w-full h-full border border-gray-200 shadow shadow-indigo-200"
           />
           <div className="absolute inset-0 gap-3 bg-slate-800/20 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
             <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">

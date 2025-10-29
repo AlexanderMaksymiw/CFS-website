@@ -16,13 +16,20 @@ export default function Footer() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-slate-900/90 z-0" />
 
-      {/* (2 columns) */}
-      <div className="relative z-10 w-full h-120 lg:gap-6 lg:flex lg:px-56 px-4 pt-10 lg:pt-15 pb-10">
-        <div className="flex-1 ">
+      {/* (3 columns) */}
+      <div className="relative z-10 w-full h-120 lg:gap-20 lg:flex lg:px-56 px-4 pt-10 lg:pt-15 pb-10">
+        <div className="flex-[1]">
           <h1 className="bg-gradient-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
             CAR FARM SOCIAL
           </h1>
+          <p className="pt-5 hidden text-gray-200/40 max-w-sm">
+            Please can spectators not encourage bad behaviour by filming bad
+            behaviour and posting on social media. This is harming CFS. There is
+            a ban on filming cars exiting via the minor road leading to the main
+            A483.
+          </p>
         </div>
+
         <div className="flex-col flex pt-5">
           <h3 className="font-semibold tracking-wide pb-3">FIND US</h3>
           <Address />
@@ -52,6 +59,7 @@ export default function Footer() {
               style={{ height: 40, width: 40 }}
             />
           </div>
+
           <div className="border-b border-white/50">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center mx-auto py-10">
               {/* Llynclys Farm Shop */}
@@ -63,9 +71,11 @@ export default function Footer() {
                     width={120}
                     height={80}
                     className="object-contain max-h-16"
+                    style={{ height: "auto", width: "auto" }}
                   />
                 </Link>
               </div>
+
 
               {/* MB Coffee Van (no logo yet) */}
               <div className="flex items-center justify-center w-40 h-20 border-white/40 border">
@@ -84,6 +94,7 @@ export default function Footer() {
                     alt="P&B Tyres logo"
                     width={120}
                     height={80}
+                    style={{ height: "auto", width: "auto" }}
                     className="object-contain max-h-16"
                   />
                 </Link>
@@ -100,59 +111,15 @@ export default function Footer() {
             </div>
           </div>
           <div className="pt-5">
-            <h3 className="font-semibold tracking-wide  text-white/50">@ Car Farm Social</h3>
-            <h3 className="font-semibold tracking-wide pt-3 text-white/50">
+            <h3 className="tracking-wide  text-white/30">@ Car Farm Social</h3>
+            <h3 className=" tracking-wide pt-3 text-white/30">
               Website by Alex Maksymiw
             </h3>
           </div>
         </div>
 
-        <div className="hidden lg:visible flex-[2] ">
-          <div className="flex  gap-80">
-            <div className="  flex">
-              <div className="flex flex-col gap-1">
-                <h2 className="text-3xl font-semibold pb-2 pt-2 whitespace-nowrap">
-                  Quick Links
-                </h2>
-                <Link href="/about">
-                  <span className="link text-lg font-semibold">Our Story</span>
-                </Link>
-
-                <Link href="/gallery">
-                  <span className="link text-lg font-semibold">Gallery</span>
-                </Link>
-                <Link href="/events">
-                  <span className="link text-lg font-semibold">Events</span>
-                </Link>
-
-                <Link href="/merch">
-                  <span className="link text-lg font-semibold">Merch</span>
-                </Link>
-                <Link href="/rules">
-                  <span className="link text-lg font-semibold">Rules</span>
-                </Link>
-              </div>
-            </div>
-            <div className="flex">
-              <div className="  flex-col  pt-2">
-                <h2 className="text-3xl font-semibold pb-2">Contact</h2>
-                <p className="text-md max-w-sm">
-                  If you would like to get in touch regarding partnerships and
-                  clubs reach out to the admins on Facebook.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className=" pt-20">
-            <p>
-              Please can spectators not encourage bad behaviour by filming bad
-              behaviour and posting on social media. This is harming CFS. There
-              is a ban on filming cars exiting via the minor road leading to the
-              main A483.
-            </p>
-          </div>
-        </div>
       </div>
+
 
       {/* Bottom section */}
       <div className=" hidden lg:px-56 px-4 lg:visible">

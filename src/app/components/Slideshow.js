@@ -21,6 +21,7 @@ export default function Slideshow({ images, interval = 4000 }) {
           src={img}
           alt={`Slide ${index}`}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={`w-full h-full object-cover absolute z-10 top-0 left-0  transition-opacity duration-1000 ${
             index === current ? "opacity-100 z-0" : "opacity-0 z-0"
           }`}

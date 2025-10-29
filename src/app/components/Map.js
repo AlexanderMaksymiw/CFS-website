@@ -14,7 +14,7 @@ export default function Location() {
       {/* Content */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Image */}
-        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[300px] md:h-[400px] overflow-hidden shadow-lg">
+        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[300px] md:h-[400px] overflow-hidden shadow shadow-indigo-200">
           <Image
             src="/images/bmw_and_impreza.jpg"
             alt="Subaru Impreza and BMW"
