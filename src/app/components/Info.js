@@ -59,12 +59,10 @@ export default function Info() {
           className="object-cover w-full h-full  shadow shadow-indigo-200"
         />
         <div className="absolute inset-0 gap-5  flex flex-col justify-center items-center text-center px-4">
-          <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl">
-            Excellent Coffee
+          <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl max-w-50 drop-shadow-2xl">
+            Grab Some Food & Drink
           </h2>
-          <Link href={"/rules"}>
-            <button className="btn">Grab a Cup</button>
-          </Link>
+
         </div>
       </div>
 
