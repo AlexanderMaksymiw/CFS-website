@@ -136,7 +136,7 @@ export default function Info() {
               <div className="absolute inset-0 z-0">
                 <Slideshow
                   images={[
-                    "/images/e30.jpg",
+                    "/images/silver-e30.jpg",
                     "/images/bmw-exit.jpg",
                     "/images/subaru-red.jpg",
                     "/images/tvr.jpg",
@@ -144,7 +144,7 @@ export default function Info() {
                     "/images/beetle.jpg",
                     "/images/205-leaving.jpg",
                     "/images/evo-6.jpg",
-                    "/images/yaris.jpg",
+                    "/images/toyota-yaris.jpg",
                   ]}
                 />
               </div>
