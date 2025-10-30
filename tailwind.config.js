@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "media",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,8 +14,8 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: "#facc15", // amber-400 as brand color
-          dark: "#d97706",
+          DEFAULT: "oklch(96.7% 0.003 264.542)", // amber-400 as brand color
+          dark: "oklch(20.8% 0.042 265.755)",
         },
       },
     },

@@ -2,7 +2,7 @@
 
 export default function Intro({ eyebrow, title, content }) {
   return (
-    <div className="container mx-auto px-4 justify-items-center p-10 max-w-6xl space-y-9">
+    <div className="container mx-auto px-4 justify-items-center p-10 max-w-6xl space-y-9 dark:bg-brand-dark">
       <p className="tracking-wider font-bold text-slate-800">{eyebrow}</p>
       <h2 className="text-3xl md:text-2xl lg:text-4xl font-semibold text-center text-slate-800">
         {title}

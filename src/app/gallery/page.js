@@ -45,7 +45,7 @@ export default function Gallery() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-slate-800 ">
       <Header />
-      <SubPageHero title="Car Gallery" images={["/images/R32 Golf.jpg"]} />
+      <SubPageHero title="Car Gallery" images={["/images/bmw-m2-drive.jpg"]} />
 
       <section className="w-full max-w-screen-xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-12 ">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8">
