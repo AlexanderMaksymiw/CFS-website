@@ -29,8 +29,8 @@ export default function ItemGrid({ posts }) {
               </div>
               <div className="pt-5 flex flex-col justify-center p-4">
                 <h3 className="font-semibold text-slate-400">
-                  {posts[0].publishedAt
-                    ? new Date(posts[0].publishedAt).toLocaleDateString()
+                  {posts[0].date
+                    ? new Date(posts[0].date).toLocaleDateString()
                     : "No date"}
                 </h3>
                 <h3 className="text-3xl font-bold text-gray-800 mb-2">
@@ -61,8 +61,8 @@ export default function ItemGrid({ posts }) {
                 </div>
                 <div className="flex-col pt-2 p-4 flex-1">
                   <h3 className="font-semibold text-slate-400">
-                    {post.publishedAt
-                      ? new Date(post.publishedAt).toLocaleDateString()
+                    {post.date
+                      ? new Date(post.date).toLocaleDateString()
                       : "No date"}
                   </h3>
                   <h3 className="text-xl text-slate-800 font-bold line-clamp-2">
