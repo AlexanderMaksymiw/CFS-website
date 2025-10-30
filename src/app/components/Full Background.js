@@ -10,6 +10,7 @@ export default function FullBackground({ children }) {
         loop
         muted
         playsInline
+        
       />
 
       <div className=" pt-25 flex relative z-20">
