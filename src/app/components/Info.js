@@ -21,7 +21,7 @@ export default function Info() {
     <section className="pt-8 sm:pt-8">
       <div className="relative md:hidden w-full h-[300px] sm:h-[400px] overflow-hidden bg-gray-200 ">
         <Image
-          src="/images/i8-bmw.png"
+          src="/images/bmw-i8-open.jpg"
           alt="BMW I8 at CFS"
           fill
           className="object-cover px-4 pt-5"
@@ -115,7 +115,7 @@ export default function Info() {
             </div>
           </div>
         </SectionBG>
-        <div className="sm:px-10 md:px-56 gap-6 relative z-0 pt-20">
+        <div className="sm:px-10 md:px-56 gap-6 relative z-0 pt-10">
           <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
             Share Your CFS Moments
           </h2>
@@ -178,7 +178,7 @@ export default function Info() {
           </div>
         </div>
 
-        <div className=" relative h-[550px] lg:h-[650px]">
+        <div className="relative h-[80vh] lg:h-[90vh] min-h-[550px]">
           <video
             src="/videos/cfs-civic.mp4"
             autoPlay

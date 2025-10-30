@@ -16,7 +16,7 @@ export default function Location() {
         {/* Left: Image */}
         <div className="relative w-full md:w-1/2 h-[300px] sm:h-[300px] md:h-[400px] overflow-hidden shadow shadow-indigo-200">
           <Image
-            src="/images/bmw_and_impreza.jpg"
+            src="/images/bmw-and-impreza.jpg"
             alt="Subaru Impreza and BMW"
             fill
             className="object-cover"
