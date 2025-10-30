@@ -30,7 +30,7 @@ const images = [
   "/images/golf-red.jpg",
   "/images/honda-s2000-side.jpg",
   "/images/evo-10.jpg",
-  "/images/lotus-front.jpg",
+  "/images/red-lotus-front.jpg",
   "/images/micra-2.jpg",
   "/images/s15.jpg",
   "/images/delorean-front.jpg",
