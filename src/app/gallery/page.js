@@ -24,6 +24,8 @@ const images = [
   "/images/toyota-yaris.jpg",
   "/images/tvr-chimaera.jpg",
   "/images/fiesta-front.jpg",
+  "/images/honda-jazz.jpg",
+  "/images/honda-jazz-side.jpg",
   "/images/fiesta-2.jpg",
   "/images/fiesta-silver.jpg",
   "/images/mini-red-front.jpg",
