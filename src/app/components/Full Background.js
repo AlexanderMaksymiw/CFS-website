@@ -10,7 +10,8 @@ export default function FullBackground({ children }) {
         loop
         muted
         playsInline
-        
+        poster="/image/hero/cfs-poster.jpg"
+
       />
 
       <div className=" pt-25 flex relative z-20">
