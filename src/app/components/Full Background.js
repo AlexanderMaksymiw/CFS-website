@@ -10,7 +10,7 @@ export default function FullBackground({ children }) {
         loop
         muted
         playsInline
-        poster="/image/hero/cfs-poster.jpg"
+        poster="/images/hero/cfs-poster.jpg"
 
       />
 
