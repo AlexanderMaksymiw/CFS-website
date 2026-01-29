@@ -1,11 +1,14 @@
 "use client";
 
+import Image from "next/image";
+
 export default function FullBackground({ children }) {
   return (
     <div className="relative h-162.5 md:h-212.5 bg-center bg-fixed overflow-hidden">
       <Image
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/images/hero/cfs-background.jpg"
+        alt="CFS Hero Background"
       />
 
       <div className=" pt-25 flex relative z-20">
