@@ -2,7 +2,7 @@
 
 export default function FullBackground({ children }) {
   return (
-    <div className="relative h-[650px] md:h-[850px] bg-center bg-fixed overflow-hidden">
+    <div className="relative h-162.5 md:h-212.5 bg-center bg-fixed overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/videos/cfs-video.mp4"

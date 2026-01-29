@@ -10,7 +10,7 @@ import Address from "./Address";
 export default function Footer() {
   return (
     <footer
-      className="w-full relative lg:h-[700px] h-[900px] text-white flex flex-col bg-fixed bg-center bg-cover"
+      className="w-full relative lg:h-175 h-225 text-white flex flex-col bg-fixed bg-center bg-cover"
       style={{ backgroundImage: "url('/images/Ford rally.jpg')" }}
     >
       {/* Overlay */}
@@ -18,8 +18,8 @@ export default function Footer() {
 
       {/* (3 columns) */}
       <div className="relative z-10 w-full h-120 lg:gap-20 lg:flex lg:px-56 px-4 pt-10 lg:pt-15 pb-10">
-        <div className="flex-[1]">
-          <h1 className="bg-gradient-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
+        <div className="flex-1">
+          <h1 className="bg-linear-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
             CAR FARM SOCIAL
           </h1>
           <p className="pt-5 hidden text-gray-200/40 max-w-sm">
