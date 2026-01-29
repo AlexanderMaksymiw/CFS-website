@@ -76,7 +76,6 @@ export default function Footer() {
                 </Link>
               </div>
 
-
               {/* MB Coffee Van (no logo yet) */}
               <div className="flex items-center justify-center w-40 h-20 border-white/40 border">
                 <Link href="https://llynclyshall.co.uk/mean-bean-coffee/">
@@ -99,15 +98,6 @@ export default function Footer() {
                   />
                 </Link>
               </div>
-
-              {/* GMJ Photography (no logo yet) */}
-              <div className="flex items-center justify-center w-40 h-20 border-white/40 border">
-                <Link href="https://garethjohnsonphotography.shootproof.com/">
-                  <p className="text-center text-white/80 font-semibold   px-3 py-2">
-                    GMJ Photography
-                  </p>
-                </Link>
-              </div>
             </div>
           </div>
           <div className="pt-5">
@@ -117,9 +107,7 @@ export default function Footer() {
             </h3>
           </div>
         </div>
-
       </div>
-
 
       {/* Bottom section */}
       <div className=" hidden lg:px-56 px-4 lg:visible">
