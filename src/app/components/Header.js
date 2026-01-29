@@ -27,7 +27,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-56 max-w-full mx-auto h-full transition-all duration-500">
         {/* Logo */}
         <motion.div
-          className="flex-shrink-0 max-w-[100px]" // prevents logo overflow
+          className="shrink-0 max-w-25" // prevents logo overflow
           animate={{
             scale: isScrolled ? 0.8 : 1.0,
             y: isScrolled ? 0 : 10,
