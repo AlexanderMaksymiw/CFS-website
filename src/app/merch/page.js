@@ -35,7 +35,6 @@ export default function Merch() {
           {merchDescription.mainText}
         </h3>
       </div>
-
       <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2  mx-auto max-w-8xl justify-center">
         <div className="relative w-full h-60 sm:h-80 md:h-110">
           <Image
