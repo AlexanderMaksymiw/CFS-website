@@ -15,7 +15,7 @@ function urlFor(source) {
 }
 
 export default async function PostPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // Fetch the post
   const post = await client.fetch(POST_QUERY, { slug });
@@ -25,13 +25,17 @@ export default async function PostPage({ params }) {
   }
 
   // Hero and first image URLs
-  const heroImageUrl = post.heroImage ? urlFor(post.heroImage)?.width(1200).height(600).url() : null;
-  const firstImageUrl = post.image ? urlFor(post.image)?.width(1200).height(600).url() : null;
+  const heroImageUrl = post.heroImage
+    ? urlFor(post.heroImage)?.width(1200).height(600).url()
+    : null;
+  const firstImageUrl = post.image
+    ? urlFor(post.image)?.width(1200).height(600).url()
+    : null;
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
+      console.log("Params:", params);
       {/* Hero image */}
       {heroImageUrl && (
         <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[21/9]">
@@ -48,7 +52,6 @@ export default async function PostPage({ params }) {
           </div>
         </div>
       )}
-
       <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
         <h3 className="text-lg md:text-3xl font-medium text-center md:text-left max-w-4xl text-slate-800">
           {post.intro}
@@ -104,7 +107,6 @@ export default async function PostPage({ params }) {
           )}
         </div>
       </div>
-
       <Footer />
     </div>
   );

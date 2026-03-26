@@ -62,7 +62,6 @@ export default function Info() {
           <h2 className="text-4xl sm:text-3xl font-semibold text-white drop-shadow-3xl max-w-50 drop-shadow-2xl">
             Grab Some Food & Drink
           </h2>
-
         </div>
       </div>
 
@@ -71,21 +70,21 @@ export default function Info() {
           image={"/images/hero/Supra_front.jpg"}
           className={"bg-white/90 lg:bg-slate-800/60"}
         >
-          <div className="relative flex flex-col md:flex-row  md:items-start  sm:px-10 md:px-56 gap-10">
+          <div className="relative flex flex-col md:flex-row  md:items-start  sm:px-10 md:px-12 gap-10">
             <div className="space-y-4 bg-cover bg-center w-full md:w-1/2 md:h-[600px]">
-              <h1 className="text-4xl max-w-90 lg:max-w-2xl mx-auto lg:hidden-mx-auto sm:text-5xl lg:text-7xl font-bold lg:text-white text-slate-900 drop-shadow-2xl text-center md:text-left">
+              <h1 className="text-4xl max-w-90 lg:max-w-2xl mx-auto lg:hidden-mx-auto sm:text-5xl lg:text-6xl font-bold lg:text-white text-slate-900 drop-shadow-2xl text-center md:text-left">
                 A Community Where Cars and Culture{" "}
                 <span className="lg:text-yellow-400 text-slate-900">
                   Come Alive
                 </span>
               </h1>
 
-              <p className="text-lg px-4 leading-7 sm:text-xl lg:text-xl lg:font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
+              <p className="text-lg  leading-7 sm:text-xl lg:text-xl lg:font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
                 Every Thursday evening throughout Spring, Summer, and Autumn, up
                 to 400 amazing rides gather near Oswestry, Shropshire.
               </p>
 
-              <p className="text-lg px-4 sm:text-xl leading-7 lg:font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
+              <p className="text-lg sm:text-xl leading-7 lg:font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
                 CFS is more than just a meet-up, our events include scenic road
                 trips, delicious food and coffee, and a relaxed, inclusive
                 atmosphere that celebrates everything from supercars to timeless
@@ -115,7 +114,7 @@ export default function Info() {
             </div>
           </div>
         </SectionBG>
-        <div className="sm:px-10 md:px-56 gap-6 relative z-0 pt-10">
+        <div className="sm:px-10 md:px-12 gap-6 relative z-0 pt-10">
           <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
             Share Your CFS Moments
           </h2>
@@ -187,13 +186,13 @@ export default function Info() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="relative flex flex-col justify-center h-full px-4 lg:px-56 bg-black/50 ">
+          <div className="relative flex flex-col justify-center h-full px-4 lg:px-12 bg-black/50 ">
             <div className="border border-white flex p-6">
               <div>
                 <h1 className="text-6xl sm:text-5xl lg:text-7xl font-bold text-white max-w-xl drop-shadow-2xl ">
                   Where Car Lovers Learn, Share, and Inspire
                 </h1>
-                <p className="text-lg sm:text-xl font-semibold text-white max-w-70 lg:max-w-xl  pt-10 pb-10 drop-shadow-2xl">
+                <p className="text-lg sm:text-xl font-semibold text-white max-w-70 lg:max-w-md  pt-10 pb-10 drop-shadow-2xl">
                   With a family and dog friendly atmosphere, clear rules, and
                   respect for all, it’s an event everyone can enjoy.
                 </p>

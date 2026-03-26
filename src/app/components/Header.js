@@ -24,7 +24,7 @@ export default function Header() {
             : "bg-transparent h-32"
         } text-white`}
     >
-      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-56 max-w-full mx-auto h-full transition-all duration-500">
+      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-12 max-w-full mx-auto h-full transition-all duration-500">
         {/* Logo */}
         <motion.div
           className="shrink-0 max-w-25" // prevents logo overflow
@@ -44,6 +44,7 @@ export default function Header() {
           <Link href="/merch">Merch</Link>
           <Link href="/latest">Latest</Link>
           <Link href="/gallery">Gallery</Link>
+          <Link href="/crew">Crew</Link>
         </nav>
 
         {/* Mobile Hamburger */}

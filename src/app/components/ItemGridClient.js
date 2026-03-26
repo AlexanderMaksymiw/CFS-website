@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ItemGrid({ posts }) {
   return (
-    <div className="lg:px-56 px-4 bg-gray-100 pt-20 pb-20">
+    <div className="lg:px-12 px-4 bg-gray-100 pt-20 pb-20">
       <h2 className="text-5xl font-bold text-slate-800 text-left mb-8">
         Latest Events
       </h2>
@@ -11,14 +11,13 @@ export default function ItemGrid({ posts }) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-[2fr_2fr] gap-4 md:gap-6 w-full">
         {/* Left: featured article */}
-        {/* Left: featured article */}
         {posts[0] && (
           <Link
             href={`/latest/${posts[0].slug.current}`}
             className="flex flex-col cursor-pointer "
           >
             <div className="border border-gray-200 shadow-indigo-200 shadow bg-white flex flex-col h-full">
-              <div className="relative overflow-hidden h-[400px] md:h-[450px] lg:h-[500px] w-full">
+              <div className="relative overflow-hidden h-100 md:h-112.5 lg:h-125 w-full">
                 <Image
                   src={posts[0].imageUrl || "/images/placeholder.jpg"}
                   alt={posts[0].title}
@@ -46,7 +45,7 @@ export default function ItemGrid({ posts }) {
           {posts.slice(1, 5).map((post) => (
             <Link
               key={post._id}
-              href={`/latest/${post.slug.current}`}
+              href={`/latest/${post.slug}`}
               className="flex flex-col h-[300px] sm:h-[350px] cursor-pointer"
             >
               <div className="border border-gray-200 shadow-indigo-200 shadow bg-white flex flex-col h-full">

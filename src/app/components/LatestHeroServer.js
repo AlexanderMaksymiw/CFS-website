@@ -25,7 +25,7 @@ export default async function LatestHeroServer() {
     <div>
       <Header />
 
-      <div className="relative flex flex-col md:flex-row  md:h-[600px] h-[500px]">
+      <div className="relative flex flex-col md:flex-row  md:h-150 h-125">
         {/* Background Image */}
         <div className="absolute inset-0 md:static">
           <Image
@@ -64,7 +64,7 @@ export default async function LatestHeroServer() {
         </div>
 
         {/* Desktop duplicate image */}
-        <div className="hidden md:block flex-1 relative w-full h-[600px]">
+        <div className="hidden md:block flex-1 relative w-full h-150">
           <Image
             src={heroImageUrl}
             alt={post.title}

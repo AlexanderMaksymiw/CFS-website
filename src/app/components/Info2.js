@@ -32,7 +32,7 @@ export default function Info2() {
       </div>
 
       {/* Desktop version */}
-      <div className=" relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-20 sm:px-10 pb-20 md:px-56">
+      <div className=" relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 pt-20 sm:px-10 pb-20 md:px-12">
         <div className="space-y-6">
           <h2 className="text-3xl font-semibold text-slate-800">
             Epic Road Trips
@@ -82,7 +82,7 @@ export default function Info2() {
       </div>
 
       {/* Desktop version */}
-      <div className="relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-56">
+      <div className="relative hidden md:grid md:grid-cols-2 gap-10 items-center px-4 sm:px-10 md:px-12">
         <div className="relative w-full h-[400px] md:h-110">
           <Image
             src="/images/orange-mclaren.jpg"

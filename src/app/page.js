@@ -1,4 +1,4 @@
-import Link from "next/link"; // components link
+import Link from "next/link";
 import HeroSlideshow from "./components/HeroSlideshow";
 import Header from "./components/Header";
 import HeroOverlay from "./components/heroOverlay";

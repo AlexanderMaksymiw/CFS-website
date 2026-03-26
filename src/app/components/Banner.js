@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function VideoBanner() {
   return (
-    <div className="relative h-[700px]">
+    <div className="relative h-175">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/videos/CFS Video.mp4"
