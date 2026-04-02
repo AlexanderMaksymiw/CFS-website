@@ -10,6 +10,7 @@ import FullBackground from "./components/Full Background";
 import SectionBG from "./components/SectionBG";
 import ItemGridServer from "./components/ItemGridServer";
 import Info2 from "./components/Info2";
+import Content from "./components/Content";
 
 const myCards = [
   {

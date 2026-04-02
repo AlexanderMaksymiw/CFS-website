@@ -2,12 +2,48 @@ import Divider from "./Divider";
 import Image from "next/image";
 import Link from "next/link";
 import Content from "./Content";
+import { SocialIcon } from "react-social-icons";
+import Featured from "./Featured";
 
 export default function Info2() {
   return (
     <section className=" pb-20">
-      <Divider image="/images/two-scoobies.jpg" className="h-300"></Divider>
-      <div className="sm:px-10 md:px-30 gap-6 relative z-0 pt-10  ">
+      <div className="px-30 pb-20">
+        <Content />
+      </div>
+      <Divider
+        className="h-400"
+        content={
+          <div className="px-30">
+            <h2 className="text-6xl font-bold drop-shadow-2xl max-w-xl tracking-tight">
+              SHOW OFF YOUR EPIC CFS MOMENTS!
+            </h2>
+            <p className="pt-5 max-w-xl text-lg tracking-tight">
+              Share your pride and joy or your favorite moments at CFS from one
+              of our exciting road trips or moments from the paddock! Interact
+              with us on our socials for a chance to win to be featured.
+            </p>
+            <div className="flex gap-3 pt-5">
+              <SocialIcon
+                bgColor="#ffffff"
+                fgColor="#0f172a"
+                url="https://www.facebook.com/groups/3764447677206661"
+                style={{ height: 40, width: 40 }}
+              />
+              <SocialIcon
+                bgColor="#ffffff"
+                fgColor="#0f172a"
+                url="https://www.instagram.com/carfarmsocial/"
+                style={{ height: 40, width: 40 }}
+              />
+            </div>
+            <Featured />
+          </div>
+        }
+      >
+        {" "}
+      </Divider>
+      <div className="sm:px-10 md:px-30 gap-6 relative z-0   ">
         <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-5 drop-shadow-2xl">
           MORE THAN JUST CARS
         </h2>
