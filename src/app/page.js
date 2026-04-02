@@ -42,14 +42,16 @@ export default function Home() {
   return (
     <div className="header">
       <Header />
+      <div>
+        {" "}
+        <Intro
+          eyebrow="Your CFS Invitation"
+          title="Join us at LLynclys Farm between 17:30 - 20:00 Every Thursday!"
+          content="From April to September, classics, supercars, JDM, and everything in between gather at LLynclys Farm in a vibrant, welcoming space for all enthusiasts with the right attitude."
+        />
+      </div>
       <FullBackground />
       <HeroOverlay />
-
-      <Intro
-        eyebrow="Your CFS Invitation"
-        title="Join us at LLynclys Farm between 17:30 - 20:00 Every Thursday!"
-        content="From April to September, classics, supercars, JDM, and everything in between gather at LLynclys Farm in a vibrant, welcoming space for all enthusiasts with the right attitude."
-      />
       <Info />
       <ItemGridServer />
       <Info2 />

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ItemGrid({ posts }) {
   return (
-    <div className="lg:px-12 px-4 bg-gray-100 pt-20 pb-20">
+    <div className="lg:px-30 px-4 bg-gray-100 pt-20 pb-20">
       <h2 className="text-5xl font-bold text-slate-800 text-left mb-8">
         Latest Events
       </h2>

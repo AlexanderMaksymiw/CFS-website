@@ -5,6 +5,7 @@ import SectionBG from "../components/SectionBG";
 import { useRouter } from "next/navigation";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
+import Carousel from "../components/Carousel";
 
 export default function Info() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function Info() {
         </div>
       </div>
 
-      <div className="md:hidden relative px-4 sm:px-10 md:px-56 pb-5 pt-5 h-[350px] ">
+      <div className="md:hidden relative px-4 sm:px-10 md:px-56 pb-5 pt-5 h-87.5 ">
         <video
           src="/videos/mean-bean-coffee.mp4"
           autoPlay
@@ -66,63 +67,44 @@ export default function Info() {
       </div>
 
       <div>
-        <SectionBG
-          image={"/images/hero/Supra_front.jpg"}
-          className={"bg-white/90 lg:bg-slate-800/60"}
-        >
-          <div className="relative flex flex-col md:flex-row  md:items-start  sm:px-10 md:px-12 gap-10">
-            <div className="space-y-4 bg-cover bg-center w-full md:w-1/2 md:h-[600px]">
-              <h1 className="text-4xl max-w-90 lg:max-w-2xl mx-auto lg:hidden-mx-auto sm:text-5xl lg:text-6xl font-bold lg:text-white text-slate-900 drop-shadow-2xl text-center md:text-left">
-                A Community Where Cars and Culture{" "}
-                <span className="lg:text-yellow-400 text-slate-900">
-                  Come Alive
-                </span>
-              </h1>
+        <div className="relative flex flex-col md:flex-row  md:items-start mt-160 gap-10">
+          <div className="space-y-4  w-full md:w-200 md:h-170">
+            <h1 className="text-4xl max-w-90 lg:max-w-110 mx-auto mt-25 sm:text-5xl lg:text-5xl font-bold  text-slate-900 text-center md:text-left">
+              SHROPSHIRE'S BEST PIT STOP BETWEEN ENGLAND AND WALES FOR CAR
+              CULTURE AND COMMUNITY
+            </h1>
+            <p className="text-lg  leading-7 sm:text-xl lg:text-2xl mx-auto text-slate-900 max-w-110 font-semibold text-center md:text-left tracking-tight">
+              Come see classic cars, supercars, JDM, VAG cars, passion projects
+              and get inspired by their owners.
+            </p>
 
-              <p className="text-lg  leading-7 sm:text-xl lg:text-xl lg:font-semibold lg:text-white text-slate-900 max-w-md text-center md:text-left drop-shadow-xl">
-                Every Thursday evening throughout Spring, Summer, and Autumn, up
-                to 400 amazing rides gather near Oswestry, Shropshire.
-              </p>
-
-              <p className="text-lg sm:text-xl leading-7 lg:font-semibold lg:text-white text-slate-900  max-w-md text-center md:text-left drop-shadow-xl">
-                CFS is more than just a meet-up, our events include scenic road
-                trips, delicious food and coffee, and a relaxed, inclusive
-                atmosphere that celebrates everything from supercars to timeless
-                classics.
-              </p>
-            </div>
-
-            <div className="relative w-full md:w-[900px] h-[400px] sm:h-[350px] md:h-[600px] overflow-hidden shadow-xl">
-              <Slideshow
-                images={[
-                  "/images/friends-4.jpg",
-                  "/images/eating.jpg",
-                  "/images/dad-2.jpg",
-                  "/images/ice-cream.jpg",
-                  "/images/having-fun.jpg",
-                  "/images/mx5-polaroid.jpg",
-                  "/images/dog-6.jpg",
-                  "/images/group-2.jpg",
-                  "/images/talking.jpg",
-                  "/images/dog-4.jpg",
-                  "/images/ice-cream-cfs.jpg",
-                  "/images/mg.jpg",
-                  "/images/photographer.jpg",
-                  "/images/cfs-hoodie.jpg",
-                ]}
-              />
-            </div>
+            <p className="text-xl sm:text-xl leading-7   text-slate-900 mx-auto tracking-tight max-w-110 text-center md:text-left">
+              Every Thursday evening up to 400 like-minded car enthusiasts meet
+              up at Llynclys farm to show off their pride and joy, share their
+              ride's story and learn from others. CFS is more than just a
+              meet-up, our events include scenic road trips, delicious food and
+              coffee, with a relaxed atmosphere that celebrates car culture.
+            </p>
           </div>
-        </SectionBG>
-        <div className="sm:px-10 md:px-12 gap-6 relative z-0 pt-10">
-          <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-10  text-center  drop-shadow-2xl">
-            Share Your CFS Moments
+
+          <div className="relative w-full md:w-240 h-100 sm:h-87.5 md:h-200 overflow-hidden rounded-xl">
+            <Image
+              src="/images/mustang.jpg"
+              alt="CFS hoodies, t-shirts, and stickers"
+              fill
+              className="object-cover object-[30%_70%] "
+            />
+          </div>
+        </div>
+        <div className="sm:px-10 md:px-30 gap-6 relative z-0 pt-10">
+          <h2 className="relative lg:block z-10 text-slate-800 text-4xl sm:text-5xl font-bold pb-5  drop-shadow-2xl">
+            YOUR CFS MOMENTS
           </h2>
           {/* LEFT + RIGHT SECTION */}
           <div className="flex flex-col md:flex-row gap-6 ">
             {/* LEFT SECTION */}
             <div
-              className="relative hidden md:block flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] overflow-hidden"
+              className="relative hidden md:block flex-1 bg-cover bg-center min-h-[500px] sm:min-h-[600px] md:min-h-[500px] rounded-xl overflow-hidden"
               style={{ backgroundImage: "url('/images/subaru-couple.jpg')" }}
             >
               <h2 className="sm:hidden relative z-10 text-white text-4xl sm:text-5xl font-bold pt-16  px-8 text-center md:text-left drop-shadow-2xl">
@@ -131,7 +113,7 @@ export default function Info() {
             </div>
 
             {/* RIGHT SECTION */}
-            <div className="relative flex-1 min-h-[500px] sm:min-h-[400px] md:min-h-[500px] overflow-hidden z-20">
+            <div className="relative flex-1 min-h-[500px] sm:min-h-[400px] md:min-h-[500px] overflow-hidden rounded-xl z-20">
               <div className="absolute inset-0 z-0">
                 <Slideshow
                   images={[
@@ -176,7 +158,6 @@ export default function Info() {
             </div>
           </div>
         </div>
-
         <div className="relative h-[80vh] lg:h-[90vh] min-h-[550px]">
           <video
             src="/videos/cfs-civic.mp4"
@@ -186,7 +167,7 @@ export default function Info() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="relative flex flex-col justify-center h-full px-4 lg:px-12 bg-black/50 ">
+          <div className="relative flex flex-col justify-center h-full px-4 lg:px-30 bg-black/50 ">
             <div className="border border-white flex p-6">
               <div>
                 <h1 className="text-6xl sm:text-5xl lg:text-7xl font-bold text-white max-w-xl drop-shadow-2xl ">

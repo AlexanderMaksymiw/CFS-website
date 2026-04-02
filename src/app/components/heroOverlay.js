@@ -12,10 +12,10 @@ export default function HeroOverlay() {
   }
 
   return (
-    <div className="absolute inset-0 z-20 flex flex-col  justify-center  text-white mx-auto lg:pt-0 h-160 md:h-160">
+    <div className="absolute inset-0 z-20 flex flex-col  justify-center  text-white mx-auto  h-200 md:h-200">
       <div>
-        <h1 className="md:text-8xl lg:text-left  text-center md:px-12 text-6xl font-bold mb-4 max-w-2xl md:max-w-6xl antialiased ">
-          WELCOME TO <span className="text-yellow-400">CAR FARM SOCIAL </span>
+        <h1 className="md:text-7xl lg:text-left text-center md:px-30 text-6xl font-bold max-w-2xl md:max-w-3xl mb-20  antialiased ">
+          WELCOME TO CAR FARM SOCIAL
         </h1>
       </div>
     </div>

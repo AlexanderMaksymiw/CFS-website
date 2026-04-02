@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Location() {
   return (
-    <section className="flex flex-col px-4 sm:px-8 lg:px-12 gap-8 pb-10 sm:pb-16 md:pb-16">
+    <section className="flex flex-col px-4 sm:px-8 lg:px-30 gap-8 pb-10 sm:pb-16 md:pb-16">
       {/* Title */}
-      <div className="text-center">
+      <div>
         <h2 className="text-4xl sm:text-4xl md:text-5xl font-bold text-slate-800 pb-4 sm:pb-5">
           Where To Find Us
         </h2>

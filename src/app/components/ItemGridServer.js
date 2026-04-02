@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/sanityClient";
-import ItemGrid from "./ItemGridClient";
+import imageUrlBuilder from "@sanity/image-url";
+import Carousel from "./Carousel";
 
 const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(date desc)[0...5] {
   _id,
@@ -15,5 +16,5 @@ export default async function ItemGridServer() {
   const posts = await client.fetch(POSTS_QUERY, {}, options);
   console.log("Fetched posts:", posts);
 
-  return <ItemGrid posts={posts} />;
+  return <Carousel posts={posts} />;
 }

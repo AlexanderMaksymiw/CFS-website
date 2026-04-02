@@ -35,7 +35,6 @@ export default async function PostPage({ params }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      console.log("Params:", params);
       {/* Hero image */}
       {heroImageUrl && (
         <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[21/9]">

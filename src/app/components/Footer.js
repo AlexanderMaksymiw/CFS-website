@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-slate-900/90 z-0" />
 
       {/* (3 columns) */}
-      <div className="relative z-10 w-full h-120 lg:gap-20 lg:flex lg:px-56 px-4 pt-10 lg:pt-15 pb-10">
+      <div className="relative z-10 w-full h-120 lg:gap-20 lg:flex lg:px-30 px-4 pt-10 lg:pt-15 pb-10">
         <div className="flex-1">
           <h1 className="bg-linear-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
             CAR FARM SOCIAL
@@ -94,9 +94,9 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="pt-5">
+          <div className="pt-1">
             <h3 className="tracking-wide  text-white/30">@ Car Farm Social</h3>
-            <h3 className=" tracking-wide pt-3 text-white/30">
+            <h3 className=" tracking-wide pt-1 text-white/30">
               Website by Alex Maksymiw
             </h3>
           </div>

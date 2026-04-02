@@ -2,12 +2,15 @@
 
 export default function Intro({ eyebrow, title, content }) {
   return (
-    <div className="container mx-auto px-4 justify-items-center p-10 max-w-6xl space-y-9 dark:bg-brand-dark">
-      <p className="tracking-wider font-bold text-slate-800">{eyebrow}</p>
-      <h2 className="text-3xl md:text-2xl lg:text-4xl font-semibold text-center text-slate-800">
-        {title}
-      </h2>
-      <h4 className="text-center md:max-w-3xl max-w-xs text-slate-800 text-xl leading-7 md:text-lg">{content}</h4>
+    <div className="rounded-2xl max-w-7xl h-170 absolute top-[95%] left-1/2 -translate-x-1/2  px-6 w-full  z-10">
+      <video
+        className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+        src="/videos/cfs-video.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
     </div>
   );
 }
