@@ -45,6 +45,7 @@ export default function Header() {
           <Link href="/latest">Latest</Link>
           <Link href="/gallery">Gallery</Link>
           <Link href="/crew">Crew</Link>
+          <Link href="/road-trips">Road Trips</Link>
         </nav>
 
         {/* Mobile Hamburger */}

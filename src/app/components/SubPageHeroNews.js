@@ -12,7 +12,7 @@ export default function SubPageHeroNews({ title, images }) {
   const hero = images && images.length > 0 ? images : defaultImages;
 
   return (
-    <div className="hero relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[60vh]">
+    <div className="hero relative w-full h-[40vh] sm:h-[50vh] md:h-[90vh] lg:h-[90vh]">
       <Header />
       <Image src={hero[0]} className="object-cover" alt={title} fill priority />
 

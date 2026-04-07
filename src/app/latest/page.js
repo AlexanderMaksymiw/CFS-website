@@ -7,7 +7,7 @@ export default function Latest() {
   return (
     <main>
       <SubPageHeroNews
-        title="Latest News"
+        title="LATEST NEWS"
         images={["/images/skoda-drive.jpg"]}
       />
       <div className="pt-10">

@@ -1,0 +1,29 @@
+export const ROADTRIPS_QUERY = `*[_type == "roadTrip" && defined(slug.current)] | order(publishedAt desc)[0...20] {
+  _id,
+  title,
+  "slug": slug.current,
+  tripDate,
+  intro,
+  description,
+  miles,
+  time,
+  heroImage{
+    asset->{
+      _id,
+      url
+    }
+  },
+  images[]{
+    asset->{
+      _id,
+      url
+    }
+  },
+  googleMapsEmbed,
+  qrCode{
+    asset->{
+      _id,
+      url
+    }
+  }
+}`;

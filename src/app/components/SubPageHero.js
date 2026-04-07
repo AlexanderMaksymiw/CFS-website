@@ -12,14 +12,14 @@ export default function SubPageHero({ title, images }) {
   const hero = images && images.length > 0 ? images : defaultImages;
 
   return (
-    <div className="hero relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[60vh]">
+    <div className="hero relative w-full h-[40vh] sm:h-[50vh] md:h-[90vh] lg:h-[90vh]">
       <Header />
       <Image src={hero[0]} className="object-cover" alt={title} fill priority />
 
       <div className="absolute inset-0 bg-black/20" />
 
-      <div className="absolute inset-0 flex flex-col px-4 sm:px-8 md:px-16 justify-center text-white">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center drop-shadow-2xl font-bold">
+      <div className="absolute inset-0 flex flex-col px-4 sm:px-8 md:px-30  text-white">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  drop-shadow-2xl font-bold pt-80">
           {title}
         </h1>
       </div>

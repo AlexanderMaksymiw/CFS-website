@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Content({ img, title, text, button, href }) {
+export default function RulesContent({ img, title, text, button, href }) {
   return (
     <div className="h-125 rounded-xl relative bg-black overflow-hidden">
-      <Image src={img} alt={title} fill className="opacity-70" />
+      <Image src={img} alt={title} fill className="opacity-70 object-cover" />
 
       <div className="absolute top-20 left-20 text-white max-w-lg space-y-5">
         <h2 className=" text-white text-6xl font-bold tracking-tight">

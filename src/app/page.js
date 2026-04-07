@@ -44,7 +44,6 @@ export default function Home() {
     <div className="header">
       <Header />
       <div>
-        {" "}
         <Intro
           eyebrow="Your CFS Invitation"
           title="Join us at LLynclys Farm between 17:30 - 20:00 Every Thursday!"
