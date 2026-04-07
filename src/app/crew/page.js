@@ -1,5 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Header from "../components/Header";
 import SubPageHero from "../components/SubPageHero";
@@ -10,16 +8,9 @@ import { CREW_QUERY } from "@/sanity/queries/crew";
 
 const builder = imageUrlBuilder(client);
 
-export default function Crew() {
-  const [crew, setCrew] = useState([]);
-
-  useEffect(() => {
-    async function fetchCrew() {
-      const data = await client.fetch(CREW_QUERY);
-      setCrew(data);
-    }
-    fetchCrew();
-  }, []);
+export default async function Crew() {
+  // Server-side fetch
+  const crew = await client.fetch(CREW_QUERY);
 
   return (
     <div>
@@ -29,18 +20,17 @@ export default function Crew() {
       />
 
       <div>
-        <div className="relative flex flex-col md:flex-row  md:items-start mt-20 gap-10">
-          <div className="space-y-4  w-full md:w-200 md:h-170">
-            <h1 className="text-4xl max-w-90 lg:max-w-110 mx-auto mt-25 sm:text-5xl lg:text-5xl font-bold  text-slate-900 text-center md:text-left">
+        <div className="relative flex flex-col md:flex-row md:items-start mt-20 gap-10">
+          <div className="space-y-4 w-full md:w-200 md:h-170">
+            <h1 className="text-4xl max-w-90 lg:max-w-110 mx-auto mt-25 sm:text-5xl lg:text-5xl font-bold text-slate-900 text-center md:text-left">
               SHROPSHIRE'S BEST PIT STOP BETWEEN ENGLAND AND WALES FOR CAR
               CULTURE AND COMMUNITY
             </h1>
-            <p className="text-lg  leading-7 sm:text-xl lg:text-2xl mx-auto text-slate-900 max-w-110 font-semibold text-center md:text-left tracking-tight">
+            <p className="text-lg leading-7 sm:text-xl lg:text-2xl mx-auto text-slate-900 max-w-110 font-semibold text-center md:text-left tracking-tight">
               Come see classic cars, supercars, JDM, VAG cars, passion projects
               and get inspired by their owners.
             </p>
-
-            <p className="text-xl sm:text-xl leading-7   text-slate-900 mx-auto tracking-tight max-w-110 text-center md:text-left">
+            <p className="text-xl sm:text-xl leading-7 text-slate-900 mx-auto tracking-tight max-w-110 text-center md:text-left">
               Every Thursday evening up to 400 like-minded car enthusiasts meet
               up at Llynclys farm to show off their pride and joy, share their
               ride's story and learn from others. CFS is more than just a
@@ -58,11 +48,11 @@ export default function Crew() {
             />
           </div>
         </div>
+
+        {/* KEEPING CFS SAFE section */}
         <div
-          className=" h-250 bg-amber-400 mt-5 px-30 gap-10"
-          style={{
-            clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0 80%)",
-          }}
+          className="h-250 bg-amber-400 mt-5 px-30 gap-10"
+          style={{ clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0 80%)" }}
         >
           <div className="pt-25">
             <h2 className="text-5xl font-bold tracking-tight text-white">
@@ -70,7 +60,7 @@ export default function Crew() {
             </h2>
           </div>
           <div className="grid grid-cols-3 relative gap-8 pt-50">
-            <div className=" relative  h-100  rounded-xl  w-full">
+            <div className="relative h-100 rounded-xl w-full">
               <Image
                 src="/images/cfs-merch.jpg"
                 alt="paul"
@@ -78,7 +68,7 @@ export default function Crew() {
                 className="object-cover rounded-xl"
               />
             </div>
-            <div className=" relative h-100  rounded-xl  w-full">
+            <div className="relative h-100 rounded-xl w-full">
               <Image
                 src="/images/marshals-2.jpg"
                 alt="marshals"
@@ -86,7 +76,7 @@ export default function Crew() {
                 className="object-cover rounded-xl"
               />
             </div>
-            <div className=" relative h-100 rounded-xl  w-full">
+            <div className="relative h-100 rounded-xl w-full">
               <Image
                 src="/images/ice-cream-cfs.jpg"
                 alt="marshals"
@@ -97,6 +87,7 @@ export default function Crew() {
           </div>
         </div>
 
+        {/* Crew Section */}
         <div>
           <h2 className="text-6xl font-bold tracking-tight px-30">
             MEET OUR MARSHALS
@@ -108,7 +99,6 @@ export default function Crew() {
                   key={member._id}
                   className="flex flex-col space-y-5 bg-white rounded-xl overflow-hidden"
                 >
-                  {/* Image */}
                   <div className="relative h-80 w-full">
                     {member.carImage ? (
                       <Image
@@ -118,14 +108,12 @@ export default function Crew() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full flex   bg-gray-200">
+                      <div className="w-full h-full flex bg-gray-200">
                         No image
                       </div>
                     )}
                   </div>
-
-                  {/* Text */}
-                  <div className=" space-y-2 pl-10">
+                  <div className="space-y-2 pl-10">
                     <h3 className="text-3xl font-bold">{member.name}</h3>
                     <p className="text-lg font-semibold">{member.role}</p>
                     <p className="text-base">{member.bio}</p>
