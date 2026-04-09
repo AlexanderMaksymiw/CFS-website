@@ -3,7 +3,7 @@
 import Footer from "../components/Footer";
 import RoadCardWrapper from "../components/RoadCardWrapper";
 import SubPageHeroNews from "../components/SubPageHeroNews";
-
+export const revalidate = 60;
 export default function RoadTripsPage() {
   return (
     <main>
