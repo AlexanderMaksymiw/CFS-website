@@ -199,10 +199,9 @@ export default function Info2() {
         />
       </div>
 
-      {/* FIX 4: EXPLORE NEW ROADS (McLaren Section)
-         I increased the height and adjusted the text positioning to ensure visibility.
-      */}
+      {/* FIX 4: EXPLORE NEW ROADS (McLaren Section) */}
       <div className="mt-20 px-4 md:px-30">
+        {/* MOBILE VIEW: Visible only on small screens */}
         <div className="md:hidden">
           <Link
             href="/gallery"
@@ -219,9 +218,6 @@ export default function Info2() {
               <h2 className="text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
                 Explore <br /> New Roads
               </h2>
-              <p className="text-white/80 text-lg font-medium">
-                Check out the latest event gallery.
-              </p>
               <button className="bg-white text-slate-900 font-black py-3 px-6 rounded-xl uppercase text-xs tracking-widest">
                 See the Lineup
               </button>
@@ -229,9 +225,31 @@ export default function Info2() {
           </Link>
         </div>
 
-        {/* Desktop variants remain unchanged but wrapped in the correct padding */}
+        {/* DESKTOP VIEW: Visible only on md screens and up */}
         <div className="hidden md:grid grid-cols-2 gap-16 items-center">
-          {/* ... same desktop logic as before ... */}
+          {/* Copy your McLaren Image and Text logic here so it has something to display! */}
+          <div className="relative h-[600px] rounded-3xl overflow-hidden">
+            <Image
+              src="/images/orange-mclaren.jpg"
+              alt="McLaren"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-6">
+            <h2 className="text-5xl font-black  uppercase tracking-tight  leading-none">
+              Explore <br /> New Roads
+            </h2>
+            <p className="text-slate-600 text-xl font-medium">
+              Supercars, classic cars, JDM and passion projects come see a wide
+              collection of cars.{" "}
+            </p>
+            <Link href="/gallery">
+              <button className="bg-slate-900 text-white font-black py-4 px-8 rounded-xl uppercase text-sm tracking-widest">
+                See the Lineup
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

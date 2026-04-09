@@ -23,8 +23,8 @@ export default function Info() {
             {/* Featured Large Shot */}
             <div className="md:col-span-8 relative h-[400px] md:h-[700px] bg-slate-50 overflow-hidden">
               <Image
-                src="/images/lambo.jpg"
-                alt="lambo"
+                src="/images/subaru-couple.jpg"
+                alt="subaru"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 66vw"
