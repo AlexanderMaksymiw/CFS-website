@@ -5,130 +5,146 @@ import Footer from "../components/Footer";
 import { client } from "@/sanity/lib/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import { CREW_QUERY } from "@/sanity/queries/crew";
+import Map from "../components/Map";
 
 const builder = imageUrlBuilder(client);
 
 export default async function Crew() {
-  // Server-side fetch
   const crew = await client.fetch(CREW_QUERY);
 
   return (
-    <div>
-      <SubPageHero
-        title="MEET THE MARSHALS"
-        images={["/images/hero/bmw-back.jpg"]}
-      />
+    <div className="bg-white">
+      <Header />
+      <SubPageHero title="THE CREW" images={["/images/hero/bmw-back.jpg"]} />
 
-      <div>
-        <div className="relative flex flex-col md:flex-row md:items-start mt-20 gap-10">
-          <div className="space-y-4 w-full md:w-200 md:h-170">
-            <h1 className="text-4xl max-w-90 lg:max-w-110 mx-auto mt-25 sm:text-5xl lg:text-5xl font-bold text-slate-900 text-center md:text-left">
-              SHROPSHIRE'S BEST PIT STOP BETWEEN ENGLAND AND WALES FOR CAR
-              CULTURE AND COMMUNITY
-            </h1>
-            <p className="text-lg leading-7 sm:text-xl lg:text-2xl mx-auto text-slate-900 max-w-110 font-semibold text-center md:text-left tracking-tight">
-              Come see classic cars, supercars, JDM, VAG cars, passion projects
-              and get inspired by their owners.
-            </p>
-            <p className="text-xl sm:text-xl leading-7 text-slate-900 mx-auto tracking-tight max-w-110 text-center md:text-left">
-              Every Thursday evening up to 400 like-minded car enthusiasts meet
-              up at Llynclys farm to show off their pride and joy, share their
-              ride's story and learn from others. CFS is more than just a
-              meet-up, our events include scenic road trips, delicious food and
-              coffee, with a relaxed atmosphere that celebrates car culture.
-            </p>
-          </div>
+      {/* --- INTRO SECTION: MAGAZINE SPREAD --- */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] items-center border-b border-slate-900">
+        <div className="p-6 md:p-20 lg:p-30 space-y-8">
+          <div className="w-20 h-2 bg-amber-400" />
+          <h1 className="text-5xl md:text-7xl font-black italic text-slate-900 leading-[0.85] tracking-tighter uppercase">
+            CFS
+            <br /> Marshals
+          </h1>
+          <p className="text-xl md:text-2xl font-bold text-slate-900 leading-tight italic uppercase tracking-tight">
+            Road trip organization, arrival management, and site flow control.
+          </p>
+          <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
+            Car Farm Social wouldn’t exist without our crew of dedicated
+            marshals. From directing 400+ builds into formation to ensuring the
+            vibe stays safe and relaxed, these enthusiasts volunteer their time
+            to keep the gears turning every Thursday night.
+          </p>
+        </div>
+        <div className="relative h-[400px] lg:h-full w-full bg-slate-100">
+          <Image
+            src="/images/marshals-group.jpg"
+            alt="CFS group"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
 
-          <div className="relative w-full md:w-240 h-100 sm:h-87.5 md:h-200 overflow-hidden rounded-xl">
-            <Image
-              src="/images/marshals-group.jpg"
-              alt="CFS marshal"
-              fill
-              className="object-cover object-[75%] scale-110"
-            />
-          </div>
+      {/* --- SAFETY SECTION: ANGULAR & BOLD --- */}
+      <div className="relative bg-slate-900 py-24 md:py-40 overflow-hidden">
+        {/* Decorative Background Text */}
+        <div className="absolute top-0 left-0 text-[15vw] font-black text-white/[0.03] italic leading-none select-none pointer-events-none whitespace-nowrap">
+          SAFETY FIRST • SAFETY FIRST •
         </div>
 
-        {/* KEEPING CFS SAFE section */}
-        <div
-          className="h-250 bg-amber-400 mt-5 px-30 gap-10"
-          style={{ clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0 80%)" }}
-        >
-          <div className="pt-25">
-            <h2 className="text-5xl font-bold tracking-tight text-white">
-              KEEPING CFS SAFE
+        <div className="relative px-6 md:px-30">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-20">
+            <h2 className="text-5xl md:text-8xl font-black italic tracking-tighter text-white uppercase leading-none">
+              KEEPING <br /> <span className="text-amber-400">CFS SAFE</span>
             </h2>
+            <p className="text-slate-400 max-w-md text-lg font-medium">
+              Our marshals are enthusiasts, just like you. They volunteer their
+              time to ensure every meet is safe, and respectful so that everyone
+              can enjoy CFS.
+            </p>
           </div>
-          <div className="grid grid-cols-3 relative gap-8 pt-50">
-            <div className="relative h-100 rounded-xl w-full">
-              <Image
-                src="/images/cfs-merch.jpg"
-                alt="paul"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
-            <div className="relative h-100 rounded-xl w-full">
-              <Image
-                src="/images/marshals-2.jpg"
-                alt="marshals"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
-            <div className="relative h-100 rounded-xl w-full">
-              <Image
-                src="/images/ice-cream-cfs.jpg"
-                alt="marshals"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              "/images/cfs-merch.jpg",
+              "/images/marshals-2.jpg",
+              "/images/ice-cream-cfs.jpg",
+            ].map((src, idx) => (
+              <div
+                key={idx}
+                className="relative aspect-[4/5] bg-slate-800 border-b-4 border-amber-400 overflow-hidden group"
+              >
+                <Image
+                  src={src}
+                  alt="Marshal activity"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-103 grayscale group-hover:grayscale-0"
+                />
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Crew Section */}
-        <div>
-          <h2 className="text-6xl font-bold tracking-tight px-30">
-            MEET OUR MARSHALS
+      {/* --- CREW DIRECTORY --- */}
+      <div className="px-6 md:px-30 py-32">
+        <div className="flex items-baseline gap-4 mb-20">
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
+            MEET THE MARSHALS
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-25 px-30 pb-20">
-            {crew.length > 0 ? (
-              crew.map((member) => (
-                <div
-                  key={member._id}
-                  className="flex flex-col space-y-5 bg-white rounded-xl overflow-hidden"
-                >
-                  <div className="relative h-80 w-full">
-                    {member.carImage ? (
-                      <Image
-                        src={builder.image(member.carImage).url()}
-                        alt={member.car || member.name}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex bg-gray-200">
-                        No image
-                      </div>
-                    )}
-                  </div>
-                  <div className="space-y-2 pl-10">
-                    <h3 className="text-3xl font-bold">{member.name}</h3>
-                    <p className="text-lg font-semibold">{member.role}</p>
-                    <p className="text-base">{member.bio}</p>
-                    <p className="text-base font-medium">{member.car}</p>
+          <div className="h-0.5 flex-grow bg-slate-900" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+          {crew.length > 0 ? (
+            crew.map((member) => (
+              <div key={member._id} className="group flex flex-col space-y-6">
+                {/* Image Frame */}
+                <div className="relative aspect-video w-full bg-slate-100 overflow-hidden border-b-8 border-slate-900">
+                  {member.carImage ? (
+                    <Image
+                      src={builder.image(member.carImage).url()}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center font-black text-slate-200 italic uppercase">
+                      No Car Photo
+                    </div>
+                  )}
+                  {/* Badge */}
+                  <div className="absolute top-0 right-0 bg-amber-400 px-4 py-2 font-black italic text-slate-900 uppercase text-xs">
+                    {member.role}
                   </div>
                 </div>
-              ))
-            ) : (
-              <p>Loading crew...</p>
-            )}
-          </div>
-        </div>
 
-        <Footer />
+                {/* Info Spec Sheet */}
+                <div className="space-y-4">
+                  <div className="flex justify-between items-end border-b-2 border-slate-100 pb-2">
+                    <h3 className="text-4xl font-black italic uppercase tracking-tighter text-slate-900">
+                      {member.name}
+                    </h3>
+                    <span className="text-amber-500 font-black italic uppercase text-sm">
+                      {member.car}
+                    </span>
+                  </div>
+                  <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="font-black italic uppercase text-slate-300">
+              Summoning the pit crew...
+            </p>
+          )}
+        </div>
       </div>
+
+      <Map />
+      <Footer />
     </div>
   );
 }

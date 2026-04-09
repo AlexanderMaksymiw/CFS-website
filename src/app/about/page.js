@@ -1,9 +1,7 @@
 "use client";
 import SubPageHero from "../components/SubPageHero";
 import Image from "next/image";
-import Video from "../components/Video";
 import Footer from "../components/Footer";
-import Slider from "../components/Slider";
 import Slideshow from "../components/Slideshow";
 
 const pageContent = {
@@ -17,10 +15,8 @@ const pageContent = {
   },
 };
 
-//helper function to render images within content
 function renderContent(content, images) {
   const parts = content.split(/(\{image\d+\})/g);
-
   return parts.map((part, index) => {
     const match = part.match(/\{(image\d+)\}/);
     if (match) {
@@ -30,16 +26,9 @@ function renderContent(content, images) {
         return (
           <div
             key={index}
-            className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden my-8"
+            className="relative w-full aspect-video md:aspect-[21/9] border-b-8 border-slate-900 overflow-hidden my-16"
           >
-            <Image
-              src={src}
-              alt={key}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 80vw"
-              priority
-            />
+            <Image src={src} alt={key} fill className="object-cover" />
           </div>
         );
       }
@@ -47,7 +36,7 @@ function renderContent(content, images) {
     return (
       <p
         key={index}
-        className="text-base sm:text-lg md:text-xl text-slate-700 whitespace-pre-wrap leading-relaxed"
+        className="text-xl md:text-2xl text-slate-700 whitespace-pre-wrap leading-relaxed mb-12"
       >
         {part}
       </p>
@@ -57,45 +46,61 @@ function renderContent(content, images) {
 
 export default function About() {
   return (
-    <main>
-      <SubPageHero title="Our Story" />
+    <main className="bg-white">
+      <SubPageHero title="OUR STORY" />
 
-      {/* article content */}
-      <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
-        {/* Heading centered */}
-        <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-4xl text-slate-800">
-          {pageContent.intro}
-        </h3>
-
-        {/*article first image */}
-        <div className="relative w-full max-w-4xl aspect-[16/9] overflow-hidden mt-8 mb-5">
+      {/* --- HERO SECTION: SPLIT LAYOUT --- */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 border-b border-slate-900 min-h-[70vh]">
+        <div className="p-8 md:p-20 lg:p-24 flex flex-col justify-center space-y-8">
+          <div className="w-20 h-2 bg-amber-400" />
+          <h1 className="text-6xl md:text-8xl font-black italic text-slate-900 leading-[0.85] tracking-tighter uppercase">
+            THE ROOTS
+          </h1>
+          <p className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight italic uppercase tracking-tighter">
+            Community first. Cars second.
+          </p>
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
+            {pageContent.intro}
+          </p>
+        </div>
+        <div className="relative h-[400px] lg:h-auto border-l border-slate-900 overflow-hidden">
           <Image
             src={pageContent.images.image1}
-            alt={pageContent.images.image1}
+            alt="First Mini"
             fill
-            priority
-            sizes="(max-width: 768px) 100vw, 80vw"
             className="object-cover"
+            priority
           />
         </div>
+      </section>
 
-        {/* main content */}
-        <div className="max-w-4xl w-full space-y-8 text-left text-slate-700 px-2 sm:px-4 md:px-0">
+      {/* --- MAIN ARTICLE CONTENT --- */}
+      <article className="py-24 px-6 md:px-0">
+        <div className="max-w-4xl mx-auto">
           {renderContent(pageContent.content, pageContent.images)}
-        </div>
 
-        <div className="relative w-full max-w-4xl aspect-[16/9] overflow-hidden mt-8">
-          <Slideshow
-            images={[
-              "/images/friends-4.jpg",
-              "/images/ice-cream.jpg",
-              "/images/eating-2.jpg",
-              "/images/couple-3.jpg",
-              "/images/old-couple.jpg",
-            ]}
-          />
+          {/* SLIDESHOW SECTION */}
+          <div className="mt-24">
+            <div className="flex items-center gap-4 mb-12">
+              <h2 className="text-4xl font-black italic uppercase tracking-tighter">
+                The Archive
+              </h2>
+              <div className="h-0.5 flex-grow bg-slate-900" />
+            </div>
+            <div className="relative w-full aspect-video bg-slate-900 border-4 border-slate-900 shadow-2xl">
+              <Slideshow
+                images={[
+                  "/images/friends-4.jpg",
+                  "/images/ice-cream.jpg",
+                  "/images/eating-2.jpg",
+                  "/images/couple-3.jpg",
+                  "/images/old-couple.jpg",
+                ]}
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
 
       <Footer />
     </main>

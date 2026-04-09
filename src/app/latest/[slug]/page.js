@@ -9,81 +9,78 @@ import Footer from "@/app/components/Footer";
 const builder = imageUrlBuilder(client);
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
-// Helper to safely build Sanity image URLs
 function urlFor(source) {
   return source ? builder.image(source) : null;
 }
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
-
-  // Fetch the post
   const post = await client.fetch(POST_QUERY, { slug });
 
-  if (!post) {
-    return <p>Post not found</p>;
-  }
+  if (!post)
+    return (
+      <p className="text-white bg-slate-900 h-screen flex items-center justify-center">
+        Post not found
+      </p>
+    );
 
-  // Hero and first image URLs
   const heroImageUrl = post.heroImage
-    ? urlFor(post.heroImage)?.width(1200).height(600).url()
-    : null;
-  const firstImageUrl = post.image
-    ? urlFor(post.image)?.width(1200).height(600).url()
+    ? urlFor(post.heroImage)?.width(1600).url()
     : null;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
-      {/* Hero image */}
+
+      {/* --- HERO: Scaled down from 8xl to 6xl --- */}
       {heroImageUrl && (
-        <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[21/9]">
+        <div className="relative w-full h-[50vh] md:h-[65vh] bg-slate-900 overflow-hidden">
           <Image
             src={heroImageUrl}
-            alt={post.title || "Post hero image"}
+            alt={post.title}
             fill
+            priority
             className="object-cover"
           />
-          <div className="absolute inset-0 flex items-end justify-center pb-10 sm:pb-16 md:pb-24 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent">
-            <h1 className="text-2xl md:text-3xl lg:text-7xl font-black text-white drop-shadow-2xl text-center md:text-left max-w-4xl mx-auto ">
-              {post.title}
-            </h1>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent" />
+
+          <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-16 px-6 md:px-30 text-white">
+            <div className="max-w-4xl space-y-3">
+              <div className="w-12 h-1 bg-amber-400" />
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight italic leading-[0.9] drop-shadow-xl">
+                {post.title}
+              </h1>
+              <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                <span>By {post.author}</span>
+                <span className="w-6 h-px bg-white/20" />
+                <span>{post.date}</span>
+              </div>
+            </div>
           </div>
         </div>
       )}
-      <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
-        <h3 className="text-lg md:text-3xl font-medium text-center md:text-left max-w-4xl text-slate-800">
-          {post.intro}
-        </h3>
 
-        <div className="max-w-4xl w-full mt-4 text-center md:text-left text-slate-600 text-sm sm:text-base">
-          <p>Written by {post.author}</p>
-          <p>Event Date: {post.date}</p>
+      {/* --- ARTICLE BODY --- */}
+      <article className="flex flex-col items-center py-12 px-6 w-full">
+        {/* Intro: Slightly wider (4xl) than the body text (3xl) */}
+        <div className="max-w-4xl w-full mb-12 border-l-4 border-amber-400 pl-6 md:pl-10">
+          <h2 className="text-xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight uppercase italic">
+            {post.intro}
+          </h2>
         </div>
 
-        {/* First image */}
-        {firstImageUrl && (
-          <div className="relative w-full max-w-4xl aspect-[16/9] overflow-hidden mt-8 mb-5">
-            <Image
-              src={firstImageUrl}
-              alt={post.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-        )}
-
-        {/* Main content using PortableText */}
-        <div className="max-w-4xl w-full space-y-8 text-left text-slate-700 px-2 sm:px-4 md:px-0">
-          {Array.isArray(post.content) && (
-            <PortableText
-              value={post.content}
-              components={{
-                types: {
-                  image: ({ value }) => {
-                    const src = urlFor(value)?.width(800).height(450).url();
-                    return src ? (
-                      <div className="relative w-full aspect-[16/9] my-8">
+        {/* Content Container */}
+        <div className="max-w-3xl w-full space-y-8 text-left">
+          <PortableText
+            value={post.content}
+            components={{
+              types: {
+                image: ({ value }) => {
+                  const src = urlFor(value)?.width(1200).url();
+                  return src ? (
+                    /* Image pops out to 4xl while text stays 3xl */
+                    <div className="my-10 -mx-0 md:-mx-12 lg:-mx-20 max-w-4xl">
+                      <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
                         <Image
                           src={src}
                           alt={value.alt || ""}
@@ -91,21 +88,32 @@ export default async function PostPage({ params }) {
                           className="object-cover"
                         />
                       </div>
-                    ) : null;
-                  },
+                      {value.caption && (
+                        <p className="mt-3 text-[10px] uppercase font-black tracking-widest text-slate-400 text-center">
+                          {value.caption}
+                        </p>
+                      )}
+                    </div>
+                  ) : null;
                 },
-                block: {
-                  normal: ({ children }) => (
-                    <p className="text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-wrap">
-                      {children}
-                    </p>
-                  ),
-                },
-              }}
-            />
-          )}
+              },
+              block: {
+                normal: ({ children }) => (
+                  <p className="text-base md:text-lg text-slate-700 leading-relaxed tracking-tight font-medium mb-6">
+                    {children}
+                  </p>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-2xl md:text-4xl font-black text-slate-900 uppercase tracking-tight italic mt-12 mb-4">
+                    {children}
+                  </h2>
+                ),
+              },
+            }}
+          />
         </div>
-      </div>
+      </article>
+
       <Footer />
     </div>
   );

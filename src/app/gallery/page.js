@@ -2,63 +2,57 @@ import Image from "next/image";
 import SubPageHero from "../components/SubPageHero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import GalleryGrid from "../components/GalleryGrid";
-import ImageCard from "../components/ImageCard";
 import Featured from "../components/Featured";
 import { SocialIcon } from "react-social-icons";
+import Map from "../components/Map";
 
 export default function Gallery() {
   return (
-    <div>
+    <div className="bg-white">
       <Header />
-      <SubPageHero title="CAR GALLERY" images={["/images/bmw-m2-drive.jpg"]} />
+      <SubPageHero title="THE ARCHIVE" images={["/images/bmw-m2-drive.jpg"]} />
 
-      <section>
-        <div className="relative flex flex-col md:flex-row  md:items-start mt-20 gap-10">
-          <div className="space-y-4  w-full md:w-200 md:h-170">
-            <h1 className="text-4xl max-w-90 lg:max-w-110 mx-auto mt-25 sm:text-5xl lg:text-5xl font-bold  text-slate-900 text-center md:text-left">
-              SHARE YOUR PHOTOS{" "}
-            </h1>
-            <p className="text-lg  leading-7 sm:text-xl lg:text-2xl mx-auto text-slate-900 max-w-110 font-semibold text-center md:text-left tracking-tight">
-              Come see classic cars, supercars, JDM, VAG cars, passion projects
-              and get inspired by their owners.
-            </p>
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] items-center border-b border-slate-900">
+        <div className="p-6 md:p-20 lg:p-30 space-y-8">
+          <div className="w-20 h-2 bg-amber-400" />
+          <h1 className="text-5xl md:text-7xl font-black italic text-slate-900 leading-[0.85] tracking-tighter uppercase">
+            SHARE YOUR <br /> PERSPECTIVE
+          </h1>
 
-            <p className="text-xl sm:text-xl leading-7   text-slate-900 mx-auto tracking-tight max-w-110 text-center md:text-left">
-              We feel incredibly lucky to have so many talented photographers
-              supporting Car Farm Social not just the professionals, but also
-              the passionate amateurs, and that includes you. We love seeing the
-              shots you capture at our events, and many of them get featured
-              across our social channels.
-            </p>
-            <div className="space-x-3 mt-10 pl-30 ">
-              <SocialIcon
-                bgColor="#ffffff"
-                fgColor="#0f172a"
-                url="https://www.facebook.com/groups/3764447677206661"
-              />
-              <SocialIcon
-                bgColor="#ffffff"
-                fgColor="#0f172a"
-                url="https://www.instagram.com/carfarmsocial/"
-              />
-            </div>
-          </div>
+          <p className="text-xl md:text-2xl font-bold text-slate-900 leading-tight italic uppercase tracking-tight max-w-md">
+            From professional glass to phone snaps—every angle tells the story
+            of the meet.
+          </p>
 
-          <div className="relative w-full md:w-240 h-100 sm:h-87.5 md:h-200 overflow-hidden rounded-xl">
-            <Image
-              src="/images/datsun-240z.jpg"
-              alt="datsun"
-              fill
-              className="object-cover object-[75%] scale-110"
-            />
-          </div>
+          <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
+            We’re incredibly lucky to have a community of talented creators. Tag
+            us to be featured in our weekly highlights.
+          </p>
+        </div>
+
+        <div className="relative h-[500px] lg:h-full w-full bg-slate-100 overflow-hidden">
+          <Image
+            src="/images/datsun-240z.jpg"
+            alt="Datsun 240Z"
+            fill
+            className="object-cover transition-transform duration-1000 hover:scale-110"
+          />
         </div>
       </section>
 
-      <section className="w-full justify-center mx-auto px-4 sm:px-6 md:px-30 py-10">
-        <Featured />
+      <section className="bg-slate-50 py-24 md:py-32">
+        <div className="px-6 md:px-30 mb-16 flex items-baseline gap-4">
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
+            COMMUNITY HIGHLIGHTS
+          </h2>
+          <div className="h-0.5 flex-grow bg-slate-900" />
+        </div>
+        <div className="px-6 md:px-30">
+          <Featured />
+        </div>
       </section>
+
+      <Map />
       <Footer />
     </div>
   );

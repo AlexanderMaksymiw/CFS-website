@@ -5,84 +5,186 @@ import { client } from "@/sanity/lib/sanityClient";
 import Image from "next/image";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import RoadTripGallery from "@/app/components/RoadTripGallery";
 
 const builder = imageUrlBuilder(client);
 
-const ROADTRIP_QUERY = `*[_type == "roadTrip" && slug.current == $slug][0]`;
+const ROADTRIP_QUERY = `*[_type == "roadTrip" && slug.current == $slug][0]{
+  ...,
+  heroImage{ asset->{ url } },
+  images[]{ _key, asset->{ url } },
+  qrCode{ asset->{ url } }
+}`;
 
-// Helper to safely build Sanity image URLs
 function urlFor(source) {
   return source ? builder.image(source) : null;
 }
 
 export default async function RoadTripPage({ params }) {
   const { slug } = await params;
-
   const roadTrip = await client.fetch(ROADTRIP_QUERY, { slug });
 
-  if (!roadTrip) return <p>Road trip not found</p>;
+  if (!roadTrip)
+    return (
+      <p className="h-screen flex items-center justify-center bg-slate-900 text-white">
+        Road trip not found
+      </p>
+    );
 
-  // Hero and first image URLs
   const heroImageUrl = roadTrip.heroImage
-    ? urlFor(roadTrip.heroImage).width(1200).height(600).url()
+    ? urlFor(roadTrip.heroImage).width(1600).url()
     : null;
 
+  const date = new Date(roadTrip.tripDate);
+  const formattedDate = date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const formattedTime = date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
-    <div>
+    <div className="bg-white">
       <Header />
-      <div className="max-w-5xl mx-auto p-6 space-y-6">
-        <h1 className="text-4xl font-bold">{roadTrip.title}</h1>
-        <p className="text-gray-500">
-          {new Date(roadTrip.tripDate).toLocaleDateString()} &bull;{" "}
-          {roadTrip.miles} miles &bull; {roadTrip.time}
-        </p>
+
+      {/* --- CINEMATIC HERO --- */}
+      <div className="h-[60vh] md:h-[75vh] relative bg-slate-900 overflow-hidden">
         {heroImageUrl && (
           <Image
             src={heroImageUrl}
             alt={roadTrip.title}
-            width={1200}
-            height={600}
-            className="rounded-xl object-cover"
+            fill
+            className="object-cover"
+            priority
           />
         )}
-        <p>{roadTrip.description}</p>
-        <div className="grid grid-cols-3 gap-4">
-          {roadTrip.images?.map((img, i) => {
-            const imgUrl = urlFor(img)?.width(400).height(300).url();
-            if (!imgUrl) return null; // skip invalid images
-            return (
-              <Image
-                key={i}
-                src={imgUrl}
-                alt={`Gallery image ${i + 1}`}
-                width={400}
-                height={300}
-                className="rounded-lg object-cover"
-              />
-            );
-          })}
-        </div>
-        {/* Google Maps embed */}
-        {roadTrip.googleMapsEmbed && (
-          <iframe
-            src={roadTrip.googleMapsEmbed}
-            width="100%"
-            height="450"
-            className="rounded-xl"
-            allowFullScreen
-          />
-        )}
-        {/* QR Code */}
-        {roadTrip.qrCode &&
-          urlFor(roadTrip.qrCode)?.width(150).height(150).url() && (
-            <Image
-              src={urlFor(roadTrip.qrCode).width(150).height(150).url()}
-              alt="QR code"
-              width={150}
-              height={150}
-            />
-          )}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
       </div>
+
+      <div className="px-6 md:px-30 -mt-20 md:-mt-32 relative z-10 pb-20">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+          {/* --- MAIN CONTENT --- */}
+          <div className="flex-1 space-y-8">
+            <div className="space-y-4">
+              <div className="w-16 h-1.5 bg-amber-400" />
+              <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight italic leading-[0.9] text-slate-900">
+                {roadTrip.title}
+              </h1>
+              <p className="text-lg md:text-xl text-slate-600 font-medium tracking-tight max-w-2xl leading-relaxed">
+                {roadTrip.description}
+              </p>
+            </div>
+
+            {/* STOPS SECTION */}
+            {roadTrip.stops?.length > 0 && (
+              <div className="space-y-6">
+                <h3 className="text-xl font-black tracking-widest text-slate-400 uppercase">
+                  Route Checkpoints
+                </h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {roadTrip.stops.map((stop, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-4 bg-slate-50 border-l-4 border-slate-900 p-4 transition-colors hover:border-amber-400"
+                    >
+                      <span className="text-2xl grayscale group-hover:grayscale-0">
+                        {stop.icon}
+                      </span>
+                      <div className="flex flex-col">
+                        <span className="font-black uppercase text-slate-900 tracking-tight">
+                          {stop.name}
+                        </span>
+                        <span className="text-xs uppercase font-bold text-slate-400 tracking-wide">
+                          {stop.notes}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* --- INFO SIDEBAR --- */}
+          <div className="w-full lg:w-96 bg-slate-900 text-white p-8 space-y-8 shadow-2xl">
+            <div className="space-y-6">
+              <h2 className="text-[10px] font-black tracking-[0.4em] text-amber-400 uppercase border-b border-white/10 pb-4">
+                Trip Logistics
+              </h2>
+
+              <div className="space-y-4">
+                {[
+                  { label: "Date", value: formattedDate },
+                  { label: "Departure", value: formattedTime },
+                  { label: "Distance", value: `${roadTrip.miles} Miles` },
+                  { label: "Duration", value: roadTrip.time },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex justify-between items-end border-b border-white/5 pb-2"
+                  >
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                      {item.label}
+                    </span>
+                    <span className="font-black uppercase italic tracking-tight">
+                      {item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* QR CODE SECTION */}
+            <div className="bg-white p-6 text-center space-y-4">
+              <h3 className="text-[10px] font-black text-slate-900 uppercase tracking-widest">
+                Digital Navigator
+              </h3>
+              <div className="bg-slate-50 p-2 inline-block">
+                <Image
+                  src={urlFor(roadTrip.qrCode).width(200).url()}
+                  alt="QR code"
+                  width={150}
+                  height={150}
+                  className="mx-auto"
+                />
+              </div>
+              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tight leading-tight">
+                Scan to sync route with Google Maps
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* --- MAP SECTION --- */}
+      {roadTrip.googleMapsEmbed && (
+        <div className="px-6 md:px-30 mb-20">
+          <div className="border-[12px] border-slate-50 overflow-hidden">
+            <iframe
+              src={roadTrip.googleMapsEmbed}
+              width="100%"
+              height="500"
+              className="grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
+      {/* --- GALLERY SECTION --- */}
+      <div className="px-6 md:px-30 pt-10 mb-20 border-t border-slate-100">
+        <div className="flex items-baseline gap-4 mb-10">
+          <h3 className="text-4xl md:text-7xl font-black tracking-tighter italic uppercase text-slate-900">
+            Gallery
+          </h3>
+          <div className="h-2 flex-grow bg-slate-900" />
+        </div>
+        <RoadTripGallery roadTrips={roadTrip.images} />
+      </div>
+
       <Footer />
     </div>
   );

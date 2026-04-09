@@ -1,131 +1,129 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Logo from "../components/Logo";
 import { SocialIcon } from "react-social-icons";
 import Address from "./Address";
 
 export default function Footer() {
   return (
     <footer
-      className="w-full relative lg:h-200 h-225 text-white flex flex-col bg-fixed bg-center bg-cover"
+      className="w-full relative min-h-screen text-white flex flex-col justify-between bg-fixed bg-center bg-cover overflow-hidden"
       style={{ backgroundImage: "url('/images/Ford rally.jpg')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-slate-900/90 z-0" />
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] z-0" />
 
-      {/* (3 columns) */}
-      <div className="relative z-10 w-full h-120 lg:gap-20 lg:flex lg:px-30 px-4 pt-10 lg:pt-15 pb-10">
-        <div className="flex-1">
-          <h1 className="bg-linear-to-l from-amber-500 to-yellow-200 bg-clip-text text-transparent lg:text-9xl lg:max-w-md text-6xl font-black text-left ">
-            CAR FARM SOCIAL
+      {/* Main Content Area */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+        {/* Brand Column */}
+        <div className="lg:col-span-5 flex flex-col justify-start">
+          <h1 className="bg-gradient-to-br from-amber-500 via-yellow-200 to-amber-600 bg-clip-text text-transparent text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter italic">
+            CAR FARM <br /> SOCIAL
           </h1>
+          <div className="mt-8 flex gap-4">
+            <SocialMediaLinks />
+          </div>
         </div>
 
-        <div className="flex-col flex pt-5">
-          <h3 className="font-semibold tracking-wide pb-3">FIND US</h3>
-          <Address />
-          <h3 className="pt-5 pb-3 font-semibold tracking-wide">
-            STANDARD OPENING TIMES
-          </h3>
-          <p>Open Thursdays from 6pm -8:30pm*</p>
-          <p>Closed for Autumn and Winter*</p>
-          <h3 className="font-semibold tracking-wide pt-5">FOLLOW US</h3>
-          <div className="relative z-10 pt-5 py-4 pb-7 flex gap-5 border-b border-white/50">
-            <SocialIcon
-              bgColor="#ffffff"
-              fgColor="#0f172a"
-              url="https://www.facebook.com/groups/3764447677206661"
-              style={{ height: 40, width: 40 }}
-            />
-            <SocialIcon
-              bgColor="#ffffff"
-              fgColor="#0f172a"
-              url="https://www.instagram.com/carfarmsocial/"
-              style={{ height: 40, width: 40 }}
-            />
-            <SocialIcon
-              bgColor="#ffffff"
-              fgColor="#0f172a"
-              url="https://www.youtube.com/@carfarmsocial"
-              style={{ height: 40, width: 40 }}
-            />
-          </div>
-
-          <div className="border-b border-white/50">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center mx-auto py-10">
-              {/* Llynclys Farm Shop */}
-              <div className="flex items-center justify-center w-40 h-20">
-                <Link href="https://llynclyshall.co.uk/">
-                  <Image
-                    src="/images/logo/llynclys-farm-shop.webp"
-                    alt="Llynclys Farm Shop logo"
-                    width={120}
-                    height={80}
-                    className="object-contain max-h-16"
-                    style={{ height: "auto", width: "auto" }}
-                  />
-                </Link>
-              </div>
-
-              {/* MB Coffee Van (no logo yet) */}
-              <div className="flex items-center justify-center w-40 h-20 border-white/40 border">
-                <Link href="https://llynclyshall.co.uk/mean-bean-coffee/">
-                  <p className="text-center text-white/80 font-semibold  px-3 py-2">
-                    MB Coffee Van
-                  </p>
-                </Link>
-              </div>
-
-              {/* P&B Tyres */}
-              <div className="flex items-center justify-center w-40 h-20 ">
-                <Link href="https://www.pandbtyres.co.uk/">
-                  <Image
-                    src="/images/logo/pb-tyres-logo.jpg"
-                    alt="P&B Tyres logo"
-                    width={120}
-                    height={80}
-                    style={{ height: "auto", width: "auto" }}
-                    className="object-contain max-h-16"
-                  />
-                </Link>
-              </div>
+        {/* Info Column */}
+        <div className="lg:col-span-3 space-y-8">
+          <div>
+            <h3 className="text-amber-500 font-black uppercase tracking-widest text-xs mb-4">
+              Find Us
+            </h3>
+            <div className="text-slate-300 font-medium leading-relaxed">
+              <Address />
             </div>
           </div>
-          <div className="pt-1">
-            <h3 className="tracking-wide  text-white/30">@ Car Farm Social</h3>
-            <h3 className=" tracking-wide pt-1 text-white/30">
-              Website by Alex Maksymiw
+
+          <div>
+            <h3 className="text-amber-500 font-black uppercase tracking-widest text-xs mb-4">
+              Standard Opening Times
             </h3>
+            <div className="text-slate-300 space-y-1">
+              <p className="font-bold text-white">Thursdays: 18:00 — 20:30*</p>
+              <p className="text-sm opacity-60">*Closed for Autumn & Winter</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Partners Column */}
+        <div className="lg:col-span-4">
+          <h3 className="text-amber-500 font-black uppercase tracking-widest text-xs mb-6">
+            Our Partners
+          </h3>
+          <div className="grid grid-cols-2 gap-4">
+            {/* Llynclys Farm Shop */}
+            <PartnerCard href="https://llynclyshall.co.uk/">
+              <Image
+                src="/images/logo/llynclys-farm-shop.webp"
+                alt="Llynclys Farm Shop"
+                width={100}
+                height={50}
+                className="object-contain brightness-0 invert"
+              />
+            </PartnerCard>
+
+            {/* MB Coffee Van */}
+            <PartnerCard href="https://llynclyshall.co.uk/mean-bean-coffee/">
+              <span className="text-[10px] font-bold uppercase tracking-tight text-center">
+                Mean Bean <br /> Coffee Van
+              </span>
+            </PartnerCard>
+
+            {/* P&B Tyres */}
+            <PartnerCard href="https://www.pandbtyres.co.uk/">
+              <Image
+                src="/images/logo/pb-tyres-logo.jpg"
+                alt="P&B Tyres"
+                width={100}
+                height={50}
+                className="object-contain grayscale invert hover:grayscale-0 transition-all"
+              />
+            </PartnerCard>
           </div>
         </div>
       </div>
 
-      {/* Bottom section */}
-      <div className=" hidden lg:px-56 px-4 lg:visible">
-        <div className="relative z-10 border-t border-white py-4 flex justify-center gap-5 text-center">
-          <SocialIcon
-            bgColor="#ffffff"
-            fgColor="#0f172a"
-            url="https://www.facebook.com/groups/3764447677206661"
-          />
-          <SocialIcon
-            bgColor="#ffffff"
-            fgColor="#0f172a"
-            url="https://www.instagram.com/carfarmsocial/"
-          />
-          <SocialIcon
-            bgColor="#ffffff"
-            fgColor="#0f172a"
-            url="https://www.youtube.com/@carfarmsocial"
-          />
+      {/* Bottom Legal Section */}
+      <div className="relative z-10 w-full bg-black/40 border-t border-white/10 py-8 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold uppercase tracking-widest">
+          <p>© 2025 CAR FARM SOCIAL. All rights reserved.</p>
+          <p className="hover:text-amber-500 transition-colors cursor-default">
+            Built by Alex Maksymiw
+          </p>
         </div>
-        <p className="text-sm text-center">
-          © 2025 CarFarmSocial. All rights reserved.
-        </p>
       </div>
     </footer>
+  );
+}
+
+// Helper Components for cleaner code
+function SocialMediaLinks() {
+  const socials = [
+    "https://www.facebook.com/groups/3764447677206661",
+    "https://www.instagram.com/carfarmsocial/",
+    "https://www.youtube.com/@carfarmsocial",
+  ];
+  return socials.map((url) => (
+    <SocialIcon
+      key={url}
+      url={url}
+      bgColor="transparent"
+      fgColor="white"
+      className="hover:scale-110 hover:bg-amber-500 rounded-full transition-all border border-white/20"
+      style={{ height: 40, width: 40 }}
+    />
+  ));
+}
+
+function PartnerCard({ children, href }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center justify-center bg-white/5 border border-white/10 rounded-xl h-20 px-4 hover:bg-white/10 hover:border-amber-500/50 transition-all group"
+    >
+      {children}
+    </Link>
   );
 }

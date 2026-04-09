@@ -4,274 +4,180 @@ import { useState, useEffect, useRef } from "react";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronDoubleRightIcon,
-  ChevronDoubleLeftIcon,
-} from "@heroicons/react/24/solid";
+  XMarkIcon,
+} from "@heroicons/react/24/outline"; // Switched to outline for a lighter touch
 
 export default function FeaturedModal({ featuredPosts }) {
-  // Pagination
   const postsPerPage = 6;
   const [page, setPage] = useState(0);
   const sectionRef = useRef(null);
   const totalPages = Math.ceil(featuredPosts.length / postsPerPage);
 
-  const MAX_BUTTONS = 3;
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [thumbIndex, setThumbIndex] = useState(0);
 
-  // Calculate start and end index of visible buttons
-  let startPage = Math.max(0, page - 1); // center current page
-  let endPage = startPage + MAX_BUTTONS;
-
-  if (endPage > totalPages) {
-    endPage = totalPages;
-    startPage = Math.max(0, endPage - MAX_BUTTONS);
-  }
-
-  const visiblePages = Array.from(
-    { length: endPage - startPage },
-    (_, i) => startPage + i,
-  );
-
-  // Modal
-  const [selectedIndex, setSelectedIndex] = useState(null); // index in featuredPosts
-  const [thumbIndex, setThumbIndex] = useState(0); // index of thumbnail in selected post
-
-  // Current post in modal
   const selectedPost =
     selectedIndex !== null ? featuredPosts[selectedIndex] : null;
 
-  // Reset thumbnail index when switching posts
   useEffect(() => {
     setThumbIndex(0);
   }, [selectedIndex]);
 
   const handlePageChange = (i) => {
     setPage(i);
-
-    setTimeout(() => {
-      if (sectionRef.current) {
-        const top =
-          sectionRef.current.getBoundingClientRect().top + window.scrollY - 80;
-
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }, 0);
+    if (sectionRef.current) {
+      const top =
+        sectionRef.current.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
-  // Paginated posts for the grid
   const paginatedPosts = featuredPosts.slice(
     page * postsPerPage,
     page * postsPerPage + postsPerPage,
   );
 
   return (
-    <>
-      {/* Grid of posts */}
-      <section ref={sectionRef} className="grid md:grid-cols-3 gap-6 pt-10">
+    <div className="w-full">
+      {/* 1. THE GRID: Clean & Direct */}
+      <section
+        ref={sectionRef}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10"
+      >
         {paginatedPosts.map((post, i) => (
           <div
             key={post._id}
             onClick={() => setSelectedIndex(page * postsPerPage + i)}
-            className="cursor-pointer rounded-xl overflow-hidden relative"
+            className="group relative cursor-pointer aspect-[4/5] bg-slate-100 overflow-hidden"
           >
-            <div className="absolute bottom-10 pl-10 z-10">
-              <h3 className="text-2xl font-bold text-white">{post.title}</h3>
+            {/* Soft Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+
+            <div className="absolute bottom-6 left-6 right-6 z-20">
+              <h3 className="text-xl font-bold text-white uppercase tracking-tight">
+                {post.title}
+              </h3>
             </div>
 
             {post.thumbnails?.length > 0 ? (
               <img
                 src={post.thumbnails[0].asset.url}
                 alt={post.title}
-                className="w-full h-125 object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
-              <div className="h-48 flex items-center justify-center">
-                No image yet
+              <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400 font-bold uppercase text-[10px]">
+                No Image
               </div>
             )}
           </div>
         ))}
       </section>
-      <div className="flex justify-center mt-8 gap-2 flex-wrap">
-        {/* First page */}
-        {page !== 0 && (
-          <button
-            onClick={() => handlePageChange(0)}
-            className="px-3 py-1 bg-slate-100 hover:bg-slate-300 rounded text-slate-900 "
-          >
-            <ChevronDoubleLeftIcon className="w-4 h-4" />
-          </button>
-        )}
 
-        {/* Prev */}
-        {page > 0 && (
-          <button
-            onClick={() => handlePageChange(page - 1)}
-            className="px-3 py-1 bg-slate-100 hover:bg-slate-300 rounded text-slate-900 hover:cursor-pointer"
-          >
-            <ChevronLeftIcon className="w-4 h-4" />
-          </button>
-        )}
+      {/* 2. THE PAGINATION: Minimal Bars */}
+      <div className="flex justify-center items-center mt-12 gap-8">
+        <button
+          disabled={page === 0}
+          onClick={() => handlePageChange(page - 1)}
+          className="text-slate-400 hover:text-slate-900 disabled:opacity-20 transition-colors"
+        >
+          <ChevronLeftIcon className="w-5 h-5" />
+        </button>
 
-        {/* Visible page numbers */}
-        {visiblePages.map((i) => (
-          <button
-            key={i}
-            onClick={() => handlePageChange(i)}
-            className={`px-3 py-1 rounded ${
-              page === i
-                ? "bg-slate-900 text-slate text-sm font-semibold"
-                : "bg-slate-100 hover:bg-slate-300 text-slate-900 font-semibold hover:cursor-pointer"
-            }`}
-          >
-            {i + 1}
-          </button>
-        ))}
+        <div className="flex gap-2">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => handlePageChange(i)}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                page === i ? "bg-slate-900 w-8" : "bg-slate-200 w-4"
+              }`}
+            />
+          ))}
+        </div>
 
-        {/* Next */}
-        {page < totalPages - 1 && (
-          <button
-            onClick={() => handlePageChange(page + 1)}
-            className="px-3 py-1 bg-slate-100 hover:bg-slate-300 rounded text-slate-900 hover:cursor-pointer"
-          >
-            <ChevronRightIcon className="w-4 h-4" />
-          </button>
-        )}
-
-        {/* Last page */}
-        {page !== totalPages - 1 && (
-          <button
-            onClick={() => handlePageChange(totalPages - 1)}
-            className="px-3 py-1 rounded bg-slate-100 hover:bg-slate-300 text-slate-900 hover:cursor-pointer"
-          >
-            <ChevronDoubleRightIcon className="w-4 h-4" />
-          </button>
-        )}
+        <button
+          disabled={page === totalPages - 1}
+          onClick={() => handlePageChange(page + 1)}
+          className="text-slate-400 hover:text-slate-900 disabled:opacity-20 transition-colors"
+        >
+          <ChevronRightIcon className="w-5 h-5" />
+        </button>
       </div>
-      {/* Modal */}
+
+      {/* 3. THE MODAL: Modern Viewport */}
       {selectedPost && (
         <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-white p-4 md:p-10 animate-in fade-in duration-200"
           onClick={() => setSelectedIndex(null)}
-          className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 pt-15"
         >
+          <button className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors z-[110]">
+            <XMarkIcon className="w-8 h-8" />
+          </button>
+
           <div
+            className="relative w-full max-w-6xl h-full flex flex-col justify-center"
             onClick={(e) => e.stopPropagation()}
-            className="rounded-xl h-175 w-175 overflow-hidden relative"
           >
-            {/* Post arrows (cycle posts) */}
-            <button
-              onClick={() =>
-                setSelectedIndex((prev) =>
-                  prev === 0 ? featuredPosts.length - 1 : prev - 1,
-                )
-              }
-              className="fixed left-4 top-1/2 -translate-y-1/2 z-50 text-white text-4xl font-black cursor-pointer"
-            >
-              ←
-            </button>
-            <button
-              onClick={() =>
-                setSelectedIndex((prev) =>
-                  prev === featuredPosts.length - 1 ? 0 : prev + 1,
-                )
-              }
-              className="fixed right-4 top-1/2 -translate-y-1/2 z-50 text-white text-4xl font-black cursor-pointer"
-            >
-              →
-            </button>
-
-            {/* Thumbnail arrows and image */}
-            {selectedPost?.thumbnails?.length > 0 &&
-              selectedPost.thumbnails[thumbIndex] && (
-                <>
+            {/* Gallery Navigation */}
+            {selectedPost.mediaType === "image" &&
+              selectedPost.thumbnails.length > 1 && (
+                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-30 pointer-events-none">
                   <button
                     onClick={() =>
-                      setThumbIndex((prev) =>
-                        prev === 0
-                          ? selectedPost.thumbnails.length - 1
-                          : prev - 1,
+                      setThumbIndex((p) =>
+                        p === 0 ? selectedPost.thumbnails.length - 1 : p - 1,
                       )
                     }
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 rounded-full text-4xl font-black cursor-pointer hover:text-gray-800"
+                    className="p-3 bg-white/90 shadow-sm border border-slate-100 text-slate-900 pointer-events-auto hover:bg-slate-900 hover:text-white transition-all"
                   >
-                    ←
+                    <ChevronLeftIcon className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() =>
-                      setThumbIndex((prev) =>
-                        prev === selectedPost.thumbnails.length - 1
-                          ? 0
-                          : prev + 1,
+                      setThumbIndex((p) =>
+                        p === selectedPost.thumbnails.length - 1 ? 0 : p + 1,
                       )
                     }
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 rounded-full text-4xl font-black cursor-pointer hover:text-gray-800"
+                    className="p-3 bg-white/90 shadow-sm border border-slate-100 text-slate-900 pointer-events-auto hover:bg-slate-900 hover:text-white transition-all"
                   >
-                    →
+                    <ChevronRightIcon className="w-5 h-5" />
                   </button>
-
-                  {/* IMAGE POSTS */}
-                  {selectedPost.mediaType === "image" &&
-                    selectedPost?.thumbnails?.length > 0 &&
-                    selectedPost.thumbnails[thumbIndex] && (
-                      <>
-                        <button
-                          onClick={() =>
-                            setThumbIndex((prev) =>
-                              prev === 0
-                                ? selectedPost.thumbnails.length - 1
-                                : prev - 1,
-                            )
-                          }
-                          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 text-4xl font-black cursor-pointer"
-                        >
-                          ←
-                        </button>
-
-                        <button
-                          onClick={() =>
-                            setThumbIndex((prev) =>
-                              prev === selectedPost.thumbnails.length - 1
-                                ? 0
-                                : prev + 1,
-                            )
-                          }
-                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 text-4xl font-black cursor-pointer"
-                        >
-                          →
-                        </button>
-
-                        <img
-                          src={selectedPost.thumbnails[thumbIndex].asset.url}
-                          alt={selectedPost.title}
-                          className="w-full h-full object-bottom object-cover rounded-xl"
-                        />
-                      </>
-                    )}
-                  {/* VIDEO POSTS */}
-                  {selectedPost.mediaType === "video" &&
-                    selectedPost.videoFile?.asset?.url && (
-                      <video
-                        src={selectedPost.videoFile.asset.url}
-                        controls
-                        autoPlay
-                        loop
-                        className="w-full h-full object-cover rounded-xl"
-                      />
-                    )}
-                  {/* EMBED POSTS */}
-                  {selectedPost.mediaType === "embed" &&
-                    selectedPost.embedUrl && (
-                      <iframe
-                        src={selectedPost.embedUrl}
-                        className="w-full h-full rounded-xl"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                      />
-                    )}
-                </>
+                </div>
               )}
+
+            <div className="relative flex-grow max-h-[80vh] bg-slate-50">
+              {selectedPost.mediaType === "image" && (
+                <img
+                  src={selectedPost.thumbnails[thumbIndex].asset.url}
+                  className="w-full h-full object-contain"
+                  alt=""
+                />
+              )}
+              {selectedPost.mediaType === "video" && (
+                <video
+                  src={selectedPost.videoFile?.asset?.url}
+                  controls
+                  className="w-full h-full object-contain bg-black"
+                />
+              )}
+            </div>
+
+            {/* Modal Info Footer - Grounded & Clean */}
+            <div className="mt-8">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-0.5 bg-amber-400" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                  {thumbIndex + 1} / {selectedPost.thumbnails?.length || 1}
+                </span>
+              </div>
+              <h2 className="text-3xl font-black text-slate-900 uppercase italic">
+                {selectedPost.title}
+              </h2>
+            </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

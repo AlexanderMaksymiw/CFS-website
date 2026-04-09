@@ -1,77 +1,59 @@
-"use client";
 import Footer from "../components/Footer";
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import SubPageHero from "../components/SubPageHero";
+import MerchContainer from "../components/MerchContainer";
+import Image from "next/image";
+import Map from "../components/Map";
+import Header from "../components/Header";
 
-const merchDescription = {
-  mainText: `We didn't start Car Farm Social to turn a profit, we built it out of
-our love for cars and the drive to foster a real community around
-them. Every piece of merch we make reflects that same passion. It's
-not about selling stuff; it's about giving people in the scene a way
-to connect, represent, and feel like they're part of something bigger
-than just the next meet or weekend drive.`,
-
-  stickersText: `The stickers are one of the most fun ways to show you're part of Car
-            Farm Social. Slap one on your car, and it's more than just a graphic
-            it's a badge that says you're in the culture with us. Next time
-            you're out on the road, keep an eye out for CFS stickers on other
-            cars; it's like spotting another member of the crew while cruising
-            around. That instant recognition is what makes the community real.`,
-
-  hoodiesText: `Hoodies that bring the same energy: comfortable, reliable, and
-perfect whether you're at the track, wrenching in the garage, or
-just chilling with friends. CFS hoodies are in limited supply so
-make sure to pick one up before they're all gone.`,
-};
-
-export default function Merch() {
+export default async function Merch() {
   return (
-    <div>
-      <SubPageHero title={"CFS Merch"} images={["/images/r8-black.jpg"]} />
+    <div className="bg-white">
+      <Header />
+      <SubPageHero title="CFS MERCH" images={["/images/r8-black.jpg"]} />
 
-      <div className="flex flex-col items-center pt-10 sm:px-6 md:px-0 w-full pb-20">
-        <h3 className="text-lg sm:text-2xl md:text-3xl font-medium text-center md:text-left max-w-sm md:max-w-4xl mx-auto text-slate-800">
-          {merchDescription.mainText}
-        </h3>
+      <div className="px-6 md:px-30 pt-20">
+        <div className="flex items-baseline gap-4 mb-12">
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
+            The Collection
+          </h2>
+          <div className="h-0.5 flex-grow bg-slate-900" />
+        </div>
+        <MerchContainer />
       </div>
-      <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2  mx-auto max-w-8xl justify-center">
-        <div className="relative w-full h-60 sm:h-80 md:h-110">
+
+      {/* --- FEATURED STICKERS SECTION --- */}
+      <div className="relative grid md:grid-cols-2 mt-20 border-t border-slate-900">
+        <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden group">
           <Image
             src="/images/cfs-stickers.jpg"
             alt="CFS Stickers"
             fill
-            className="object-cover "
+            className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
+          {/* Angular Overlay */}
+          <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors" />
         </div>
-        <div className="space-y-6">
-          <h2 className="text-3xl font-semibold text-slate-800 text-center md:text-left">
-            CFS Stickers
-          </h2>
-          <p className="text-lg text-slate-700 max-w-3xl mb-10">
-            {merchDescription.stickersText}
-          </p>
+
+        <div className="flex flex-col justify-center p-10 md:p-24 bg-slate-900 text-white space-y-8">
+          <div className="w-20 h-2 bg-amber-400" />
+          <div className="space-y-4">
+            <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-[0.8]">
+              JOIN THE <br /> LINEUP
+            </h2>
+            <p className="text-slate-400 font-medium text-lg leading-relaxed max-w-md">
+              Grab some CFS vinyl, just a small way to show you’re part of the
+              crew.
+            </p>
+          </div>
+          <div className="bg-amber-400/10 border border-amber-400/20 p-4 w-fit">
+            <p className="text-amber-400 text-xs font-bold uppercase tracking-widest">
+              Available at CFS
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="grid gap-10 items-center px-4 sm:px-6 md:px-10 lg:px-40 md:grid-cols-2 mx-auto max-w-8xl justify-center mt-20 mb-20">
-        <div className="order-2 md:order-1 space-y-6">
-          <h2 className="text-3xl font-semibold text-slate-800 text-center md:text-left">
-            CFS Hoodies
-          </h2>
-          <p className="text-lg text-slate-700 max-w-2xl md:text-left mb-10">
-            {merchDescription.hoodiesText}
-          </p>
-        </div>
-        <div className="relative order-1 md:order-2 w-full h-60 sm:h-80 md:h-110">
-          <Image
-            src="/images/cfs-hoodie.jpg"
-            alt="CFS Hoodie"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </div>
+      <Map />
       <Footer />
     </div>
   );

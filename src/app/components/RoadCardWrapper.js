@@ -1,4 +1,4 @@
-"use client"; // needed for useState
+"use client";
 import { useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -11,7 +11,6 @@ export default function RoadCardWrapper() {
   const [page, setPage] = useState(0);
   const postsPerPage = 6;
 
-  // Fetch data client-side (could also use server component + pass in as prop)
   useEffect(() => {
     async function fetchTrips() {
       const trips = await client.fetch(ROADTRIPS_QUERY);

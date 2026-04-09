@@ -1,4 +1,4 @@
-"use client"; // only needed if you want client features on the page itself
+"use client";
 
 import Footer from "../components/Footer";
 import RoadCardWrapper from "../components/RoadCardWrapper";
@@ -9,6 +9,7 @@ export default function RoadTripsPage() {
     <main>
       <SubPageHeroNews
         title="ROAD TRIPS"
+        category="Road Trips"
         images={["/images/elan-valley-convoy-bridge.jpg"]}
       />
 

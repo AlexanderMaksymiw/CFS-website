@@ -2,37 +2,68 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ArticleBannerClient({ post }) {
-  return (
-    <section className="relative flex px-30 h-100 ">
-      <div className="absolute inset-0  ">
-        {post && (
-          <Image
-            src={post.imageUrl || "/images/placeholder.jpg"}
-            className="w-full h-full px-30 object-cover "
-            alt={post.title}
-            fill
-          />
-        )}
-      </div>
+  if (!post) return null;
 
+  return (
+    <section className="relative w-full h-[400px] md:h-[600px] bg-slate-900 overflow-hidden">
+      {/* 1. TEXT / SLATE BLADE */}
       <div
-        className="relative z-10 bg-amber-700 text-white w-[60%] px-12 flex flex-col justify-center"
+        className="absolute inset-y-0 left-0 h-full w-full bg-slate-900 text-white z-20"
         style={{
-          clipPath: "polygon(0 0, 50% 0, 70% 100%, 0% 100%)",
+          /* Angles perfectly to meet the image cut */
+          clipPath:
+            "polygon(0 0, calc(50% + 5vw) 0%, calc(50% - 5vw) 100%, 0% 100%)",
         }}
       >
-        <div>
-          <h2 className="text-3xl font-bold mb-4 text-left max-w-sm">
-            Example heading {post.title}
-          </h2>
-          <p className="text-left max-w-sm">{post.intro}</p>
+        <div className="flex flex-col justify-center h-full px-6 md:px-30">
+          <div className="max-w-2xl space-y-4">
+            {/* Category / Eyebrow */}
+            <span className="text-amber-400 font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">
+              Featured Story
+            </span>
+
+            {/* Title with that tight/italic look */}
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic leading-[0.9] text-white">
+              {post.title}
+            </h2>
+
+            {/* Intro text */}
+            <p className="text-slate-300 text-base md:text-lg font-medium max-w-lg line-clamp-3 tracking-tight leading-relaxed">
+              {post.intro}
+            </p>
+
+            {/* CFS Action Button (No line this time, keep it clean like the grid) */}
+            <div className="pt-8 flex">
+              <Link
+                href={`/latest/${post.slug}`}
+                className="inline-flex items-center gap-4 bg-amber-400 text-slate-900 px-10 py-4 rounded-sm font-black uppercase tracking-widest text-xs transition-transform hover:scale-105"
+              >
+                Read Article
+              </Link>
+            </div>
+          </div>
         </div>
-        <Link
-          href={`/latest/${post.slug}`}
-          className="flex flex-col cursor-pointer "
-        >
-          <button className="pt-10 self-start">Read more</button>
-        </Link>
+      </div>
+
+      {/* 2. IMAGE / BLADE */}
+      <div
+        className="absolute inset-y-0 right-0 h-full w-full bg-slate-800 z-10"
+        style={{
+          /* Opposite cut to create the seam */
+          clipPath:
+            "polygon(calc(50% + 5vw) 0%, 100% 0%, 100% 100%, calc(50% - 5vw) 100%)",
+        }}
+      >
+        <Image
+          src={post.imageUrl || "/images/placeholder.jpg"}
+          className="object-cover"
+          alt={post.title}
+          fill
+          priority
+        />
+
+        {/* CINEMATIC GRADIENT: Darkens the image for focus (seen in image_0.png) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950/20" />
       </div>
     </section>
   );

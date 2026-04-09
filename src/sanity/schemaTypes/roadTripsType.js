@@ -24,6 +24,38 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "stops",
+      title: "Stops",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Stop Name",
+              type: "string",
+            },
+            {
+              name: "type",
+              title: "Type",
+              type: "string",
+            },
+            {
+              name: "icon",
+              title: "Icon",
+              type: "string",
+            },
+            {
+              name: "notes",
+              title: "Notes",
+              type: "text",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "time",
       title: "Estimated Time",
       type: "string",

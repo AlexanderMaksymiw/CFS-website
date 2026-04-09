@@ -8,11 +8,10 @@ export default function Latest() {
     <main>
       <SubPageHeroNews
         title="LATEST NEWS"
+        category="News"
         images={["/images/skoda-drive.jpg"]}
       />
-      <div className="pt-10">
-        <ArticleBannerServer />
-      </div>
+
       <div className="lg:px-30 px-4 pt-10 pb-20">
         <ArticleCardWrapper />
       </div>
