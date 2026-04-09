@@ -5,7 +5,7 @@ export default function ArticleBannerClient({ post }) {
   if (!post) return null;
 
   return (
-    <section className="relative w-full h-[400px] md:h-[600px] bg-slate-900 overflow-hidden">
+    <section className="relative w-full h-100 md:h-150 bg-slate-900 overflow-hidden">
       {/* 1. TEXT / SLATE BLADE */}
       <div
         className="absolute inset-y-0 left-0 h-full w-full bg-slate-900 text-white z-20"
@@ -63,7 +63,7 @@ export default function ArticleBannerClient({ post }) {
         />
 
         {/* CINEMATIC GRADIENT: Darkens the image for focus (seen in image_0.png) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-transparent to-slate-950/20" />
       </div>
     </section>
   );

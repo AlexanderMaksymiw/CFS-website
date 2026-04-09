@@ -38,7 +38,7 @@ export default function Share() {
         {/* The Media Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
           {/* LEFT: Featured Static Shot */}
-          <div className="md:col-span-5 relative group h-[400px] md:h-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-black transition-transform hover:-rotate-1">
+          <div className="md:col-span-5 relative group h-100 md:h-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-black transition-transform hover:-rotate-1">
             <Image
               src="/images/subaru-couple.jpg"
               alt="Subaru Couple"
@@ -49,7 +49,7 @@ export default function Share() {
           </div>
 
           {/* RIGHT: The Live Slideshow */}
-          <div className="md:col-span-7 relative h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-black rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className="md:col-span-7 relative h-125 rounded-3xl overflow-hidden shadow-2xl border-4 border-black rotate-1 hover:rotate-0 transition-transform duration-500">
             <div className="absolute inset-0">
               <Slideshow
                 images={[

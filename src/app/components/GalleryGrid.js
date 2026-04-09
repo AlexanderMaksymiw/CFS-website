@@ -9,7 +9,7 @@ export default function GalleryGrid({ images }) {
         {images.map((src, index) => (
           <div
             key={index}
-            className="relative w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden"
+            className="relative w-full aspect-4/3 sm:aspect-4/3 md:aspect-video overflow-hidden"
           >
             <Image
               src={src}

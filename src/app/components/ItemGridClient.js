@@ -46,10 +46,10 @@ export default function ItemGrid({ posts }) {
             <Link
               key={post._id}
               href={`/latest/${post.slug}`}
-              className="flex flex-col h-[300px] sm:h-[350px] cursor-pointer"
+              className="flex flex-col h-75 sm:h-87.5 cursor-pointer"
             >
               <div className="border border-gray-200 shadow-indigo-200 shadow bg-white flex flex-col h-full">
-                <div className="relative h-[180px] sm:h-[250px] overflow-hidden w-full">
+                <div className="relative h-45 sm:h-62.5 overflow-hidden w-full">
                   <Image
                     src={post.imageUrl || "/images/placeholder.jpg"}
                     alt={post.title}

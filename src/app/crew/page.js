@@ -17,7 +17,6 @@ export default async function Crew() {
       <Header />
       <SubPageHero title="THE CREW" images={["/images/hero/bmw-back.jpg"]} />
 
-      {/* --- INTRO SECTION: MAGAZINE SPREAD --- */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] items-center border-b border-slate-900">
         <div className="p-6 md:p-20 lg:p-30 space-y-8">
           <div className="w-20 h-2 bg-amber-400" />
@@ -35,7 +34,7 @@ export default async function Crew() {
             to keep the gears turning every Thursday night.
           </p>
         </div>
-        <div className="relative h-[400px] lg:h-full w-full bg-slate-100">
+        <div className="relative h-100 lg:h-full w-full bg-slate-100">
           <Image
             src="/images/marshals-group.jpg"
             alt="CFS group"
@@ -45,13 +44,7 @@ export default async function Crew() {
         </div>
       </div>
 
-      {/* --- SAFETY SECTION: ANGULAR & BOLD --- */}
       <div className="relative bg-slate-900 py-24 md:py-40 overflow-hidden">
-        {/* Decorative Background Text */}
-        <div className="absolute top-0 left-0 text-[15vw] font-black text-white/[0.03] italic leading-none select-none pointer-events-none whitespace-nowrap">
-          SAFETY FIRST • SAFETY FIRST •
-        </div>
-
         <div className="relative px-6 md:px-30">
           <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-20">
             <h2 className="text-5xl md:text-8xl font-black italic tracking-tighter text-white uppercase leading-none">
@@ -72,7 +65,7 @@ export default async function Crew() {
             ].map((src, idx) => (
               <div
                 key={idx}
-                className="relative aspect-[4/5] bg-slate-800 border-b-4 border-amber-400 overflow-hidden group"
+                className="relative aspect-4/5 bg-slate-800 border-b-4 border-amber-400 overflow-hidden group"
               >
                 <Image
                   src={src}
@@ -86,13 +79,12 @@ export default async function Crew() {
         </div>
       </div>
 
-      {/* --- CREW DIRECTORY --- */}
       <div className="px-6 md:px-30 py-32">
         <div className="flex items-baseline gap-4 mb-20">
           <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
             MEET THE MARSHALS
           </h2>
-          <div className="h-0.5 flex-grow bg-slate-900" />
+          <div className="h-0.5 grow bg-slate-900" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">

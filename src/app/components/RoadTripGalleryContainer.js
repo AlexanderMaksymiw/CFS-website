@@ -43,14 +43,13 @@ export default function RoadTripGallery({ roadTrips }) {
                 alt={`Gallery image ${i}`}
                 className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-110 group-hover:opacity-60"
               />
-              {/* Amber Frame hover effect */}
-              <div className="absolute inset-0 border-0 group-hover:border-[1px] border-amber-400 transition-all duration-200" />
+
+              <div className="absolute inset-0 border-0] border-amber-400 transition-all duration-200" />
             </div>
           );
         })}
       </div>
 
-      {/* PAGINATION */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-8 mt-16 border-t border-slate-100 pt-10">
           <button
@@ -84,7 +83,7 @@ export default function RoadTripGallery({ roadTrips }) {
       {/* LIGHTBOX / MODAL */}
       {selectedIndex !== null && galleryImages[selectedIndex] && (
         <div
-          className="fixed inset-0 z-[200] bg-slate-950 flex flex-col animate-in fade-in duration-300"
+          className="fixed inset-0 z-200 bg-slate-950 flex flex-col animate-in fade-in duration-300"
           onClick={() => setSelectedIndex(null)}
         >
           <div className="p-6 flex justify-between items-center text-white">
@@ -97,7 +96,7 @@ export default function RoadTripGallery({ roadTrips }) {
             />
           </div>
 
-          <div className="flex-grow relative flex items-center justify-center p-4">
+          <div className="grow relative flex items-center justify-center p-4">
             <button
               onClick={(e) => {
                 e.stopPropagation();

@@ -20,19 +20,12 @@ export default function SubPageHero({ title, images, subtitle }) {
         priority
       />
 
-      {/* GRADIENT OVERLAY:
-        Using Slate-900/80 at the bottom to blend into your page content 
-        and Slate-900/40 at the top to make the Header legible.
-      */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900/40 z-10" />
+      <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-transparent to-slate-900/40 z-10" />
 
-      {/* CONTENT BOX */}
       <div className="absolute inset-0 z-20 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-30 text-white">
         <div className="max-w-4xl space-y-2">
-          {/* Subtle Accent Line */}
           <div className="w-12 h-1 bg-amber-400 mb-4" />
 
-          {/* Breadcrumb or Subtitle (Optional but pro) */}
           {subtitle && (
             <span className="text-xs font-black uppercase tracking-[0.3em] text-amber-400 block mb-2">
               {subtitle}

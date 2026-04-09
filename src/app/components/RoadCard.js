@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function RoadCard({ title, description, image, link }) {
   return (
     <Link href={link} className="group block relative overflow-hidden">
-      <div className="relative w-full h-[500px] md:h-[600px] bg-slate-900">
+      <div className="relative w-full h-125 md:h-150 bg-slate-900">
         <Image
           src={image}
           alt={title}
@@ -17,7 +17,7 @@ export default function RoadCard({ title, description, image, link }) {
         {/* HEAVIER GRADIENT: 
            This allows smaller text to be perfectly legible without needing to be massive.
         */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
           <div className="space-y-4">
@@ -31,7 +31,7 @@ export default function RoadCard({ title, description, image, link }) {
             {/* Tuned down the size from 5xl to 3xl/4xl 
                Increased leading slightly so the italics don't clash 
             */}
-            <h5 className="text-3xl md:text-4xl font-black text-white leading-[1] uppercase tracking-tight italic antialiased group-hover:text-amber-400 transition-colors max-w-[90%]">
+            <h5 className="text-3xl md:text-4xl font-black text-white leading-none uppercase tracking-tight italic antialiased group-hover:text-amber-400 transition-colors max-w-[90%]">
               {title}
             </h5>
 

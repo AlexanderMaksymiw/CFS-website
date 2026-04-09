@@ -4,19 +4,16 @@ import Link from "next/link";
 
 export default function Content({ img, title, text, button, href }) {
   return (
-    <div className="group h-[500px] rounded-2xl relative bg-slate-900 overflow-hidden shadow-lg border border-white/5">
-      {/* Image with a subtle zoom effect on hover */}
+    <div className="group h-125 rounded-2xl relative bg-slate-900 overflow-hidden shadow-lg border border-white/5">
       <Image
         src={img}
         alt={title}
         fill
-        className=" opacity-60 transition-transform duration-700 group-hover:scale-102"
+        className=" opacity-60 transition-transform duration-700 group-hover:scale-102 object-cover object-top"
       />
 
-      {/* Modern Gradient Overlay to ensure text is always readable */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
-      {/* Content anchored to the bottom left for a magazine feel */}
       <div className="absolute bottom-10 left-10 right-10 text-white space-y-4 z-10">
         <h2 className="text-white text-5xl font-black uppercase tracking-tight leading-none italic">
           {title}

@@ -30,7 +30,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="relative h-[500px] lg:h-full w-full bg-slate-100 overflow-hidden">
+        <div className="relative h-125 lg:h-full w-full bg-slate-100 overflow-hidden">
           <Image
             src="/images/datsun-240z.jpg"
             alt="Datsun 240Z"
@@ -45,7 +45,7 @@ export default function Gallery() {
           <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
             COMMUNITY HIGHLIGHTS
           </h2>
-          <div className="h-0.5 flex-grow bg-slate-900" />
+          <div className="h-0.5 grow bg-slate-900" />
         </div>
         <div className="px-6 md:px-30">
           <Featured />

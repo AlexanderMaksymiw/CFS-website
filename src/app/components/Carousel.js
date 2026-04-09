@@ -67,22 +67,19 @@ export default function Carousel({ posts = [] }) {
               <Link
                 key={post._id}
                 href={`/latest/${post.slug}`}
-                className="min-w-[380px] group cursor-pointer"
+                className="min-w-95 group cursor-pointer"
               >
-                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-slate-100 shadow-xl">
-                  {/* Image with subtle zoom on hover */}
+                <div className="relative h-125 rounded-2xl overflow-hidden bg-slate-100 shadow-xl">
                   <Image
                     src={post.imageUrl}
                     alt={post.title}
                     fill
                     sizes="400px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-103"
+                    className="object-cover transition-transform duration-700 group-hover:scale-102"
                   />
 
-                  {/* Gradient Overlay - Protects text without killing image brightness */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
-                  {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                     <div className="space-y-3">
                       <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-70">
@@ -110,7 +107,6 @@ export default function Carousel({ posts = [] }) {
           </motion.div>
         </div>
 
-        {/* Progress Bar */}
         <div className="mt-12 h-1 bg-gray-100 w-full rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-black"

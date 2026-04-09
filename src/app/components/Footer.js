@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
         {/* Brand Column */}
         <div className="lg:col-span-5 flex flex-col justify-start">
-          <h1 className="bg-gradient-to-br from-amber-500 via-yellow-200 to-amber-600 bg-clip-text text-transparent text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter italic">
+          <h1 className="bg-linear-to-br from-amber-500 via-yellow-200 to-amber-600 bg-clip-text text-transparent text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter italic">
             CAR FARM <br /> SOCIAL
           </h1>
           <div className="mt-8 flex gap-4">

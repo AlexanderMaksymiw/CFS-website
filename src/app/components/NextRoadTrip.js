@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function NextRoadTrip({ img, title, text, button, href }) {
   return (
-    <div className="group h-[500px] md:h-[600px] relative bg-slate-900 overflow-hidden  transition-all duration-500">
+    <div className="group h-125 md:h-150 relative bg-slate-900 overflow-hidden  transition-all duration-500">
       {/* Background Image */}
       <Image
         src={img}
@@ -15,7 +15,7 @@ export default function NextRoadTrip({ img, title, text, button, href }) {
       />
 
       {/* Industrial Gradient: Heavier on mobile for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent md:bg-gradient-to-r md:from-slate-900 md:via-slate-900/20 md:to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent md:bg-linear-to-r md:from-slate-900 md:via-slate-900/20 md:to-transparent" />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-16 text-white">

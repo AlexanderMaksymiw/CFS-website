@@ -6,7 +6,7 @@ export default function ArticleCard({ title, description, image, link }) {
   return (
     <Link href={link} className="group flex flex-col bg-white overflow-hidden">
       {/* Image Container */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden bg-slate-100">
+      <div className="relative w-full aspect-4/3 overflow-hidden bg-slate-100">
         <Image
           src={image}
           alt={title}
@@ -15,7 +15,7 @@ export default function ArticleCard({ title, description, image, link }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {/* Amber Corner Accent on Hover */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-amber-400 border-l-[40px] border-l-transparent translate-x-10 -translate-y-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+        <div className="absolute top-0 right-0 w-0 h-0 border-t-40 border-t-amber-400 border-l-40 border-l-transparent translate-x-10 -translate-y-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
       </div>
 
       {/* Text Content */}

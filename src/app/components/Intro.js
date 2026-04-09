@@ -15,7 +15,7 @@ export default function Intro({ eyebrow, title, content }) {
           playsInline
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-slate-900/60" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/20 to-slate-900/60" />
         <div className="absolute inset-0 bg-slate-900/30" />
 
         {/* Content Container */}

@@ -57,7 +57,7 @@ export default function Location() {
         </div>
 
         {/* Scaled Map: Reduced height to 450px and width to 60% */}
-        <div className="relative w-full md:w-[60%] h-[350px] md:h-[450px] md:-mt-10 overflow-hidden shadow-2xl rounded-[2.5rem] border-[10px] border-black/5 transition-transform duration-500 hover:scale-[1.01]">
+        <div className="relative w-full md:w-[60%] h-87.5 md:h-112.5 md:-mt-10 overflow-hidden shadow-2xl rounded-[2.5rem] border-10 border-black/5 transition-transform duration-500 hover:scale-[1.01]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.7722663358454!2d-3.0629201877035204!3d52.81510861422269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487aafeb1b7a353f%3A0xc61f56e9c4351229!2sLlynclys%20Hall%20Farm%20Shop!5e1!3m2!1sen!2suk!4v1757073250337!5m2!1sen!2suk"
             className="absolute top-0 left-0 w-full h-full border-0 grayscale-[0.2] contrast-[1.1] brightness-[1.05]"

@@ -48,10 +48,10 @@ export default function FeaturedModal({ featuredPosts }) {
           <div
             key={post._id}
             onClick={() => setSelectedIndex(page * postsPerPage + i)}
-            className="group relative cursor-pointer aspect-[4/5] bg-slate-100 overflow-hidden"
+            className="group relative cursor-pointer aspect-4/5 bg-slate-100 overflow-hidden"
           >
             {/* Soft Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10" />
 
             <div className="absolute bottom-6 left-6 right-6 z-20">
               <h3 className="text-xl font-bold text-white uppercase tracking-tight">
@@ -108,10 +108,10 @@ export default function FeaturedModal({ featuredPosts }) {
       {/* 3. THE MODAL: Modern Viewport */}
       {selectedPost && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-white p-4 md:p-10 animate-in fade-in duration-200"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-white p-4 md:p-10 animate-in fade-in duration-200"
           onClick={() => setSelectedIndex(null)}
         >
-          <button className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors z-[110]">
+          <button className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors z-110">
             <XMarkIcon className="w-8 h-8" />
           </button>
 
@@ -146,7 +146,7 @@ export default function FeaturedModal({ featuredPosts }) {
                 </div>
               )}
 
-            <div className="relative flex-grow max-h-[80vh] bg-slate-50">
+            <div className="relative grow max-h-[80vh] bg-slate-50">
               {selectedPost.mediaType === "image" && (
                 <img
                   src={selectedPost.thumbnails[thumbIndex].asset.url}
@@ -163,7 +163,6 @@ export default function FeaturedModal({ featuredPosts }) {
               )}
             </div>
 
-            {/* Modal Info Footer - Grounded & Clean */}
             <div className="mt-8">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-0.5 bg-amber-400" />

@@ -16,21 +16,20 @@ export default async function Merch() {
           <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
             The Collection
           </h2>
-          <div className="h-0.5 flex-grow bg-slate-900" />
+          <div className="h-0.5 grow bg-slate-900" />
         </div>
         <MerchContainer />
       </div>
 
       {/* --- FEATURED STICKERS SECTION --- */}
       <div className="relative grid md:grid-cols-2 mt-20 border-t border-slate-900">
-        <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden group">
+        <div className="relative w-full h-125 md:h-175 overflow-hidden group">
           <Image
             src="/images/cfs-stickers.jpg"
             alt="CFS Stickers"
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
-          {/* Angular Overlay */}
           <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors" />
         </div>
 

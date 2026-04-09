@@ -26,7 +26,7 @@ function renderContent(content, images) {
         return (
           <div
             key={index}
-            className="relative w-full aspect-video md:aspect-[21/9] border-b-8 border-slate-900 overflow-hidden my-16"
+            className="relative w-full aspect-video md:aspect-21/9 border-b-8 border-slate-900 overflow-hidden my-16"
           >
             <Image src={src} alt={key} fill className="object-cover" />
           </div>
@@ -63,7 +63,7 @@ export default function About() {
             {pageContent.intro}
           </p>
         </div>
-        <div className="relative h-[400px] lg:h-auto border-l border-slate-900 overflow-hidden">
+        <div className="relative h-100 lg:h-auto border-l border-slate-900 overflow-hidden">
           <Image
             src={pageContent.images.image1}
             alt="First Mini"
@@ -85,7 +85,7 @@ export default function About() {
               <h2 className="text-4xl font-black italic uppercase tracking-tighter">
                 The Archive
               </h2>
-              <div className="h-0.5 flex-grow bg-slate-900" />
+              <div className="h-0.5 grow bg-slate-900" />
             </div>
             <div className="relative w-full aspect-video bg-slate-900 border-4 border-slate-900 shadow-2xl">
               <Slideshow

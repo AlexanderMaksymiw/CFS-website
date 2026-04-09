@@ -52,7 +52,7 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
           return (
             <div key={item._id || globalIndex} className="group flex flex-col">
               {/* IMAGE FRAME: Editorial 3:4 Aspect Ratio */}
-              <div className="relative aspect-[3/4] w-full bg-slate-50 border-b-4 border-slate-900 overflow-hidden">
+              <div className="relative aspect-3/4 w-full bg-slate-50 border-b-4 border-slate-900 overflow-hidden">
                 {currentImage ? (
                   <>
                     <Image

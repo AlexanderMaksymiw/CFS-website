@@ -7,7 +7,7 @@ export default function Info() {
   return (
     <section className=" bg-white overflow-hidden">
       <section className="w-full bg-white py-10">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-30">
+        <div className="max-w-400 mx-auto px-6 md:px-30">
           {/* Minimal Heading - Just context */}
           <div className="mb-10 max-w-2xl">
             <h2 className="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-4">
@@ -21,7 +21,7 @@ export default function Info() {
           {/* The Showcase Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Featured Large Shot */}
-            <div className="md:col-span-8 relative h-[400px] md:h-[700px] bg-slate-50 overflow-hidden">
+            <div className="md:col-span-8 relative h-100 md:h-175 bg-slate-50 overflow-hidden">
               <Image
                 src="/images/subaru-couple.jpg"
                 alt="subaru"
@@ -34,20 +34,20 @@ export default function Info() {
             {/* Side Stack */}
             <div className="md:col-span-4 flex flex-col gap-8">
               {/* Top Small Shot */}
-              <div className="relative h-[300px] md:h-[334px] bg-slate-50 overflow-hidden">
+              <div className="relative h-75 md:h-83.5 bg-slate-50 overflow-hidden">
                 <Image
                   src="/images/group-2.jpg"
-                  alt="Rally Details"
+                  alt="cfs group of attendess"
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover"
                 />
               </div>
 
               {/* Bottom Small Shot */}
-              <div className="relative h-[300px] md:h-[334px] bg-slate-50 overflow-hidden">
+              <div className="relative h-75 md:h-83.5 bg-slate-50 overflow-hidden">
                 <Image
                   src="/images/i8-bmw.png"
-                  alt="Night Meet"
+                  alt="busy cfs event with a bmw i8"
                   fill
                   className="object-cover"
                 />

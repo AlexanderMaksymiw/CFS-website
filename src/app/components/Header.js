@@ -19,7 +19,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -36,13 +35,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-100 transition-all duration-500 ${
         isScrolled || isOpen
           ? "bg-slate-900/90 backdrop-blur-md h-20 shadow-xl"
           : "bg-transparent h-28"
       } text-white`}
     >
-      <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto h-full">
+      <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 max-w-400 mx-auto h-full">
         {/* Logo Section */}
         <motion.div
           className="shrink-0"
@@ -64,14 +63,14 @@ export default function Header() {
               className="group relative text-[11px] font-black uppercase tracking-[0.25em] transition-colors hover:text-amber-400"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-amber-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-amber-400 transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className="xl:hidden flex flex-col gap-1.5 p-2 z-[110]"
+          className="xl:hidden flex flex-col gap-1.5 p-2 z-110"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
@@ -87,7 +86,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -95,7 +93,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-slate-900 z-[105] flex flex-col items-center overflow-y-auto pt-32 pb-12 px-6"
+            className="fixed inset-0 bg-slate-900 z-105 flex flex-col items-center overflow-y-auto pt-32 pb-12 px-6"
           >
             <div className="flex flex-col items-center gap-6 w-full max-w-sm">
               {navLinks.map((link) => (

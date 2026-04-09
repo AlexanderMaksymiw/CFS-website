@@ -14,7 +14,7 @@ export default function RulesContent({ img, title, text, button, href }) {
       />
 
       {/* Gradient Overlay for Text Legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
       {/* Content anchored to the bottom */}
       <div className="absolute bottom-10 left-10 right-10 text-white space-y-4 z-10">

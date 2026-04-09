@@ -13,19 +13,16 @@ export default function SubPageHeroNews({ title, images, category = "News" }) {
 
       <Image src={hero[0]} className="object-cover" alt={title} fill priority />
 
-      {/* Deep Slate Gradient for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent z-10" />
+      <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/20 to-transparent z-10" />
 
       <div className="absolute inset-0 z-20 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-30 text-white">
         <div className="max-w-5xl space-y-4">
           <div className="w-16 h-1.5 bg-amber-400" />
 
-          {/* Heading with your tight tracking preference */}
           <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight italic leading-[0.8] drop-shadow-2xl">
             {title}
           </h1>
 
-          {/* DYNAMIC META LINE */}
           <div className="flex items-center gap-3">
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-amber-400">
               Latest {category === "Road Trips" ? "Road Trips" : "News"}

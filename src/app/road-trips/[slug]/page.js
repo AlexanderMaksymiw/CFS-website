@@ -50,7 +50,6 @@ export default async function RoadTripPage({ params }) {
     <div className="bg-white">
       <Header />
 
-      {/* --- CINEMATIC HERO --- */}
       <div className="h-[60vh] md:h-[75vh] relative bg-slate-900 overflow-hidden">
         {heroImageUrl && (
           <Image
@@ -61,12 +60,11 @@ export default async function RoadTripPage({ params }) {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent" />
       </div>
 
       <div className="px-6 md:px-30 -mt-20 md:-mt-32 relative z-10 pb-20">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-          {/* --- MAIN CONTENT --- */}
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
               <div className="w-16 h-1.5 bg-amber-400" />
@@ -78,7 +76,6 @@ export default async function RoadTripPage({ params }) {
               </p>
             </div>
 
-            {/* STOPS SECTION */}
             {roadTrip.stops?.length > 0 && (
               <div className="space-y-6">
                 <h3 className="text-xl font-black tracking-widest text-slate-400 uppercase">
@@ -108,7 +105,6 @@ export default async function RoadTripPage({ params }) {
             )}
           </div>
 
-          {/* --- INFO SIDEBAR --- */}
           <div className="w-full lg:w-96 bg-slate-900 text-white p-8 space-y-8 shadow-2xl">
             <div className="space-y-6">
               <h2 className="text-[10px] font-black tracking-[0.4em] text-amber-400 uppercase border-b border-white/10 pb-4">
@@ -137,7 +133,6 @@ export default async function RoadTripPage({ params }) {
               </div>
             </div>
 
-            {/* QR CODE SECTION */}
             <div className="bg-white p-6 text-center space-y-4">
               <h3 className="text-[10px] font-black text-slate-900 uppercase tracking-widest">
                 Digital Navigator
@@ -159,10 +154,9 @@ export default async function RoadTripPage({ params }) {
         </div>
       </div>
 
-      {/* --- MAP SECTION --- */}
       {roadTrip.googleMapsEmbed && (
         <div className="px-6 md:px-30 mb-20">
-          <div className="border-[12px] border-slate-50 overflow-hidden">
+          <div className="border-12 border-slate-50 overflow-hidden">
             <iframe
               src={roadTrip.googleMapsEmbed}
               width="100%"
@@ -174,13 +168,12 @@ export default async function RoadTripPage({ params }) {
         </div>
       )}
 
-      {/* --- GALLERY SECTION --- */}
       <div className="px-6 md:px-30 pt-10 mb-20 border-t border-slate-100">
         <div className="flex items-baseline gap-4 mb-10">
           <h3 className="text-4xl md:text-7xl font-black tracking-tighter italic uppercase text-slate-900">
             Gallery
           </h3>
-          <div className="h-2 flex-grow bg-slate-900" />
+          <div className="h-2 grow bg-slate-900" />
         </div>
         <RoadTripGallery roadTrips={roadTrip.images} />
       </div>

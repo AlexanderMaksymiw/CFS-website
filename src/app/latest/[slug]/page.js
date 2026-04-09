@@ -32,7 +32,6 @@ export default async function PostPage({ params }) {
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
 
-      {/* --- HERO: Scaled down from 8xl to 6xl --- */}
       {heroImageUrl && (
         <div className="relative w-full h-[50vh] md:h-[65vh] bg-slate-900 overflow-hidden">
           <Image
@@ -42,7 +41,7 @@ export default async function PostPage({ params }) {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/10 to-transparent" />
 
           <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-16 px-6 md:px-30 text-white">
             <div className="max-w-4xl space-y-3">
@@ -60,16 +59,13 @@ export default async function PostPage({ params }) {
         </div>
       )}
 
-      {/* --- ARTICLE BODY --- */}
       <article className="flex flex-col items-center py-12 px-6 w-full">
-        {/* Intro: Slightly wider (4xl) than the body text (3xl) */}
         <div className="max-w-4xl w-full mb-12 border-l-4 border-amber-400 pl-6 md:pl-10">
           <h2 className="text-xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight uppercase italic">
             {post.intro}
           </h2>
         </div>
 
-        {/* Content Container */}
         <div className="max-w-3xl w-full space-y-8 text-left">
           <PortableText
             value={post.content}
@@ -78,9 +74,8 @@ export default async function PostPage({ params }) {
                 image: ({ value }) => {
                   const src = urlFor(value)?.width(1200).url();
                   return src ? (
-                    /* Image pops out to 4xl while text stays 3xl */
-                    <div className="my-10 -mx-0 md:-mx-12 lg:-mx-20 max-w-4xl">
-                      <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
+                    <div className="my-10 mx-0 md:-mx-12 lg:-mx-20 max-w-4xl">
+                      <div className="relative w-full aspect-video overflow-hidden bg-slate-100">
                         <Image
                           src={src}
                           alt={value.alt || ""}
