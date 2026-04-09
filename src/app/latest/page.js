@@ -2,7 +2,6 @@ import Footer from "../components/Footer";
 import ArticleCardWrapper from "../components/ArticleCardWrapper";
 import SubPageHeroNews from "../components/SubPageHeroNews";
 import ArticleBannerServer from "@/app/components/ArticleBannerServer";
-export const revalidate = 60;
 export default function Latest() {
   return (
     <main>
