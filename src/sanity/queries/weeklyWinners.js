@@ -1,5 +1,5 @@
 export const WEEKLY_WINNERS_QUERY = `
-  *[_type == "weeklyWinners"] | order(date desc, order asc) {
+  *[_type == "weeklyWinners"] | order(date desc, position asc)[0...3] {
     _id,
     title,
     date,

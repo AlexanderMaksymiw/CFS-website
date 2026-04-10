@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Header from "../components/Header";
 
-// Added 'category' prop here
 export default function SubPageHeroNews({ title, images, category = "News" }) {
   const defaultImages = ["/images/Ferrari Hero 2.jpg", "/images/M3.jpg"];
   const hero = images && images.length > 0 ? images : defaultImages;

@@ -92,7 +92,6 @@ export default function Info2() {
               </div>
             </div>
 
-            {/* Represent Card */}
             <div className="flex-1 rounded-2xl overflow-hidden ">
               <div className="relative h-86 w-full">
                 <Image
@@ -127,9 +126,7 @@ export default function Info2() {
           />
         </div>
 
-        {/* FIREWOOD / COFFEE SECTION */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 ">
-          {/* Firewood */}
           <div className="rounded-2xl overflow-hidden flex flex-col ">
             <div className="relative h-86 w-full">
               <Image
@@ -152,7 +149,6 @@ export default function Info2() {
               </Link>
             </div>
           </div>
-          {/* Coffee */}
           <div className="rounded-2xl overflow-hidden flex flex-col ">
             <div className="relative h-86 w-full">
               <Image

@@ -42,7 +42,6 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
 
   return (
     <div className="space-y-12 mb-20">
-      {/* --- PRODUCT GRID --- */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {visibleItems.map((item, i) => {
           const globalIndex = page * itemsPerPage + i;
@@ -51,7 +50,6 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
 
           return (
             <div key={item._id || globalIndex} className="group flex flex-col">
-              {/* IMAGE FRAME: Editorial 3:4 Aspect Ratio */}
               <div className="relative aspect-3/4 w-full bg-slate-50 border-b-4 border-slate-900 overflow-hidden">
                 {currentImage ? (
                   <>
@@ -63,7 +61,6 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
                       className="object-cover transition-all duration-700 grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105"
                     />
 
-                    {/* FLUSH NAVIGATION CONTROLS */}
                     {item.images.length > 1 && (
                       <div className="absolute bottom-0 right-0 flex z-10">
                         <button
@@ -100,7 +97,6 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
                 )}
               </div>
 
-              {/* ITEM SPEC SHEET */}
               <div className="mt-6 space-y-3">
                 <h3 className="text-2xl font-black text-slate-900 uppercase italic tracking-tighter leading-none">
                   {item.title}
@@ -122,7 +118,6 @@ export default function MerchCarousel({ merchItems = [], itemsPerPage = 4 }) {
         })}
       </div>
 
-      {/* --- DIAMOND PAGINATION --- */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-8 border-t border-slate-100 pt-10">
           <button

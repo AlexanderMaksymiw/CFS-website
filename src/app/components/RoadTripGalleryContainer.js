@@ -8,7 +8,6 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function RoadTripGallery({ roadTrips }) {
-  // 1. Ensure we have an array
   const galleryImages = roadTrips || [];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -25,10 +24,8 @@ export default function RoadTripGallery({ roadTrips }) {
 
   return (
     <div className="w-full">
-      {/* MASONRY GRID */}
       <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 space-y-4">
         {paginatedImages.map((img, i) => {
-          // 2. Extract the URL safely based on your Sanity query
           const src = img.asset?.url;
           if (!src) return null;
 
@@ -80,7 +77,6 @@ export default function RoadTripGallery({ roadTrips }) {
         </div>
       )}
 
-      {/* LIGHTBOX / MODAL */}
       {selectedIndex !== null && galleryImages[selectedIndex] && (
         <div
           className="fixed inset-0 z-200 bg-slate-950 flex flex-col animate-in fade-in duration-300"

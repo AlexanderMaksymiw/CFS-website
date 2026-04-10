@@ -3,7 +3,6 @@ import Image from "next/image";
 import Header from "../components/Header";
 
 export default function SubPageHero({ title, images, subtitle }) {
-  // Fallback images
   const defaultImages = ["/images/Ferrari Hero 2.jpg", "/images/M3.jpg"];
   const hero = images && images.length > 0 ? images : defaultImages;
 
@@ -11,7 +10,6 @@ export default function SubPageHero({ title, images, subtitle }) {
     <section className="relative w-full h-[50vh] md:h-[70vh] lg:h-[80vh] bg-slate-900 overflow-hidden">
       <Header />
 
-      {/* Hero Image with a subtle scale-in effect or just clean fill */}
       <Image
         src={hero[0]}
         className="object-cover object-center"
@@ -38,7 +36,6 @@ export default function SubPageHero({ title, images, subtitle }) {
         </div>
       </div>
 
-      {/* Bottom Edge "Blade" - subtle decorative element */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-white/10 z-30" />
     </section>
   );

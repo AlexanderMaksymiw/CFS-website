@@ -12,7 +12,8 @@ export default function RoadTripsPage() {
         images={["/images/elan-valley-convoy-bridge.jpg"]}
       />
 
-      <div className="pt-10 px-6 md:px-20 lg:px-30">
+      <div className="pt-10 px-6 md:px-20 lg:px-30 pb-15">
+        {" "}
         <RoadCardWrapper />
       </div>
 

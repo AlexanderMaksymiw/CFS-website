@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function RulesContent({ img, title, text, button, href }) {
   return (
     <div className="group h-125 rounded-2xl relative bg-slate-900 overflow-hidden shadow-lg border border-white/5">
-      {/* Background Image */}
       <Image
         src={img}
         alt={title}
@@ -13,10 +12,8 @@ export default function RulesContent({ img, title, text, button, href }) {
         className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
       />
 
-      {/* Gradient Overlay for Text Legibility */}
       <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
-      {/* Content anchored to the bottom */}
       <div className="absolute bottom-10 left-10 right-10 text-white space-y-4 z-10">
         <h2 className="text-white text-5xl font-black uppercase tracking-tight leading-none">
           {title}

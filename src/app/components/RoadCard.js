@@ -14,9 +14,6 @@ export default function RoadCard({ title, description, image, link }) {
           priority
         />
 
-        {/* HEAVIER GRADIENT: 
-           This allows smaller text to be perfectly legible without needing to be massive.
-        */}
         <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
@@ -28,9 +25,6 @@ export default function RoadCard({ title, description, image, link }) {
               </span>
             </div>
 
-            {/* Tuned down the size from 5xl to 3xl/4xl 
-               Increased leading slightly so the italics don't clash 
-            */}
             <h5 className="text-3xl md:text-4xl font-black text-white leading-none uppercase tracking-tight italic antialiased group-hover:text-amber-400 transition-colors max-w-[90%]">
               {title}
             </h5>
@@ -41,7 +35,6 @@ export default function RoadCard({ title, description, image, link }) {
           </div>
         </div>
 
-        {/* Muted top-right detail */}
         <div className="absolute top-8 right-8 border border-white/10 px-3 py-1">
           <span className="text-[8px] font-black text-white/20 uppercase tracking-[0.4em]">
             CFS / EXPLORE

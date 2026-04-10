@@ -52,7 +52,6 @@ export default function Rules() {
         images={["/images/porsche-gt4.webp"]}
       />
 
-      {/* --- CRITICAL WARNING SECTION --- */}
       <div className="bg-slate-900 py-16 px-6 md:px-30">
         <div className="max-w-4xl space-y-6">
           <div className="w-20 h-2 bg-red-600" />
@@ -70,12 +69,10 @@ export default function Rules() {
         </div>
       </div>
 
-      {/* --- RULES LIST --- */}
       <div className="px-6 md:px-30 py-20 space-y-32">
         {rules.map((rule) => (
           <div key={rule.id} className="relative group">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-start">
-              {/* SIDEBAR: Number & Title */}
               <div className="space-y-4 lg:sticky lg:top-32">
                 <span className="text-8xl font-black text-slate-100 italic leading-none block">
                   {rule.id}
@@ -86,7 +83,6 @@ export default function Rules() {
                 <div className="w-12 h-1 bg-amber-400" />
               </div>
 
-              {/* MAIN CONTENT: Media & Description */}
               <div className="space-y-8">
                 <div className="relative aspect-video w-full bg-slate-100 overflow-hidden  ">
                   {rule.img ? (
@@ -117,7 +113,6 @@ export default function Rules() {
         ))}
       </div>
 
-      {/* --- FINAL CALL TO ACTION --- */}
       <div className="px-6 md:px-30 pb-32">
         <div className="bg-amber-400 p-12 md:p-20 flex flex-col items-center text-center space-y-6">
           <h3 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">

@@ -21,7 +21,6 @@ export default async function Merch() {
         <MerchContainer />
       </div>
 
-      {/* --- FEATURED STICKERS SECTION --- */}
       <div className="relative grid md:grid-cols-2 mt-20 border-t border-slate-900">
         <div className="relative w-full h-125 md:h-175 overflow-hidden group">
           <Image

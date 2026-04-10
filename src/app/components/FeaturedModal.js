@@ -115,7 +115,7 @@ export default function FeaturedModal({ featuredPosts }) {
                 <button
                   key={i}
                   onClick={() => handlePageChange(i)}
-                  className={`min-w-[36px] h-9 flex items-center justify-center text-[11px] font-black transition-all rounded-md cursor-pointer ${
+                  className={`min-w-9 h-9 flex items-center justify-center text-[11px] font-black transition-all rounded-md cursor-pointer ${
                     page === i
                       ? "bg-slate-900 text-white shadow-lg scale-110"
                       : "text-slate-900/50 hover:text-slate-900 hover:bg-slate-900/5"

@@ -1,5 +1,3 @@
-// 1. FOR THE GRID PAGE (Add this one!)
-// This fetches ALL trips so you can list them.
 export const ROADTRIPS_QUERY = `*[_type == "roadTrip"] | order(tripDate desc) {
   _id,
   title,
@@ -10,8 +8,6 @@ export const ROADTRIPS_QUERY = `*[_type == "roadTrip"] | order(tripDate desc) {
   }
 }`;
 
-// 2. FOR THE INDIVIDUAL PAGE (Keep this one!)
-// This fetches ONE specific trip based on the URL slug.
 export const ROADTRIP_QUERY = `*[_type == "roadTrip" && slug.current == $slug][0]{
   _id,
   title,

@@ -26,7 +26,6 @@ export default async function LatestHeroServer() {
       <Header />
 
       <div className="relative flex flex-col md:flex-row  md:h-150 h-125">
-        {/* Background Image */}
         <div className="absolute inset-0 md:static">
           <Image
             src={heroImageUrl}
@@ -37,10 +36,7 @@ export default async function LatestHeroServer() {
           />
         </div>
 
-        {/* Mobile overlay */}
         <div className="absolute inset-0 bg-slate-800/10 md:hidden"></div>
-
-        {/* Text */}
 
         <div className=" relative z-10 flex-1 flex items-center justify-center px-4  bg-slate-800/70 md:bg-slate-800 md:static">
           <div className="text-left max-w-xl">
@@ -63,7 +59,6 @@ export default async function LatestHeroServer() {
           </div>
         </div>
 
-        {/* Desktop duplicate image */}
         <div className="hidden md:block flex-1 relative w-full h-150">
           <Image
             src={heroImageUrl}

@@ -8,9 +8,7 @@ export default function ItemGrid({ posts }) {
         Latest Events
       </h2>
 
-      {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-[2fr_2fr] gap-4 md:gap-6 w-full">
-        {/* Left: featured article */}
         {posts[0] && (
           <Link
             href={`/latest/${posts[0].slug.current}`}
@@ -40,7 +38,6 @@ export default function ItemGrid({ posts }) {
           </Link>
         )}
 
-        {/* Right: remaining articles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
           {posts.slice(1, 5).map((post) => (
             <Link

@@ -91,7 +91,6 @@ export default async function Crew() {
           {crew.length > 0 ? (
             crew.map((member) => (
               <div key={member._id} className="group flex flex-col space-y-6">
-                {/* Image Frame */}
                 <div className="relative aspect-video w-full bg-slate-100 overflow-hidden ">
                   {member.carImage ? (
                     <Image
@@ -105,13 +104,11 @@ export default async function Crew() {
                       No Car Photo
                     </div>
                   )}
-                  {/* Badge */}
                   <div className="absolute top-0 right-0 bg-amber-400 px-4 py-2 font-black italic text-slate-900 uppercase text-xs">
                     {member.role}
                   </div>
                 </div>
 
-                {/* Info Spec Sheet */}
                 <div className="space-y-4">
                   <div className="flex justify-between items-end border-b-2 border-slate-100 pb-2">
                     <h3 className="text-4xl font-black italic uppercase tracking-tighter text-slate-900">

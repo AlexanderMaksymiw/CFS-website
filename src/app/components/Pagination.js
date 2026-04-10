@@ -25,7 +25,6 @@ export default function Pagination({
 
   return (
     <div className="flex justify-center items-center gap-3 flex-wrap">
-      {/* First / Prev */}
       <button
         disabled={page === 0}
         onClick={() => handlePageChange(0)}
@@ -34,7 +33,6 @@ export default function Pagination({
         <ChevronDoubleLeftIcon className="w-4 h-4" />
       </button>
 
-      {/* Page Numbers */}
       {Array.from({ length: totalPages }, (_, i) => (
         <button
           key={i}
@@ -49,7 +47,6 @@ export default function Pagination({
         </button>
       ))}
 
-      {/* Last / Next */}
       <button
         disabled={page === totalPages - 1}
         onClick={() => handlePageChange(totalPages - 1)}

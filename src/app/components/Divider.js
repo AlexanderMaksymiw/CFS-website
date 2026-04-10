@@ -6,10 +6,8 @@ export default function Divider({ image, content, className, scrollRef }) {
         clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 90%)",
       }}
     >
-      {/* Overlay: this will show the color/tint */}
       <div className={`absolute inset-0 z-0  ${className}`} />
 
-      {/* Content */}
       <div className="relative z-10 px-30">{content}</div>
     </div>
   );

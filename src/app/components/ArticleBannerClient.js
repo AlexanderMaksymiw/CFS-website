@@ -62,7 +62,6 @@ export default function ArticleBannerClient({ post }) {
           priority
         />
 
-        {/* CINEMATIC GRADIENT: Darkens the image for focus (seen in image_0.png) */}
         <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-transparent to-slate-950/20" />
       </div>
     </section>

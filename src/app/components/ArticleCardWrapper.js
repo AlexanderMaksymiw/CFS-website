@@ -14,7 +14,6 @@ export default function ArticleCardWrapper() {
   useEffect(() => {
     async function fetchPosts() {
       setLoading(true);
-      // Fetch all posts to determine total, or fetch per page
       const query = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
         title,
         intro,
@@ -37,7 +36,6 @@ export default function ArticleCardWrapper() {
       </div>
     );
 
-  // Calculate slice for current page
   const totalItems = posts.length;
   const currentPosts = posts.slice(
     page * itemsPerPage,
