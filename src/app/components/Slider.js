@@ -28,7 +28,7 @@ export default function Slider() {
   }, [images.length]);
 
   return (
-    <div className="relative h-[600px] object-none w-full">
+    <div className="relative h-150 object-none w-full">
       {images.map((src, idx) => (
         <Image
           key={idx}

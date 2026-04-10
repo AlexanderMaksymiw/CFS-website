@@ -4,8 +4,7 @@ export default function ImageCard({ image }) {
   return (
     <div className="px-32">
       <div className=" pb-20">
-
-        <div className="relative h-[1000px]">
+        <div className="relative h-250">
           <Image
             src={image}
             alt="Card image"
