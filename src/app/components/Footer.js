@@ -101,7 +101,7 @@ function SocialMediaLinks() {
   const socials = [
     "https://www.facebook.com/groups/3764447677206661",
     "https://www.instagram.com/carfarmsocial/",
-    "https://www.youtube.com/@carfarmsocial",
+    "https://www.youtube.com/@CarFarmSocialClub",
   ];
   return socials.map((url) => (
     <SocialIcon
