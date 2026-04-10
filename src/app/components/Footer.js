@@ -41,7 +41,7 @@ export default function Footer() {
               Standard Opening Times
             </h3>
             <div className="text-slate-300 space-y-1">
-              <p className="font-bold text-white">Thursdays: 18:00 — 20:30*</p>
+              <p className="font-bold text-white">Thursdays: 17:30 — 20:00*</p>
               <p className="text-sm opacity-60">*Closed for Autumn & Winter</p>
             </div>
           </div>
