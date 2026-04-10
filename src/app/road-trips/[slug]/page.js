@@ -87,9 +87,7 @@ export default async function RoadTripPage({ params }) {
                       key={i}
                       className="flex items-center gap-4 bg-slate-50 border-l-4 border-slate-900 p-4 transition-colors hover:border-amber-400"
                     >
-                      <span className="text-2xl grayscale group-hover:grayscale-0">
-                        {stop.icon}
-                      </span>
+                      <span className="text-2xl">{stop.icon}</span>
                       <div className="flex flex-col">
                         <span className="font-black uppercase text-slate-900 tracking-tight">
                           {stop.name}

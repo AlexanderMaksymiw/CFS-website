@@ -75,43 +75,68 @@ export default function FeaturedModal({ featuredPosts }) {
         ))}
       </section>
 
-      {/* PAGINATION (Diamond Style) */}
+      {/* UNIVERSAL PAGINATION (Works on Amber & White) */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-8 mt-16 border-t border-slate-100 pt-10">
+        <div className="flex items-center justify-center gap-6 mt- border-t border-slate-900/10 pt-10">
           <button
             disabled={page === 0}
             onClick={() => handlePageChange(page - 1)}
             className={`text-[10px] font-black uppercase tracking-widest transition-colors ${
               page === 0
-                ? "text-slate-200"
-                : "text-slate-900 hover:text-amber-500"
+                ? "text-slate-900/20"
+                : "text-slate-900 hover:opacity-60 cursor-pointer"
             }`}
           >
-            ← Prev
+            Prev
           </button>
 
-          <div className="flex gap-4">
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i}
-                onClick={() => handlePageChange(i)}
-                className={`w-2 h-2 rotate-45 transition-all duration-300 ${
-                  page === i ? "bg-amber-400 scale-125" : "bg-slate-200"
-                }`}
-              />
-            ))}
+          <div className="flex items-center gap-2">
+            {[...Array(totalPages)].map((_, i) => {
+              const isVisible =
+                i === 0 ||
+                i === totalPages - 1 ||
+                (i >= page - 1 && i <= page + 1);
+
+              if (!isVisible) {
+                if (i === 1 || i === totalPages - 2) {
+                  return (
+                    <span
+                      key={i}
+                      className="text-slate-900/30 font-black text-xs px-1"
+                    >
+                      ...
+                    </span>
+                  );
+                }
+                return null;
+              }
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => handlePageChange(i)}
+                  className={`min-w-[36px] h-9 flex items-center justify-center text-[11px] font-black transition-all rounded-md cursor-pointer ${
+                    page === i
+                      ? "bg-slate-900 text-white shadow-lg scale-110"
+                      : "text-slate-900/50 hover:text-slate-900 hover:bg-slate-900/5"
+                  }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </button>
+              );
+            })}
           </div>
 
           <button
             disabled={page === totalPages - 1}
-            onClick={() => handlePageChange(page + 1)}
+            onClick={() => handlePageChange((i) => i + 1)}
             className={`text-[10px] font-black uppercase tracking-widest transition-colors ${
               page === totalPages - 1
-                ? "text-slate-200"
-                : "text-slate-900 hover:text-amber-500"
+                ? "text-slate-900/20"
+                : "text-slate-900 hover:opacity-60 cursor-pointer"
             }`}
           >
-            Next →
+            Next
           </button>
         </div>
       )}
