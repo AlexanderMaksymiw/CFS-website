@@ -1,9 +1,11 @@
-"use client";
-
 import Footer from "../components/Footer";
 import RoadCardWrapper from "../components/RoadCardWrapper";
 import SubPageHeroNews from "../components/SubPageHeroNews";
-export default function RoadTripsPage() {
+import { client } from "@/sanity/lib/client";
+import { ROADTRIPS_QUERY } from "@/sanity/queries/roadTrips";
+
+export default async function RoadTripsPage() {
+  const roadTrips = await client.fetch(ROADTRIPS_QUERY);
   return (
     <main>
       <SubPageHeroNews
@@ -13,8 +15,7 @@ export default function RoadTripsPage() {
       />
 
       <div className="pt-10 px-6 md:px-20 lg:px-30 pb-15">
-        {" "}
-        <RoadCardWrapper />
+        <RoadCardWrapper initialTrips={roadTrips} />
       </div>
 
       <Footer />

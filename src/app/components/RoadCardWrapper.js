@@ -5,19 +5,11 @@ import { urlFor } from "@/sanity/lib/image";
 import RoadCard from "./RoadCard";
 import { ROADTRIPS_QUERY } from "@/sanity/queries/roadTrips";
 
-export default function RoadCardWrapper() {
-  const [roadTrips, setRoadTrips] = useState([]);
+export default function RoadCardWrapper({ initialTrips = [] }) {
+  const [roadTrips] = useState(initialTrips);
   const [page, setPage] = useState(0);
   const postsPerPage = 6;
   const sectionRef = useRef(null);
-
-  useEffect(() => {
-    async function fetchTrips() {
-      const trips = await client.fetch(ROADTRIPS_QUERY);
-      setRoadTrips(trips || []);
-    }
-    fetchTrips();
-  }, []);
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
