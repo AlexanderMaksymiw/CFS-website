@@ -1,40 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import ArticleCard from "./ArticleCard";
 import Pagination from "./Pagination";
 
-export default function ArticleCardWrapper() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function ArticleCardWrapper({ initialPosts = [] }) {
+  const [posts] = useState(initialPosts);
   const [page, setPage] = useState(0);
   const itemsPerPage = 6;
-
-  useEffect(() => {
-    async function fetchPosts() {
-      setLoading(true);
-      const query = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
-        title,
-        intro,
-        heroImage,
-        "slug": slug.current
-      }`;
-      const result = await client.fetch(query);
-      setPosts(result);
-      setLoading(false);
-    }
-    fetchPosts();
-  }, []);
-
-  if (loading)
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-pulse">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="h-80 bg-slate-100 rounded-xl" />
-        ))}
-      </div>
-    );
 
   const totalItems = posts.length;
   const currentPosts = posts.slice(
