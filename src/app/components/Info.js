@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Share from "../components/Share";
 import Intro from "../components/Intro";
 
 export default function Info() {
