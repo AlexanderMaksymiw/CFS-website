@@ -8,19 +8,17 @@ export default function Info() {
     <section className=" bg-white overflow-hidden">
       <section className="w-full bg-white py-10">
         <div className="max-w-400 mx-auto px-6 md:px-30">
-          {/* Minimal Heading - Just context */}
           <div className="mb-10 max-w-2xl">
             <h2 className="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-4">
               cfs / event
             </h2>
             <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight">
-              A weekly gathering of cars, and the people who keep them driving.
+              A weekly gathering of car enthusiasts, come join us and show off
+              your pride and joy.
             </p>
           </div>
 
-          {/* The Showcase Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {/* Featured Large Shot */}
             <div className="md:col-span-8 relative h-100 md:h-175 bg-slate-50 overflow-hidden">
               <Image
                 src="/images/subaru-couple.jpg"
@@ -31,10 +29,8 @@ export default function Info() {
               />
             </div>
 
-            {/* Side Stack */}
             <div className="md:col-span-4 flex flex-col gap-8">
-              {/* Top Small Shot */}
-              <div className="relative h-75 md:h-83.5 bg-slate-50 overflow-hidden">
+              <div className="relative h-75 md:h-83.5  overflow-hidden">
                 <Image
                   src="/images/group-2.jpg"
                   alt="cfs group of attendess"
@@ -43,8 +39,7 @@ export default function Info() {
                 />
               </div>
 
-              {/* Bottom Small Shot */}
-              <div className="relative h-75 md:h-83.5 bg-slate-50 overflow-hidden">
+              <div className="relative h-75 md:h-83.5  overflow-hidden">
                 <Image
                   src="/images/i8-bmw.png"
                   alt="busy cfs event with a bmw i8"
@@ -57,7 +52,7 @@ export default function Info() {
         </div>
       </section>
 
-      <div className="py-20">
+      <div className="py-10">
         {" "}
         <Intro
           eyebrow="Your CFS Invitation"

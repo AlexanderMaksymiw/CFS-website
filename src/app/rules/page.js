@@ -48,7 +48,7 @@ export default function Rules() {
     <div className="bg-white">
       <Header />
       <SubPageHero
-        title="THE CODE OF CONDUCT"
+        title="PADDOCK RULES"
         images={["/images/porsche-gt4.webp"]}
       />
 
@@ -88,7 +88,7 @@ export default function Rules() {
 
               {/* MAIN CONTENT: Media & Description */}
               <div className="space-y-8">
-                <div className="relative aspect-video w-full bg-slate-100 overflow-hidden border-b-8 border-slate-900">
+                <div className="relative aspect-video w-full bg-slate-100 overflow-hidden  ">
                   {rule.img ? (
                     <Image
                       src={rule.img}

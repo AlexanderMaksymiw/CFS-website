@@ -42,7 +42,6 @@ export default function Header() {
       } text-white`}
     >
       <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 max-w-400 mx-auto h-full">
-        {/* Logo Section */}
         <motion.div
           className="shrink-0"
           animate={{
@@ -54,8 +53,7 @@ export default function Header() {
           <Logo className="w-auto h-12" />
         </motion.div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-8">
+        <nav className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -68,7 +66,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Toggle */}
         <button
           className="xl:hidden flex flex-col gap-1.5 p-2 z-110"
           onClick={() => setIsOpen(!isOpen)}

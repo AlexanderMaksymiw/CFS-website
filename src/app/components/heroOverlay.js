@@ -5,7 +5,6 @@ export default function HeroOverlay() {
   return (
     <div className="flex flex-col justify-center h-full px-6 md:px-30 text-white">
       <div className="max-w-4xl space-y-2">
-        {/* Amber accent on top of Slate-800 */}
         <div className="uppercase tracking-[0.4em] text-xs mb-4 font-black text-amber-400 border-l-4 border-amber-400 pl-4">
           Welcome to{" "}
         </div>
@@ -30,7 +29,6 @@ export default function HeroOverlay() {
             Explore Events
           </Link>
 
-          {/* Secondary Button: Slate/White Border */}
           <Link
             href="/rules"
             className="border-2 border-slate-500 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-slate-800 hover:border-white transition-all"

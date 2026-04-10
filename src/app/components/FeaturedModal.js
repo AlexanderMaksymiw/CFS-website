@@ -5,7 +5,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   XMarkIcon,
-} from "@heroicons/react/24/outline"; // Switched to outline for a lighter touch
+} from "@heroicons/react/24/solid"; // Switched back to Solid for that "heavy" look
 
 export default function FeaturedModal({ featuredPosts }) {
   const postsPerPage = 6;
@@ -39,7 +39,6 @@ export default function FeaturedModal({ featuredPosts }) {
 
   return (
     <div className="w-full">
-      {/* 1. THE GRID: Clean & Direct */}
       <section
         ref={sectionRef}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10"
@@ -48,13 +47,12 @@ export default function FeaturedModal({ featuredPosts }) {
           <div
             key={post._id}
             onClick={() => setSelectedIndex(page * postsPerPage + i)}
-            className="group relative cursor-pointer aspect-4/5 bg-slate-100 overflow-hidden"
+            className="group relative cursor-pointer aspect-4/5 bg-slate-900 overflow-hidden"
           >
-            {/* Soft Gradient Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-40" />
 
             <div className="absolute bottom-6 left-6 right-6 z-20">
-              <h3 className="text-xl font-bold text-white uppercase tracking-tight">
+              <h3 className="text-xl font-black text-white uppercase tracking-tight italic">
                 {post.title}
               </h3>
             </div>
@@ -63,116 +61,163 @@ export default function FeaturedModal({ featuredPosts }) {
               <img
                 src={post.thumbnails[0].asset.url}
                 alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-102 group-hover:opacity-60"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400 font-bold uppercase text-[10px]">
-                No Image
+              <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-500 font-black uppercase text-[10px] tracking-widest">
+                No Media
               </div>
             )}
+
+            {/* Border frame effect on hover */}
+            <div className="absolute inset-0 border-0  transition-all duration-200 z-30 pointer-events-none" />
           </div>
         ))}
       </section>
 
-      {/* 2. THE PAGINATION: Minimal Bars */}
-      <div className="flex justify-center items-center mt-12 gap-8">
-        <button
-          disabled={page === 0}
-          onClick={() => handlePageChange(page - 1)}
-          className="text-slate-400 hover:text-slate-900 disabled:opacity-20 transition-colors"
-        >
-          <ChevronLeftIcon className="w-5 h-5" />
-        </button>
-
-        <div className="flex gap-2">
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => handlePageChange(i)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                page === i ? "bg-slate-900 w-8" : "bg-slate-200 w-4"
-              }`}
-            />
-          ))}
-        </div>
-
-        <button
-          disabled={page === totalPages - 1}
-          onClick={() => handlePageChange(page + 1)}
-          className="text-slate-400 hover:text-slate-900 disabled:opacity-20 transition-colors"
-        >
-          <ChevronRightIcon className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* 3. THE MODAL: Modern Viewport */}
-      {selectedPost && (
-        <div
-          className="fixed inset-0 z-100 flex items-center justify-center bg-white p-4 md:p-10 animate-in fade-in duration-200"
-          onClick={() => setSelectedIndex(null)}
-        >
-          <button className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors z-110">
-            <XMarkIcon className="w-8 h-8" />
+      {/* PAGINATION (Diamond Style) */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-8 mt-16 border-t border-slate-100 pt-10">
+          <button
+            disabled={page === 0}
+            onClick={() => handlePageChange(page - 1)}
+            className={`text-[10px] font-black uppercase tracking-widest transition-colors ${
+              page === 0
+                ? "text-slate-200"
+                : "text-slate-900 hover:text-amber-500"
+            }`}
+          >
+            ← Prev
           </button>
 
-          <div
-            className="relative w-full max-w-6xl h-full flex flex-col justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Gallery Navigation */}
-            {selectedPost.mediaType === "image" &&
-              selectedPost.thumbnails.length > 1 && (
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-30 pointer-events-none">
-                  <button
-                    onClick={() =>
-                      setThumbIndex((p) =>
-                        p === 0 ? selectedPost.thumbnails.length - 1 : p - 1,
-                      )
-                    }
-                    className="p-3 bg-white/90 shadow-sm border border-slate-100 text-slate-900 pointer-events-auto hover:bg-slate-900 hover:text-white transition-all"
-                  >
-                    <ChevronLeftIcon className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() =>
-                      setThumbIndex((p) =>
-                        p === selectedPost.thumbnails.length - 1 ? 0 : p + 1,
-                      )
-                    }
-                    className="p-3 bg-white/90 shadow-sm border border-slate-100 text-slate-900 pointer-events-auto hover:bg-slate-900 hover:text-white transition-all"
-                  >
-                    <ChevronRightIcon className="w-5 h-5" />
-                  </button>
-                </div>
-              )}
+          <div className="flex gap-4">
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => handlePageChange(i)}
+                className={`w-2 h-2 rotate-45 transition-all duration-300 ${
+                  page === i ? "bg-amber-400 scale-125" : "bg-slate-200"
+                }`}
+              />
+            ))}
+          </div>
 
-            <div className="relative grow max-h-[80vh] bg-slate-50">
-              {selectedPost.mediaType === "image" && (
+          <button
+            disabled={page === totalPages - 1}
+            onClick={() => handlePageChange(page + 1)}
+            className={`text-[10px] font-black uppercase tracking-widest transition-colors ${
+              page === totalPages - 1
+                ? "text-slate-200"
+                : "text-slate-900 hover:text-amber-500"
+            }`}
+          >
+            Next →
+          </button>
+        </div>
+      )}
+
+      {selectedPost && (
+        <div
+          className="fixed inset-0 z-9999 bg-slate-950 flex flex-col animate-in fade-in duration-300"
+          onClick={() => setSelectedIndex(null)}
+        >
+          <div className="p-4 flex justify-between items-center text-white">
+            <span className="text-[10px] font-black tracking-[0.5em] text-slate-500 uppercase">
+              CFS Gallery {selectedIndex + 1} / {featuredPosts.length}
+            </span>
+            <XMarkIcon
+              className="w-8 h-8 text-white cursor-pointer hover:text-amber-400 transition-colors"
+              onClick={() => setSelectedIndex(null)}
+            />
+          </div>
+
+          {/* Main Content Area */}
+          <div className="grow relative flex items-center justify-center p-4">
+            {/* Global Post Navigation (Left) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex((prev) =>
+                  prev > 0 ? prev - 1 : featuredPosts.length - 1,
+                );
+              }}
+              className="absolute left-6 text-white/20 hover:text-amber-400 transition-colors hidden md:block z-50"
+            >
+              <ChevronLeftIcon className="w-12 h-12" />
+            </button>
+
+            <div
+              className="relative max-w-5xl max-h-[75vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedPost.mediaType === "image" ? (
                 <img
-                  src={selectedPost.thumbnails[thumbIndex].asset.url}
-                  className="w-full h-full object-contain"
-                  alt=""
+                  src={selectedPost.thumbnails[thumbIndex]?.asset.url}
+                  className="max-w-full max-h-[75vh] object-contain shadow-2xl"
+                  alt={selectedPost.title}
                 />
-              )}
-              {selectedPost.mediaType === "video" && (
+              ) : (
                 <video
                   src={selectedPost.videoFile?.asset?.url}
                   controls
-                  className="w-full h-full object-contain bg-black"
+                  className="max-w-full max-h-[75vh] shadow-2xl bg-black"
                 />
               )}
+
+              {selectedPost.mediaType === "image" &&
+                selectedPost.thumbnails?.length > 1 && (
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-events-none">
+                    <button
+                      onClick={() =>
+                        setThumbIndex((p) =>
+                          p === 0 ? selectedPost.thumbnails.length - 1 : p - 1,
+                        )
+                      }
+                      className="p-2 bg-black/50 text-white pointer-events-auto hover:bg-amber-400 hover:text-black transition-all"
+                    >
+                      <ChevronLeftIcon className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={() =>
+                        setThumbIndex((p) =>
+                          p === selectedPost.thumbnails.length - 1 ? 0 : p + 1,
+                        )
+                      }
+                      className="p-2 bg-black/50 text-white pointer-events-auto hover:bg-amber-400 hover:text-black transition-all"
+                    >
+                      <ChevronRightIcon className="w-6 h-6" />
+                    </button>
+                  </div>
+                )}
             </div>
 
-            <div className="mt-8">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-0.5 bg-amber-400" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                  {thumbIndex + 1} / {selectedPost.thumbnails?.length || 1}
-                </span>
-              </div>
-              <h2 className="text-3xl font-black text-slate-900 uppercase italic">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex((prev) =>
+                  prev < featuredPosts.length - 1 ? prev + 1 : 0,
+                );
+              }}
+              className="absolute right-6 text-white/20 hover:text-amber-400 transition-colors hidden md:block z-50"
+            >
+              <ChevronRightIcon className="w-12 h-12" />
+            </button>
+          </div>
+
+          <div className=" text-center bg-slate-950 mb-10">
+            <div className="flex flex-col items-center gap-2">
+              <h2 className="text-xl md:text-2xl font-bold text-white uppercase italic tracking-tight">
                 {selectedPost.title}
               </h2>
+              <div className="flex items-center gap-4">
+                <div className="h-px w-8 bg-amber-400" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-500">
+                  {selectedPost.mediaType === "image"
+                    ? `Frame ${thumbIndex + 1} / ${selectedPost.thumbnails.length}`
+                    : "Motion Archive"}
+                </span>
+                <div className="h-px w-8 bg-amber-400" />
+              </div>
             </div>
           </div>
         </div>

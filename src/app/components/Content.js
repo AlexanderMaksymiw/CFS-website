@@ -5,6 +5,11 @@ import Link from "next/link";
 export default function Content({ img, title, text, button, href }) {
   return (
     <div className="group h-125 rounded-2xl relative bg-slate-900 overflow-hidden shadow-lg border border-white/5">
+      <div className="absolute top-10 right-0 origin-bottom-right -rotate-90 pointer-events-none">
+        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white whitespace-nowrap">
+          Image Courtesy of &copy; Dog Furiendly
+        </span>
+      </div>
       <Image
         src={img}
         alt={title}

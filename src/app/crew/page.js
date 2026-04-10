@@ -71,7 +71,7 @@ export default async function Crew() {
                   src={src}
                   alt="Marshal activity"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-103 grayscale group-hover:grayscale-0"
+                  className="object-cover transition-transform duration-700 group-hover:scale-102 grayscale group-hover:grayscale-0"
                 />
               </div>
             ))}
@@ -92,13 +92,13 @@ export default async function Crew() {
             crew.map((member) => (
               <div key={member._id} className="group flex flex-col space-y-6">
                 {/* Image Frame */}
-                <div className="relative aspect-video w-full bg-slate-100 overflow-hidden border-b-8 border-slate-900">
+                <div className="relative aspect-video w-full bg-slate-100 overflow-hidden ">
                   {member.carImage ? (
                     <Image
                       src={builder.image(member.carImage).url()}
                       alt={member.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-102"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-black text-slate-200 italic uppercase">

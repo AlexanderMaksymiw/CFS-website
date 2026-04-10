@@ -8,7 +8,6 @@ import { useState } from "react";
 export default function Carousel({ posts = [] }) {
   const [index, setIndex] = useState(0);
 
-  // Adjusted widths for better fit
   const CARD_WIDTH = 380;
   const GAP = 24;
   const slideAmount = CARD_WIDTH + GAP;
@@ -24,12 +23,11 @@ export default function Carousel({ posts = [] }) {
           <span className="text-xs font-bold tracking-widest uppercase text-slate-400">
             The Journal
           </span>
-          <h2 className="text-5xl font-bold tracking-tighter uppercase mt-1">
+          <h2 className="text-5xl font-bold tracking-tight uppercase mt-1">
             Latest Events
           </h2>
         </div>
 
-        {/* Navigation Arrows */}
         <div className="flex gap-4">
           <button
             onClick={() => setIndex((prev) => Math.max(prev - 1, 0))}
@@ -37,7 +35,7 @@ export default function Carousel({ posts = [] }) {
             className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${
               index === 0
                 ? "border-gray-200 text-gray-300"
-                : "border-black text-black hover:bg-black hover:text-white cursor-pointer"
+                : "border-slate-900 text-slate-950 hover:bg-slate-900 hover:text-white cursor-pointer"
             }`}
           >
             ←
@@ -48,7 +46,7 @@ export default function Carousel({ posts = [] }) {
             className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${
               index === maxIndex
                 ? "border-gray-200 text-gray-300"
-                : "border-black text-black hover:bg-black hover:text-white cursor-pointer"
+                : "border-slate-900 text-slate-950 hover:bg-slate-900 hover:text-white cursor-pointer"
             }`}
           >
             →
@@ -91,7 +89,7 @@ export default function Carousel({ posts = [] }) {
                             })
                           : "Coming Soon"}
                       </span>
-                      <h3 className="text-3xl font-extrabold leading-none uppercase tracking-tight">
+                      <h3 className="text-3xl font-bold leading-none uppercase tracking-tight">
                         {post.title}
                       </h3>
                       <div className="pt-4 overflow-hidden">
@@ -107,7 +105,7 @@ export default function Carousel({ posts = [] }) {
           </motion.div>
         </div>
 
-        <div className="mt-12 h-1 bg-gray-100 w-full rounded-full overflow-hidden">
+        <div className="mt-12 h-1 bg-gray-200 w-full rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-black"
             initial={false}

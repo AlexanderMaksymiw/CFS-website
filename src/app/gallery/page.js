@@ -5,28 +5,30 @@ import Footer from "../components/Footer";
 import Featured from "../components/Featured";
 import { SocialIcon } from "react-social-icons";
 import Map from "../components/Map";
+import WeeklyWinners from "../components/WeeklyWinners";
+import WeeklyWinnersContent from "../components/WeeklyWinnersContent";
 
 export default function Gallery() {
   return (
     <div className="bg-white">
       <Header />
-      <SubPageHero title="THE ARCHIVE" images={["/images/bmw-m2-drive.jpg"]} />
+      <SubPageHero title="THE PADDOCK" images={["/images/bmw-m2-drive.jpg"]} />
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] items-center border-b border-slate-900">
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] items-center border-b border-slate-300">
         <div className="p-6 md:p-20 lg:p-30 space-y-8">
           <div className="w-20 h-2 bg-amber-400" />
-          <h1 className="text-5xl md:text-7xl font-black italic text-slate-900 leading-[0.85] tracking-tighter uppercase">
-            SHARE YOUR <br /> PERSPECTIVE
+          <h1 className="text-5xl md:text-6xl font-black italic text-slate-900 leading-[0.85] tracking-tight uppercase">
+            SHARE YOUR <br /> PHOTOS
           </h1>
 
-          <p className="text-xl md:text-2xl font-bold text-slate-900 leading-tight italic uppercase tracking-tight max-w-md">
-            From professional glass to phone snaps—every angle tells the story
-            of the meet.
+          <p className="text-xl md:text-xl font-bold text-slate-900 leading-tight italic uppercase tracking-tight max-w-md">
+            We’re incredibly lucky to have a community of talented creators. Tag
+            us to be featured on our page.
           </p>
 
           <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
-            We’re incredibly lucky to have a community of talented creators. Tag
-            us to be featured in our weekly highlights.
+            Only the official CFS photographer is allowed to take photos on exit
+            to the A483
           </p>
         </div>
 
@@ -39,13 +41,14 @@ export default function Gallery() {
           />
         </div>
       </section>
+      <WeeklyWinnersContent />
 
-      <section className="bg-slate-50 py-24 md:py-32">
-        <div className="px-6 md:px-30 mb-16 flex items-baseline gap-4">
-          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tighter">
+      <section className="bg-slate-50 py-15 md:py-15">
+        <div className="px-6 md:px-30 mb-5 flex items-baseline gap-4">
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-slate-900 tracking-tight">
             COMMUNITY HIGHLIGHTS
           </h2>
-          <div className="h-0.5 grow bg-slate-900" />
+          <div className="h-0.5 grow bg-slate-300" />
         </div>
         <div className="px-6 md:px-30">
           <Featured />

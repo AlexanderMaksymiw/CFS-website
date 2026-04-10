@@ -26,7 +26,7 @@ function renderContent(content, images) {
         return (
           <div
             key={index}
-            className="relative w-full aspect-video md:aspect-21/9 border-b-8 border-slate-900 overflow-hidden my-16"
+            className="relative w-full aspect-video md:aspect-21/9  overflow-hidden my-16"
           >
             <Image src={src} alt={key} fill className="object-cover" />
           </div>
@@ -63,7 +63,8 @@ export default function About() {
             {pageContent.intro}
           </p>
         </div>
-        <div className="relative h-100 lg:h-auto border-l border-slate-900 overflow-hidden">
+
+        <div className="relative h-100 lg:h-auto border-l border-slate-900 overflow-hidden group">
           <Image
             src={pageContent.images.image1}
             alt="First Mini"
@@ -71,6 +72,37 @@ export default function About() {
             className="object-cover"
             priority
           />
+
+          {/* --- THE ARROW & LABEL --- */}
+          <div className="absolute bottom-[25%] left-[15%] flex flex-col items-center pointer-events-none">
+            {/* Hand-drawn style SVG Arrow */}
+            <svg
+              width="80"
+              height="80"
+              viewBox="0 0 100 100"
+              fill="none"
+              className="text-amber-400 drop-shadow-lg -rotate-12"
+            >
+              <path
+                d="M20 80 Q 40 40 80 20"
+                stroke="currentColor"
+                strokeWidth="6"
+                strokeLinecap="round"
+              />
+              <path
+                d="M65 20 L 80 20 L 80 35"
+                stroke="currentColor"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
+            {/* Label */}
+            <span className="bg-slate-900 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em] px-3 py-1 italic -mt-2">
+              First Car
+            </span>
+          </div>
         </div>
       </section>
 
@@ -87,7 +119,7 @@ export default function About() {
               </h2>
               <div className="h-0.5 grow bg-slate-900" />
             </div>
-            <div className="relative w-full aspect-video bg-slate-900 border-4 border-slate-900 shadow-2xl">
+            <div className="relative w-full aspect-video   shadow-2xl">
               <Slideshow
                 images={[
                   "/images/friends-4.jpg",

@@ -7,6 +7,8 @@ import RulesContent from "./RulesContent";
 import { SocialIcon } from "react-social-icons";
 import Featured from "./Featured";
 import NextRoadTripContent from "./NextRoadTripServer";
+import WeeklyWinners from "./WeeklyWinners";
+import WeeklyWinnersContent from "./WeeklyWinnersContent";
 
 export default function Info2() {
   return (
@@ -14,8 +16,9 @@ export default function Info2() {
       <div className="px-4 md:px-30 pb-20">
         <NextRoadTripContent />
       </div>
+      <WeeklyWinnersContent />
 
-      <section className="relative w-full bg-amber-500 py-24 overflow-hidden">
+      <section className="z-50 relative w-full bg-amber-500 py-24 overflow-hidden">
         <div className="absolute top-0 right-0 text-[10rem] md:text-[20rem] font-black text-white/5 select-none pointer-events-none -translate-y-1/2 translate-x-1/4">
           CFS
         </div>
@@ -181,58 +184,6 @@ export default function Info2() {
           href={"/rules"}
           img="/images/mirror-smiling.jpg"
         />
-      </div>
-
-      <div className="mt-20 px-4 md:px-30">
-        <div className="md:hidden">
-          <Link
-            href="/gallery"
-            className="group relative block w-full h-125 rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/orange-mclaren.jpg"
-              alt="McLaren"
-              fill
-              className="object-cover opacity-90"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
-            <div className="absolute bottom-10 left-8 right-8 space-y-4">
-              <h2 className="text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
-                Explore <br /> New Roads
-              </h2>
-              <button className="bg-white text-slate-900 font-black py-3 px-6 rounded-xl uppercase text-xs tracking-widest hover:bg-red-600 cursor-pointer ">
-                See the Lineup
-              </button>
-            </div>
-          </Link>
-        </div>
-
-        {/* DESKTOP VIEW: Visible only on md screens and up */}
-        <div className="hidden md:grid grid-cols-2 gap-16 items-center">
-          {/* Copy your McLaren Image and Text logic here so it has something to display! */}
-          <div className="relative h-150 rounded-3xl overflow-hidden">
-            <Image
-              src="/images/orange-mclaren.jpg"
-              alt="McLaren"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="space-y-6">
-            <h2 className="text-5xl font-black  uppercase tracking-tight  leading-none">
-              Explore <br /> New Roads
-            </h2>
-            <p className="text-slate-600 text-xl font-medium">
-              Supercars, classic cars, JDM and passion projects come see a wide
-              collection of cars.{" "}
-            </p>
-            <Link href="/gallery">
-              <button className="bg-slate-900 text-white font-black py-4 px-8 rounded-xl uppercase text-sm tracking-widest hover:bg-red-600 cursor-pointer">
-                See the Lineup
-              </button>
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );
