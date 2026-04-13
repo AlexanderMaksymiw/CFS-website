@@ -10,9 +10,9 @@ export default function HeroOverlay() {
         </div>
 
         <h1 className="flex flex-col leading-[0.85] uppercase font-black italic antialiased max-w-lg">
-          <span className="text-6xl md:text-9xl tracking-tighter text-white">
-            Car Farm <br />
-            <span className="text-amber-400">Social</span>
+          <span className="text-6xl md:text-8xl tracking-tight text-white">
+            Car Farm Social <br />
+            <span className="text-amber-400">Club</span>
           </span>
         </h1>
 

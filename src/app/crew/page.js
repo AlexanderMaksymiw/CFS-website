@@ -28,7 +28,7 @@ export default async function Crew() {
             Road trip organization, arrival management, and site flow control.
           </p>
           <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
-            Car Farm Social wouldn’t exist without our crew of dedicated
+            Car Farm Social Club wouldn’t exist without our crew of dedicated
             marshals. From directing 400+ builds into formation to ensuring the
             vibe stays safe and relaxed, these enthusiasts volunteer their time
             to keep the gears turning every Thursday night.

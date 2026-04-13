@@ -10,22 +10,18 @@ export default function Footer() {
       className="w-full relative min-h-screen text-white flex flex-col justify-between bg-fixed bg-center bg-cover overflow-hidden"
       style={{ backgroundImage: "url('/images/Ford rally.jpg')" }}
     >
-      {/* Overlay for readability */}
       <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] z-0" />
 
-      {/* Main Content Area */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-        {/* Brand Column */}
         <div className="lg:col-span-5 flex flex-col justify-start">
           <h1 className="bg-linear-to-br from-amber-500 via-yellow-200 to-amber-600 bg-clip-text text-transparent text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter italic">
-            CAR FARM <br /> SOCIAL
+            CAR FARM <br /> SOCIAL <br /> CLUB
           </h1>
           <div className="mt-8 flex gap-4">
             <SocialMediaLinks />
           </div>
         </div>
 
-        {/* Info Column */}
         <div className="lg:col-span-3 space-y-8">
           <div>
             <h3 className="text-amber-500 font-black uppercase tracking-widest text-xs mb-4">
@@ -47,13 +43,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Partners Column */}
         <div className="lg:col-span-4">
           <h3 className="text-amber-500 font-black uppercase tracking-widest text-xs mb-6">
             Our Partners
           </h3>
           <div className="grid grid-cols-2 gap-4">
-            {/* Llynclys Farm Shop */}
             <PartnerCard href="https://llynclyshall.co.uk/">
               <Image
                 src="/images/logo/llynclys-farm-shop.webp"
@@ -64,14 +58,12 @@ export default function Footer() {
               />
             </PartnerCard>
 
-            {/* MB Coffee Van */}
             <PartnerCard href="https://llynclyshall.co.uk/mean-bean-coffee/">
               <span className="text-[10px] font-bold uppercase tracking-tight text-center">
                 Mean Bean <br /> Coffee Van
               </span>
             </PartnerCard>
 
-            {/* P&B Tyres */}
             <PartnerCard href="https://www.pandbtyres.co.uk/">
               <Image
                 src="/images/logo/pb-tyres-logo.jpg"
@@ -87,7 +79,7 @@ export default function Footer() {
 
       <div className="relative z-10 w-full bg-black/40 border-t border-white/10 py-8 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold uppercase tracking-widest">
-          <p>2025 CAR FARM SOCIAL</p>
+          <p>2025 CAR FARM SOCIAL CLUB</p>
           <p className="hover:text-amber-500 transition-colors cursor-default">
             Built by Alex Maksymiw
           </p>

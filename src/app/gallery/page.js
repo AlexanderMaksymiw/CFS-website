@@ -37,7 +37,7 @@ export default function Gallery() {
             src="/images/datsun-240z.jpg"
             alt="Datsun 240Z"
             fill
-            className="object-cover transition-transform duration-1000 hover:scale-110"
+            className="object-cover transition-transform duration-1000 hover:scale-102"
           />
         </div>
       </section>

@@ -5,7 +5,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   XMarkIcon,
-} from "@heroicons/react/24/solid"; // Switched back to Solid for that "heavy" look
+} from "@heroicons/react/24/solid"; 
 
 export default function FeaturedModal({ featuredPosts }) {
   const postsPerPage = 6;
@@ -69,13 +69,11 @@ export default function FeaturedModal({ featuredPosts }) {
               </div>
             )}
 
-            {/* Border frame effect on hover */}
             <div className="absolute inset-0 border-0  transition-all duration-200 z-30 pointer-events-none" />
           </div>
         ))}
       </section>
 
-      {/* UNIVERSAL PAGINATION (Works on Amber & White) */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-6 mt- border-t border-slate-900/10 pt-10">
           <button
@@ -156,9 +154,7 @@ export default function FeaturedModal({ featuredPosts }) {
             />
           </div>
 
-          {/* Main Content Area */}
           <div className="grow relative flex items-center justify-center p-4">
-            {/* Global Post Navigation (Left) */}
             <button
               onClick={(e) => {
                 e.stopPropagation();

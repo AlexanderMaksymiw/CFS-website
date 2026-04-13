@@ -21,7 +21,7 @@ export default function Carousel({ posts = [] }) {
       <div className="flex justify-between items-end mb-10">
         <div>
           <span className="text-xs font-bold tracking-widest uppercase text-slate-400">
-            The Journal
+            Latest from the Paddock{" "}
           </span>
           <h2 className="text-5xl font-bold tracking-tight uppercase mt-1">
             Latest Events
