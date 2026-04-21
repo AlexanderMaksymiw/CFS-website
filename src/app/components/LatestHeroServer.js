@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Header from "./Header";
 import Footer from "./Footer";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+import { client } from "../../sanity/lib/client";
+import { urlFor } from "../../sanity/lib/image";
 import Link from "next/link";
 
 const LATEST_POST_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0] {

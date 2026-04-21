@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "../../sanity/lib/image";
 import ArticleCard from "./ArticleCard";
 import Pagination from "./Pagination";
 

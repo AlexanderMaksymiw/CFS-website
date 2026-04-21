@@ -1,5 +1,5 @@
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+import { client } from "../../sanity/lib/client";
+import { urlFor } from "../../sanity/lib/image";
 import ArticleBannerClient from "./ArticleBannerClient";
 
 const POST_QUERY = `*[_type == "post" && defined(slug.current)] | order(date desc)[0] {

@@ -1,5 +1,5 @@
-import { MERCH_QUERY } from "@/sanity/queries/merchandise";
-import { client } from "@/sanity/lib/client";
+import { MERCH_QUERY } from "../../sanity/queries/merchandise";
+import { client } from "../../sanity/lib/client";
 import MerchCarousel from "./MerchCarousel";
 
 export default async function MerchContainer() {

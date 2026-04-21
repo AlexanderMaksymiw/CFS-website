@@ -2,9 +2,9 @@ import Image from "next/image";
 import Header from "../components/Header";
 import SubPageHero from "../components/SubPageHero";
 import Footer from "../components/Footer";
-import { client } from import { client } from "../../sanity/lib/sanityClient";
+import { client } from "../../sanity/lib/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
-import { CREW_QUERY } from "@/sanity/queries/crew";
+import { CREW_QUERY } from "../../sanity/queries/crew";
 import Map from "../components/Map";
 
 const builder = imageUrlBuilder(client);

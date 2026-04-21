@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import RoadCardWrapper from "../components/RoadCardWrapper";
 import SubPageHeroNews from "../components/SubPageHeroNews";
-import { client } from "@/sanity/lib/client";
-import { ROADTRIPS_QUERY } from "@/sanity/queries/roadTrips";
+import { client } from "../../sanity/lib/client";
+import { ROADTRIPS_QUERY } from "../../sanity/queries/roadTrips";
 
 export default async function RoadTripsPage() {
   const roadTrips = await client.fetch(ROADTRIPS_QUERY);

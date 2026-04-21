@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+import { client } from "../../sanity/lib/client";
+import { urlFor } from "../../sanity/lib/image";
 import RoadCard from "./RoadCard";
-import { ROADTRIPS_QUERY } from "@/sanity/queries/roadTrips";
+import { ROADTRIPS_QUERY } from "../../sanity/queries/roadTrips";
 
 export default function RoadCardWrapper({ initialTrips = [] }) {
   const [roadTrips] = useState(initialTrips);
