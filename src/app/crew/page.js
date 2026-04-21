@@ -8,6 +8,7 @@ import { CREW_QUERY } from "../../sanity/queries/crew";
 import Map from "../components/Map";
 
 const builder = imageUrlBuilder(client);
+export const revalidate = 60;
 
 export default async function Crew() {
   const crew = await client.fetch(CREW_QUERY);
