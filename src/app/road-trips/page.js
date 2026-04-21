@@ -4,6 +4,8 @@ import SubPageHeroNews from "../components/SubPageHeroNews";
 import { client } from "../../sanity/lib/client";
 import { ROADTRIPS_QUERY } from "../../sanity/queries/roadTrips";
 
+export const revalidate = 60;
+
 export default async function RoadTripsPage() {
   const roadTrips = await client.fetch(ROADTRIPS_QUERY);
   return (

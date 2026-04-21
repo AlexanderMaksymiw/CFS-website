@@ -5,6 +5,8 @@ import Image from "next/image";
 import Map from "../components/Map";
 import Header from "../components/Header";
 
+export const revalidate = 60;
+
 export default async function Merch() {
   return (
     <div className="bg-white">

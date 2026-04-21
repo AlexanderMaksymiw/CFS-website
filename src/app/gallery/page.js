@@ -8,6 +8,7 @@ import Map from "../components/Map";
 import WeeklyWinners from "../components/WeeklyWinners";
 import WeeklyWinnersContent from "../components/WeeklyWinnersContent";
 
+export const revalidate = 60;
 export default function Gallery() {
   return (
     <div className="bg-white">
