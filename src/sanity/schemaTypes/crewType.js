@@ -33,5 +33,9 @@ export default defineType({
       title: "Bio",
       type: "text",
     }),
+    defineField({
+      name: "order",
+      type: "number",
+    }),
   ],
 });
