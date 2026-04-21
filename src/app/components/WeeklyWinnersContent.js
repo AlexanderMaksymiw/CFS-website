@@ -1,6 +1,6 @@
-import { client } from "@/sanity/lib/sanityClient";
+import { client } from "../../sanity/lib/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
-import { WEEKLY_WINNERS_QUERY } from "@/sanity/queries/weeklyWinners";
+import { WEEKLY_WINNERS_QUERY } from "../../sanity/queries/weeklyWinners";
 import WeeklyWinners from "./WeeklyWinners";
 
 const builder = imageUrlBuilder(client);

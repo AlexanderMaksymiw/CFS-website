@@ -1,7 +1,7 @@
-import { client } from "@/sanity/lib/sanityClient";
+import { client } from "../../sanity/lib/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
-import NextRoadTrip from "@/app/components/NextRoadTrip";
-import { LATEST_ROADTRIP_QUERY } from "@/sanity/queries/latestRoadTrips";
+import NextRoadTrip from "./NextRoadTrip";
+import { LATEST_ROADTRIP_QUERY } from "../../sanity/queries/latestRoadTrips";
 
 const builder = imageUrlBuilder(client);
 

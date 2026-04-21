@@ -1,6 +1,6 @@
 import { PortableText } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/sanityClient";
+import { client } from import { client } from "../../sanity/lib/sanityClient";
 
 import Image from "next/image";
 import Header from "@/app/components/Header";

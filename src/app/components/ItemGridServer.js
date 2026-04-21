@@ -1,4 +1,4 @@
-import { client } from "@/sanity/lib/sanityClient";
+import { client } from "../../sanity/lib/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import Carousel from "./Carousel";
 
