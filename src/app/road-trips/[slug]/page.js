@@ -3,9 +3,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../../../sanity/lib/sanityClient";
 
 import Image from "next/image";
-import Header from "../../app/components/Header";
-import Footer from "../../app/components/Footer";
-import RoadTripGallery from "../../app/components/RoadTripGallery";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import RoadTripGallery from "../../components/RoadTripGallery";
 
 const builder = imageUrlBuilder(client);
 

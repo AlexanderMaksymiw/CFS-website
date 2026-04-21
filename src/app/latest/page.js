@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import ArticleCardWrapper from "../components/ArticleCardWrapper";
 import SubPageHeroNews from "../components/SubPageHeroNews";
-import ArticleBannerServer from "../app/components/ArticleBannerServer";
+import ArticleBannerServer from "../components/ArticleBannerServer";
 import { client } from "../../sanity/lib/client";
 export default async function Latest() {
   const query = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
