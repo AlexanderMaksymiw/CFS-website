@@ -90,7 +90,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-slate-900 z-105 flex flex-col items-center overflow-y-auto pt-32 pb-12 px-6"
+            className="fixed inset-0 bg-slate-900 z-105 flex flex-col items-center overflow-y-auto pt-32 pb-12 px-6 h-130"
           >
             <div className="flex flex-col items-center gap-6 w-full max-w-sm">
               {navLinks.map((link) => (

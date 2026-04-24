@@ -111,11 +111,11 @@ export default async function Crew() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-end border-b-2 border-slate-100 pb-2">
-                    <h3 className="text-4xl font-black italic uppercase tracking-tighter text-slate-900">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-end border-b-2 border-slate-100 pb-2 gap-2">
+                    <h3 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-slate-900 leading-none">
                       {member.name}
                     </h3>
-                    <span className="text-amber-500 font-black italic uppercase text-sm">
+                    <span className="text-amber-500 font-black italic uppercase text-xs md:text-sm md:text-right max-w-[250px] leading-tight">
                       {member.car}
                     </span>
                   </div>
