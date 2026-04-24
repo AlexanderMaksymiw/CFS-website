@@ -12,33 +12,6 @@ import ItemGridServer from "./components/ItemGridServer";
 import Info2 from "./components/Info2";
 import Content from "./components/Content";
 
-const myCards = [
-  {
-    image: "/images/Drive_out_ford.jpg",
-    title: "Epic Adventures",
-  },
-  {
-    image: "/images/catering.jpg",
-    title: "Food and Drink",
-  },
-  {
-    image: "/images/escort.jpg",
-    title: "Supercars and Classics",
-  },
-  {
-    image: "/images/abarth.jpg",
-    title: "Clubs Welcome!",
-  },
-  {
-    image: "/images/MX5_polaroid.jpg",
-    title: "Community Driven",
-  },
-  {
-    image: "/images/dog.jpg",
-    title: "Dog Friendly",
-  },
-];
-
 export default function Home() {
   return (
     <div className="header">
